@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F70139D12B21C26500FE23B3 /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70139D02B21C26500FE23B3 /* testView.swift */; };
 		F77E70232B21A90500B2CD37 /* DotripApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77E70222B21A90500B2CD37 /* DotripApp.swift */; };
 		F77E70252B21A90500B2CD37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77E70242B21A90500B2CD37 /* ContentView.swift */; };
 		F77E70272B21A90600B2CD37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77E70262B21A90600B2CD37 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F70139D02B21C26500FE23B3 /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
 		F77E701F2B21A90500B2CD37 /* Dotrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dotrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F77E70222B21A90500B2CD37 /* DotripApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotripApp.swift; sourceTree = "<group>"; };
 		F77E70242B21A90500B2CD37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		F77E70312B21AE6500B2CD37 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F70139D02B21C26500FE23B3 /* testView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			files = (
 				F77E70252B21A90500B2CD37 /* ContentView.swift in Sources */,
 				F77E70232B21A90500B2CD37 /* DotripApp.swift in Sources */,
+				F70139D12B21C26500FE23B3 /* testView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
