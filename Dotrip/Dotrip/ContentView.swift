@@ -10,11 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView{
-            Text("홈")
-                .tabItem {
-                    Image(systemName: "house")
-                    Text("홈")
-                }
+            MainPageView()
             MyMissionListView()
                 .tabItem {
                     Image(systemName: "flag.checkered")
