@@ -21,7 +21,7 @@ struct MyMissionListView: View {
                     Text("\(missionStore.missions.count)")
                         .foregroundStyle(Color.orange)
                     Text("개 있습니다")
-                    
+    
                 }
                 .modifier(CountModify())
         
@@ -53,9 +53,6 @@ MyMissionDetailView(missions: $missionStore.missions[item])) {
         }
     }
 }
-
-
-
 
 //진행중인 미션 갯수 디자인
 struct CountModify: ViewModifier {

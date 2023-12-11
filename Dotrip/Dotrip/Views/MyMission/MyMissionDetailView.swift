@@ -50,10 +50,9 @@ struct MyMissionDetailView: View {
                         
                         Button(self.clickedBtn == false ? "미션 시작" : "미션중") {
                             //클릭하면 카메라 작동
-                            withAnimation{
-                                self.clickedBtn = true
-                                self.missionStatus = true
-                            }
+                            self.clickedBtn = true
+                            self.missionStatus = true
+
                         }
                         .fontWeight(self.clickedBtn == false ? .regular : .bold)
                         .frame(width:250, height: 50)

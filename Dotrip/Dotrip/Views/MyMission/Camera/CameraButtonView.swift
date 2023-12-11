@@ -24,8 +24,8 @@ struct CameraButtonView: View {
                         .overlay(
                             Image(systemName: "camera.fill")
                                 .foregroundStyle(Color.black)         
-                        )
                 )
+            )
         }
     }
 }

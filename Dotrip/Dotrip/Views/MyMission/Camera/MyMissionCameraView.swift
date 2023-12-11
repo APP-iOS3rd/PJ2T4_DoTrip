@@ -26,7 +26,7 @@ struct MyMissionCameraView: View {
                     .cornerRadius(20)
                     .overlay(
                         CameraButtonView(showActionSheet: $showActionSheet)
-                            .offset(x:50,y:65)
+                           // .offset(x:50,y:65)
                     )
             }
             .actionSheet(isPresented: $showActionSheet, content:{ () -> ActionSheet in

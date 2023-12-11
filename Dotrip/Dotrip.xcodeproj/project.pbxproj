@@ -109,8 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				20A8DA472B26CAE700E306D2 /* MyMissionCameraView.swift */,
-				20A8DA492B26CB0A00E306D2 /* CameraButtonView.swift */,
 				20A8DA4B2B26CB2700E306D2 /* ImagePicker.swift */,
+				20A8DA492B26CB0A00E306D2 /* CameraButtonView.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
