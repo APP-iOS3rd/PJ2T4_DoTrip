@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F70139D12B21C26500FE23B3 /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70139D02B21C26500FE23B3 /* testView.swift */; };
+		F71B53B02B2591F0001AA4EC /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53AF2B2591F0001AA4EC /* MyPageView.swift */; };
+		F71B53B52B25A023001AA4EC /* PointHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53B42B25A023001AA4EC /* PointHistoryView.swift */; };
+		F71B53B82B25A937001AA4EC /* PointExchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53B72B25A937001AA4EC /* PointExchangeView.swift */; };
+		F71B53BB2B25A961001AA4EC /* QnAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53BA2B25A961001AA4EC /* QnAView.swift */; };
+		F71B53BD2B25A985001AA4EC /* EmailInquiryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53BC2B25A985001AA4EC /* EmailInquiryView.swift */; };
+		F71B53BF2B25BC0B001AA4EC /* ModifyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53BE2B25BC0B001AA4EC /* ModifyProfileView.swift */; };
 		F77E70232B21A90500B2CD37 /* DotripApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77E70222B21A90500B2CD37 /* DotripApp.swift */; };
 		F77E70252B21A90500B2CD37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77E70242B21A90500B2CD37 /* ContentView.swift */; };
 		F77E70272B21A90600B2CD37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77E70262B21A90600B2CD37 /* Assets.xcassets */; };
@@ -15,7 +20,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F70139D02B21C26500FE23B3 /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
+		F71B53AF2B2591F0001AA4EC /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		F71B53B42B25A023001AA4EC /* PointHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointHistoryView.swift; sourceTree = "<group>"; };
+		F71B53B72B25A937001AA4EC /* PointExchangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointExchangeView.swift; sourceTree = "<group>"; };
+		F71B53BA2B25A961001AA4EC /* QnAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QnAView.swift; sourceTree = "<group>"; };
+		F71B53BC2B25A985001AA4EC /* EmailInquiryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInquiryView.swift; sourceTree = "<group>"; };
+		F71B53BE2B25BC0B001AA4EC /* ModifyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyProfileView.swift; sourceTree = "<group>"; };
 		F77E701F2B21A90500B2CD37 /* Dotrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dotrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F77E70222B21A90500B2CD37 /* DotripApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotripApp.swift; sourceTree = "<group>"; };
 		F77E70242B21A90500B2CD37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +44,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F71B53B32B259C13001AA4EC /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				F71B53AF2B2591F0001AA4EC /* MyPageView.swift */,
+				F71B53BE2B25BC0B001AA4EC /* ModifyProfileView.swift */,
+				F71B53B62B25A8D8001AA4EC /* MyPageList */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		F71B53B62B25A8D8001AA4EC /* MyPageList */ = {
+			isa = PBXGroup;
+			children = (
+				F71B53B42B25A023001AA4EC /* PointHistoryView.swift */,
+				F71B53B72B25A937001AA4EC /* PointExchangeView.swift */,
+				F71B53BA2B25A961001AA4EC /* QnAView.swift */,
+				F71B53BC2B25A985001AA4EC /* EmailInquiryView.swift */,
+			);
+			path = MyPageList;
+			sourceTree = "<group>";
+		};
 		F77E70162B21A90500B2CD37 = {
 			isa = PBXGroup;
 			children = (
@@ -83,7 +114,7 @@
 		F77E70312B21AE6500B2CD37 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F70139D02B21C26500FE23B3 /* testView.swift */,
+				F71B53B32B259C13001AA4EC /* MyPage */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -172,9 +203,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F71B53B82B25A937001AA4EC /* PointExchangeView.swift in Sources */,
+				F71B53BF2B25BC0B001AA4EC /* ModifyProfileView.swift in Sources */,
+				F71B53BB2B25A961001AA4EC /* QnAView.swift in Sources */,
 				F77E70252B21A90500B2CD37 /* ContentView.swift in Sources */,
+				F71B53B02B2591F0001AA4EC /* MyPageView.swift in Sources */,
+				F71B53BD2B25A985001AA4EC /* EmailInquiryView.swift in Sources */,
+				F71B53B52B25A023001AA4EC /* PointHistoryView.swift in Sources */,
 				F77E70232B21A90500B2CD37 /* DotripApp.swift in Sources */,
-				F70139D12B21C26500FE23B3 /* testView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +351,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -343,6 +380,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
