@@ -15,7 +15,7 @@ struct ContentView: View {
                     Image(systemName: "house")
                     Text("홈")
                 }
-            Text("내미션")
+            MyMissionListView()
                 .tabItem {
                     Image(systemName: "flag.checkered")
                     Text("내미션")

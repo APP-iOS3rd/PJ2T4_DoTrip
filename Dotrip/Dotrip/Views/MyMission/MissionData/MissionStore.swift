@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class MissionStore: ObservableObject{
+    @Published var missions: [Mission]
+    
+    init(missions: [Mission]) {
+        self.missions = missions
+    }
+}

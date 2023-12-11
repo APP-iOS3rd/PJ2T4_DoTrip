@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		207AC6EA2B26C5C800D3A340 /* MyMissionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207AC6E92B26C5C800D3A340 /* MyMissionListView.swift */; };
+		20A8DA3B2B26C69B00E306D2 /* MyMissionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8DA3A2B26C69B00E306D2 /* MyMissionList.swift */; };
+		20A8DA3F2B26C74A00E306D2 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8DA3E2B26C74900E306D2 /* Mission.swift */; };
+		20A8DA412B26C7EC00E306D2 /* MissionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8DA402B26C7EC00E306D2 /* MissionStore.swift */; };
+		20A8DA432B26C81900E306D2 /* MissionDataLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8DA422B26C81900E306D2 /* MissionDataLoad.swift */; };
+		20A8DA452B26CA8300E306D2 /* MyMissionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8DA442B26CA8300E306D2 /* MyMissionDetailView.swift */; };
+		20A8DA482B26CAE700E306D2 /* MyMissionCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8DA472B26CAE700E306D2 /* MyMissionCameraView.swift */; };
+		20A8DA4A2B26CB0A00E306D2 /* CameraButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8DA492B26CB0A00E306D2 /* CameraButtonView.swift */; };
+		20A8DA4C2B26CB2700E306D2 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8DA4B2B26CB2700E306D2 /* ImagePicker.swift */; };
+		20A8DA4E2B26CC7800E306D2 /* missionData.json in Resources */ = {isa = PBXBuildFile; fileRef = 20A8DA4D2B26CC7800E306D2 /* missionData.json */; };
 		F71B53B02B2591F0001AA4EC /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53AF2B2591F0001AA4EC /* MyPageView.swift */; };
 		F71B53B52B25A023001AA4EC /* PointHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53B42B25A023001AA4EC /* PointHistoryView.swift */; };
 		F71B53B82B25A937001AA4EC /* PointExchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53B72B25A937001AA4EC /* PointExchangeView.swift */; };
@@ -20,6 +30,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		207AC6E92B26C5C800D3A340 /* MyMissionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMissionListView.swift; sourceTree = "<group>"; };
+		20A8DA3A2B26C69B00E306D2 /* MyMissionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMissionList.swift; sourceTree = "<group>"; };
+		20A8DA3E2B26C74900E306D2 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
+		20A8DA402B26C7EC00E306D2 /* MissionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionStore.swift; sourceTree = "<group>"; };
+		20A8DA422B26C81900E306D2 /* MissionDataLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDataLoad.swift; sourceTree = "<group>"; };
+		20A8DA442B26CA8300E306D2 /* MyMissionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMissionDetailView.swift; sourceTree = "<group>"; };
+		20A8DA472B26CAE700E306D2 /* MyMissionCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMissionCameraView.swift; sourceTree = "<group>"; };
+		20A8DA492B26CB0A00E306D2 /* CameraButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraButtonView.swift; sourceTree = "<group>"; };
+		20A8DA4B2B26CB2700E306D2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		20A8DA4D2B26CC7800E306D2 /* missionData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = missionData.json; sourceTree = "<group>"; };
 		F71B53AF2B2591F0001AA4EC /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		F71B53B42B25A023001AA4EC /* PointHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointHistoryView.swift; sourceTree = "<group>"; };
 		F71B53B72B25A937001AA4EC /* PointExchangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointExchangeView.swift; sourceTree = "<group>"; };
@@ -44,6 +64,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		207AC6E82B26C59B00D3A340 /* MyMission */ = {
+			isa = PBXGroup;
+			children = (
+				20A8DA462B26CAAC00E306D2 /* Camera */,
+				20A8DA392B26C65700E306D2 /* MissionData */,
+				207AC6E92B26C5C800D3A340 /* MyMissionListView.swift */,
+				20A8DA442B26CA8300E306D2 /* MyMissionDetailView.swift */,
+				20A8DA3A2B26C69B00E306D2 /* MyMissionList.swift */,
+			);
+			path = MyMission;
+			sourceTree = "<group>";
+		};
+		20A8DA392B26C65700E306D2 /* MissionData */ = {
+			isa = PBXGroup;
+			children = (
+				20A8DA3E2B26C74900E306D2 /* Mission.swift */,
+				20A8DA402B26C7EC00E306D2 /* MissionStore.swift */,
+				20A8DA422B26C81900E306D2 /* MissionDataLoad.swift */,
+				20A8DA4D2B26CC7800E306D2 /* missionData.json */,
+			);
+			path = MissionData;
+			sourceTree = "<group>";
+		};
+		20A8DA462B26CAAC00E306D2 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				20A8DA472B26CAE700E306D2 /* MyMissionCameraView.swift */,
+				20A8DA4B2B26CB2700E306D2 /* ImagePicker.swift */,
+				20A8DA492B26CB0A00E306D2 /* CameraButtonView.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
 		F71B53B32B259C13001AA4EC /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +167,7 @@
 		F77E70312B21AE6500B2CD37 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				207AC6E82B26C59B00D3A340 /* MyMission */,
 				F71B53B32B259C13001AA4EC /* MyPage */,
 			);
 			path = Views;
@@ -192,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F77E702A2B21A90600B2CD37 /* Preview Assets.xcassets in Resources */,
+				20A8DA4E2B26CC7800E306D2 /* missionData.json in Resources */,
 				F77E70272B21A90600B2CD37 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,13 +258,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20A8DA3F2B26C74A00E306D2 /* Mission.swift in Sources */,
+				20A8DA4A2B26CB0A00E306D2 /* CameraButtonView.swift in Sources */,
 				F71B53B82B25A937001AA4EC /* PointExchangeView.swift in Sources */,
+				20A8DA4C2B26CB2700E306D2 /* ImagePicker.swift in Sources */,
 				F71B53BF2B25BC0B001AA4EC /* ModifyProfileView.swift in Sources */,
 				F71B53BB2B25A961001AA4EC /* QnAView.swift in Sources */,
 				F77E70252B21A90500B2CD37 /* ContentView.swift in Sources */,
+				20A8DA432B26C81900E306D2 /* MissionDataLoad.swift in Sources */,
 				F71B53B02B2591F0001AA4EC /* MyPageView.swift in Sources */,
 				F71B53BD2B25A985001AA4EC /* EmailInquiryView.swift in Sources */,
+				20A8DA452B26CA8300E306D2 /* MyMissionDetailView.swift in Sources */,
+				20A8DA3B2B26C69B00E306D2 /* MyMissionList.swift in Sources */,
+				20A8DA412B26C7EC00E306D2 /* MissionStore.swift in Sources */,
 				F71B53B52B25A023001AA4EC /* PointHistoryView.swift in Sources */,
+				20A8DA482B26CAE700E306D2 /* MyMissionCameraView.swift in Sources */,
+				207AC6EA2B26C5C800D3A340 /* MyMissionListView.swift in Sources */,
 				F77E70232B21A90500B2CD37 /* DotripApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
