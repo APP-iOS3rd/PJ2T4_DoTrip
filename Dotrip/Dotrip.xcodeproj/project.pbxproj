@@ -23,7 +23,7 @@
 		F71B53BB2B25A961001AA4EC /* QnAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53BA2B25A961001AA4EC /* QnAView.swift */; };
 		F71B53BD2B25A985001AA4EC /* EmailInquiryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53BC2B25A985001AA4EC /* EmailInquiryView.swift */; };
 		F71B53BF2B25BC0B001AA4EC /* ModifyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53BE2B25BC0B001AA4EC /* ModifyProfileView.swift */; };
-		F71B53C12B26C559001AA4EC /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53C02B26C559001AA4EC /* ImagePicker.swift */; };
+		F71B53C12B26C559001AA4EC /* ImagePicker2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53C02B26C559001AA4EC /* ImagePicker2.swift */; };
 		F77E70232B21A90500B2CD37 /* DotripApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77E70222B21A90500B2CD37 /* DotripApp.swift */; };
 		F77E70252B21A90500B2CD37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77E70242B21A90500B2CD37 /* ContentView.swift */; };
 		F77E70272B21A90600B2CD37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77E70262B21A90600B2CD37 /* Assets.xcassets */; };
@@ -47,7 +47,7 @@
 		F71B53BA2B25A961001AA4EC /* QnAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QnAView.swift; sourceTree = "<group>"; };
 		F71B53BC2B25A985001AA4EC /* EmailInquiryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInquiryView.swift; sourceTree = "<group>"; };
 		F71B53BE2B25BC0B001AA4EC /* ModifyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyProfileView.swift; sourceTree = "<group>"; };
-		F71B53C02B26C559001AA4EC /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		F71B53C02B26C559001AA4EC /* ImagePicker2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker2.swift; sourceTree = "<group>"; };
 		F77E701F2B21A90500B2CD37 /* Dotrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dotrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F77E70222B21A90500B2CD37 /* DotripApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotripApp.swift; sourceTree = "<group>"; };
 		F77E70242B21A90500B2CD37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,8 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				20A8DA472B26CAE700E306D2 /* MyMissionCameraView.swift */,
-				20A8DA4B2B26CB2700E306D2 /* ImagePicker.swift */,
 				20A8DA492B26CB0A00E306D2 /* CameraButtonView.swift */,
+				20A8DA4B2B26CB2700E306D2 /* ImagePicker.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -104,7 +104,7 @@
 			children = (
 				F71B53AF2B2591F0001AA4EC /* MyPageView.swift */,
 				F71B53BE2B25BC0B001AA4EC /* ModifyProfileView.swift */,
-				F71B53C02B26C559001AA4EC /* ImagePicker.swift */,
+				F71B53C02B26C559001AA4EC /* ImagePicker2.swift */,
 				F71B53B62B25A8D8001AA4EC /* MyPageList */,
 			);
 			path = MyPage;
@@ -267,7 +267,7 @@
 				20A8DA4C2B26CB2700E306D2 /* ImagePicker.swift in Sources */,
 				F71B53BF2B25BC0B001AA4EC /* ModifyProfileView.swift in Sources */,
 				F71B53BB2B25A961001AA4EC /* QnAView.swift in Sources */,
-				F71B53C12B26C559001AA4EC /* ImagePicker.swift in Sources */,
+				F71B53C12B26C559001AA4EC /* ImagePicker2.swift in Sources */,
 				F77E70252B21A90500B2CD37 /* ContentView.swift in Sources */,
 				20A8DA432B26C81900E306D2 /* MissionDataLoad.swift in Sources */,
 				F71B53B02B2591F0001AA4EC /* MyPageView.swift in Sources */,

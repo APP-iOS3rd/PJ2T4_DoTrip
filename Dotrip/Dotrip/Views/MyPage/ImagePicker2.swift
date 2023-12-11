@@ -10,7 +10,7 @@ import SwiftUI
 
 var preseletedAssetIdentifiers = [String]()
 
-struct ImagePicker: UIViewControllerRepresentable {
+struct ImagePicker2: UIViewControllerRepresentable {
     
     @Environment(\.dismiss) private var dismiss
     let config: PHPickerConfiguration
@@ -32,9 +32,9 @@ struct ImagePicker: UIViewControllerRepresentable {
     }
     
     class Coordinator: PHPickerViewControllerDelegate {
-        let parent: ImagePicker
+        let parent: ImagePicker2
         
-        init(parent: ImagePicker) {
+        init(parent: ImagePicker2) {
             self.parent = parent
         }
         

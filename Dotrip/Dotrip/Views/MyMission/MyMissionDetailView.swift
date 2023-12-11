@@ -37,7 +37,7 @@ struct MyMissionDetailView: View {
                             MyMissionCameraView(mission:$missions)
                                 
                         }else {
-                            Image("서울이미지1")
+                            Image("경복궁사진1")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 350)

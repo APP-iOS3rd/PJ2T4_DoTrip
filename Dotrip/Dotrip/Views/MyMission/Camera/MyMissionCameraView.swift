@@ -16,8 +16,6 @@ struct MyMissionCameraView: View {
     @State var image : Image?
     @State var sourcetype :Int = 0
     
-    
-    
     var body: some View {
         ZStack{
             VStack{
