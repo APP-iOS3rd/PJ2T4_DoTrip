@@ -17,6 +17,14 @@
 		20A8DA4A2B26CB0A00E306D2 /* CameraButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8DA492B26CB0A00E306D2 /* CameraButtonView.swift */; };
 		20A8DA4C2B26CB2700E306D2 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8DA4B2B26CB2700E306D2 /* ImagePicker.swift */; };
 		20A8DA4E2B26CC7800E306D2 /* missionData.json in Resources */ = {isa = PBXBuildFile; fileRef = 20A8DA4D2B26CC7800E306D2 /* missionData.json */; };
+		970E70EB2B26FBB90005FCFE /* API_KEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = 970E70EA2B26FBB90005FCFE /* API_KEY.plist */; };
+		970E70F12B26FBEC0005FCFE /* EventInfoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970E70ED2B26FBEC0005FCFE /* EventInfoAPI.swift */; };
+		970E70F22B26FBEC0005FCFE /* TourKoreaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970E70EE2B26FBEC0005FCFE /* TourKoreaAPI.swift */; };
+		970E70F32B26FBEC0005FCFE /* GetAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970E70EF2B26FBEC0005FCFE /* GetAPIKey.swift */; };
+		970E70F42B26FBEC0005FCFE /* IntroductionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970E70F02B26FBEC0005FCFE /* IntroductionAPI.swift */; };
+		970E70F72B26FC090005FCFE /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970E70F62B26FC090005FCFE /* MainPageView.swift */; };
+		970E70FB2B26FC1B0005FCFE /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970E70F92B26FC1B0005FCFE /* EventDetailView.swift */; };
+		970E70FC2B26FC1B0005FCFE /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970E70FA2B26FC1B0005FCFE /* SearchView.swift */; };
 		F71B53B02B2591F0001AA4EC /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53AF2B2591F0001AA4EC /* MyPageView.swift */; };
 		F71B53B52B25A023001AA4EC /* PointHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53B42B25A023001AA4EC /* PointHistoryView.swift */; };
 		F71B53B82B25A937001AA4EC /* PointExchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53B72B25A937001AA4EC /* PointExchangeView.swift */; };
@@ -41,6 +49,14 @@
 		20A8DA492B26CB0A00E306D2 /* CameraButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraButtonView.swift; sourceTree = "<group>"; };
 		20A8DA4B2B26CB2700E306D2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		20A8DA4D2B26CC7800E306D2 /* missionData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = missionData.json; sourceTree = "<group>"; };
+		970E70EA2B26FBB90005FCFE /* API_KEY.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = API_KEY.plist; sourceTree = "<group>"; };
+		970E70ED2B26FBEC0005FCFE /* EventInfoAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInfoAPI.swift; sourceTree = "<group>"; };
+		970E70EE2B26FBEC0005FCFE /* TourKoreaAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourKoreaAPI.swift; sourceTree = "<group>"; };
+		970E70EF2B26FBEC0005FCFE /* GetAPIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAPIKey.swift; sourceTree = "<group>"; };
+		970E70F02B26FBEC0005FCFE /* IntroductionAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroductionAPI.swift; sourceTree = "<group>"; };
+		970E70F62B26FC090005FCFE /* MainPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
+		970E70F92B26FC1B0005FCFE /* EventDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
+		970E70FA2B26FC1B0005FCFE /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		F71B53AF2B2591F0001AA4EC /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		F71B53B42B25A023001AA4EC /* PointHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointHistoryView.swift; sourceTree = "<group>"; };
 		F71B53B72B25A937001AA4EC /* PointExchangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointExchangeView.swift; sourceTree = "<group>"; };
@@ -99,6 +115,34 @@
 			path = Camera;
 			sourceTree = "<group>";
 		};
+		970E70EC2B26FBD90005FCFE /* TourKoreaAPI */ = {
+			isa = PBXGroup;
+			children = (
+				970E70ED2B26FBEC0005FCFE /* EventInfoAPI.swift */,
+				970E70EF2B26FBEC0005FCFE /* GetAPIKey.swift */,
+				970E70F02B26FBEC0005FCFE /* IntroductionAPI.swift */,
+				970E70EE2B26FBEC0005FCFE /* TourKoreaAPI.swift */,
+			);
+			path = TourKoreaAPI;
+			sourceTree = "<group>";
+		};
+		970E70F52B26FBF50005FCFE /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				970E70F62B26FC090005FCFE /* MainPageView.swift */,
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
+		970E70F82B26FC0C0005FCFE /* SearchPage */ = {
+			isa = PBXGroup;
+			children = (
+				970E70F92B26FC1B0005FCFE /* EventDetailView.swift */,
+				970E70FA2B26FC1B0005FCFE /* SearchView.swift */,
+			);
+			path = SearchPage;
+			sourceTree = "<group>";
+		};
 		F71B53B32B259C13001AA4EC /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +190,7 @@
 				F77E70222B21A90500B2CD37 /* DotripApp.swift */,
 				F77E70242B21A90500B2CD37 /* ContentView.swift */,
 				F77E70262B21A90600B2CD37 /* Assets.xcassets */,
+				970E70EA2B26FBB90005FCFE /* API_KEY.plist */,
 				F77E70282B21A90600B2CD37 /* Preview Content */,
 			);
 			path = Dotrip;
@@ -170,6 +215,8 @@
 		F77E70312B21AE6500B2CD37 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				970E70F82B26FC0C0005FCFE /* SearchPage */,
+				970E70F52B26FBF50005FCFE /* MainPage */,
 				207AC6E82B26C59B00D3A340 /* MyMission */,
 				F71B53B32B259C13001AA4EC /* MyPage */,
 			);
@@ -179,6 +226,7 @@
 		F77E70322B21AE6E00B2CD37 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				970E70EC2B26FBD90005FCFE /* TourKoreaAPI */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -249,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F77E702A2B21A90600B2CD37 /* Preview Assets.xcassets in Resources */,
+				970E70EB2B26FBB90005FCFE /* API_KEY.plist in Resources */,
 				20A8DA4E2B26CC7800E306D2 /* missionData.json in Resources */,
 				F77E70272B21A90600B2CD37 /* Assets.xcassets in Resources */,
 			);
@@ -261,20 +310,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				970E70F42B26FBEC0005FCFE /* IntroductionAPI.swift in Sources */,
 				20A8DA3F2B26C74A00E306D2 /* Mission.swift in Sources */,
+				970E70F72B26FC090005FCFE /* MainPageView.swift in Sources */,
 				20A8DA4A2B26CB0A00E306D2 /* CameraButtonView.swift in Sources */,
+				970E70F32B26FBEC0005FCFE /* GetAPIKey.swift in Sources */,
 				F71B53B82B25A937001AA4EC /* PointExchangeView.swift in Sources */,
+				970E70F12B26FBEC0005FCFE /* EventInfoAPI.swift in Sources */,
 				20A8DA4C2B26CB2700E306D2 /* ImagePicker.swift in Sources */,
+				970E70FB2B26FC1B0005FCFE /* EventDetailView.swift in Sources */,
 				F71B53BF2B25BC0B001AA4EC /* ModifyProfileView.swift in Sources */,
 				F71B53BB2B25A961001AA4EC /* QnAView.swift in Sources */,
 				F71B53C12B26C559001AA4EC /* ImagePicker2.swift in Sources */,
 				F77E70252B21A90500B2CD37 /* ContentView.swift in Sources */,
 				20A8DA432B26C81900E306D2 /* MissionDataLoad.swift in Sources */,
 				F71B53B02B2591F0001AA4EC /* MyPageView.swift in Sources */,
+				970E70FC2B26FC1B0005FCFE /* SearchView.swift in Sources */,
 				F71B53BD2B25A985001AA4EC /* EmailInquiryView.swift in Sources */,
 				20A8DA452B26CA8300E306D2 /* MyMissionDetailView.swift in Sources */,
 				20A8DA3B2B26C69B00E306D2 /* MyMissionList.swift in Sources */,
 				20A8DA412B26C7EC00E306D2 /* MissionStore.swift in Sources */,
+				970E70F22B26FBEC0005FCFE /* TourKoreaAPI.swift in Sources */,
 				F71B53B52B25A023001AA4EC /* PointHistoryView.swift in Sources */,
 				20A8DA482B26CAE700E306D2 /* MyMissionCameraView.swift in Sources */,
 				207AC6EA2B26C5C800D3A340 /* MyMissionListView.swift in Sources */,
@@ -414,6 +470,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Dotrip/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Dotrip/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -443,6 +500,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Dotrip/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Dotrip/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
