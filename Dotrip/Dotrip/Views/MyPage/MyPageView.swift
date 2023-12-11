@@ -19,6 +19,7 @@ extension Color {
 
 struct MyPageView: View {
     @State private var showModal = false
+    @ObservedObject private var userData: UserData = UserData()
     
     var body: some View {
         NavigationView {
@@ -47,7 +48,7 @@ struct MyPageView: View {
                                                     .foregroundColor(.black)
                                             }
                                             .sheet(isPresented: self.$showModal) {
-                                                ModifyProfileView()
+                                                ModifyProfileView(userData: userData)
                                             }
                                             .padding()
                                             
@@ -63,7 +64,7 @@ struct MyPageView: View {
                                                     .padding()
                                                 
                                                 HStack {
-                                                    Text("카피바라")
+                                                    Text(userData.myPageNickname)
                                                         .foregroundColor(.black)
                                                         .bold()
                                                     Text("님")
@@ -108,7 +109,6 @@ struct MyPageView: View {
                             NavigationLink(destination: PointHistoryView()) {
                                 Text("포인트 사용내역")
                             }
-                            .listRowSeparator(.hidden)
                             NavigationLink(destination: PointExchangeView()) {
                                 Text("포인트 교환")
                             }
