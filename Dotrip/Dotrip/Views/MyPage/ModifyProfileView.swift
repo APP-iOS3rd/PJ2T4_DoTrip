@@ -20,7 +20,7 @@ struct ModifyProfileView: View {
     
     init(userData: UserData) {
             self.userData = userData
-        }
+    }
     
     var pickerConfig: PHPickerConfiguration {
         var config = PHPickerConfiguration(photoLibrary: PHPhotoLibrary.shared())
@@ -58,7 +58,7 @@ struct ModifyProfileView: View {
 //                            .offset(x:3, y:50)
                     }
                     .sheet(isPresented: $showPicker, content: {
-                        ImagePicker(config: pickerConfig) {
+                        ImagePicker2(config: pickerConfig) {
                             seletedImages in
                             processSeletedImages(results: seletedImages)
                         }

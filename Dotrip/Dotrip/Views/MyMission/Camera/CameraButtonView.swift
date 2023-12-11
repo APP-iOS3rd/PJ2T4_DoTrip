@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CameraButtonView: View {
     @Binding var showActionSheet : Bool
+    
     var body: some View {
         Button(action: {
             self.showActionSheet.toggle()
@@ -22,8 +23,7 @@ struct CameraButtonView: View {
                         .foregroundColor(Color.init(red: 232/255, green: 233/255, blue: 231/255))
                         .overlay(
                             Image(systemName: "camera.fill")
-                                .foregroundStyle(Color.black)
-                            
+                                .foregroundStyle(Color.black)         
                         )
                 )
         }
