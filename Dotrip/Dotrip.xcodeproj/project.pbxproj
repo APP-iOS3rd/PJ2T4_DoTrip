@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		97A592F62B2694AD006C0EE3 /* API_KEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97A592F52B2694AD006C0EE3 /* API_KEY.plist */; };
+		97A592FC2B2694D3006C0EE3 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A592FB2B2694D3006C0EE3 /* SearchView.swift */; };
+		97A593002B2696A6006C0EE3 /* TourKoreaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A592FE2B2696A6006C0EE3 /* TourKoreaAPI.swift */; };
+		97A593012B2696A6006C0EE3 /* GetAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A592FF2B2696A6006C0EE3 /* GetAPIKey.swift */; };
 		F70139D12B21C26500FE23B3 /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70139D02B21C26500FE23B3 /* testView.swift */; };
 		F77E70232B21A90500B2CD37 /* DotripApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77E70222B21A90500B2CD37 /* DotripApp.swift */; };
 		F77E70252B21A90500B2CD37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77E70242B21A90500B2CD37 /* ContentView.swift */; };
@@ -15,6 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		97A592F52B2694AD006C0EE3 /* API_KEY.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = API_KEY.plist; sourceTree = "<group>"; };
+		97A592FB2B2694D3006C0EE3 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		97A592FE2B2696A6006C0EE3 /* TourKoreaAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourKoreaAPI.swift; sourceTree = "<group>"; };
+		97A592FF2B2696A6006C0EE3 /* GetAPIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAPIKey.swift; sourceTree = "<group>"; };
+		97A593022B26978A006C0EE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F70139D02B21C26500FE23B3 /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
 		F77E701F2B21A90500B2CD37 /* Dotrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dotrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F77E70222B21A90500B2CD37 /* DotripApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotripApp.swift; sourceTree = "<group>"; };
@@ -34,6 +43,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		97A592FD2B26968C006C0EE3 /* TourKoreaAPI */ = {
+			isa = PBXGroup;
+			children = (
+				97A592FF2B2696A6006C0EE3 /* GetAPIKey.swift */,
+				97A592FE2B2696A6006C0EE3 /* TourKoreaAPI.swift */,
+			);
+			path = TourKoreaAPI;
+			sourceTree = "<group>";
+		};
 		F77E70162B21A90500B2CD37 = {
 			isa = PBXGroup;
 			children = (
@@ -53,11 +71,13 @@
 		F77E70212B21A90500B2CD37 /* Dotrip */ = {
 			isa = PBXGroup;
 			children = (
+				97A593022B26978A006C0EE3 /* Info.plist */,
 				F77E70302B21AE5900B2CD37 /* Models */,
 				F77E70312B21AE6500B2CD37 /* Views */,
 				F77E70322B21AE6E00B2CD37 /* Controllers */,
 				F77E70222B21A90500B2CD37 /* DotripApp.swift */,
 				F77E70242B21A90500B2CD37 /* ContentView.swift */,
+				97A592F52B2694AD006C0EE3 /* API_KEY.plist */,
 				F77E70262B21A90600B2CD37 /* Assets.xcassets */,
 				F77E70282B21A90600B2CD37 /* Preview Content */,
 			);
@@ -83,6 +103,7 @@
 		F77E70312B21AE6500B2CD37 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				97A592FB2B2694D3006C0EE3 /* SearchView.swift */,
 				F70139D02B21C26500FE23B3 /* testView.swift */,
 			);
 			path = Views;
@@ -91,6 +112,7 @@
 		F77E70322B21AE6E00B2CD37 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				97A592FD2B26968C006C0EE3 /* TourKoreaAPI */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -160,6 +182,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97A592F62B2694AD006C0EE3 /* API_KEY.plist in Resources */,
 				F77E702A2B21A90600B2CD37 /* Preview Assets.xcassets in Resources */,
 				F77E70272B21A90600B2CD37 /* Assets.xcassets in Resources */,
 			);
@@ -172,9 +195,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97A593002B2696A6006C0EE3 /* TourKoreaAPI.swift in Sources */,
+				97A592FC2B2694D3006C0EE3 /* SearchView.swift in Sources */,
 				F77E70252B21A90500B2CD37 /* ContentView.swift in Sources */,
 				F77E70232B21A90500B2CD37 /* DotripApp.swift in Sources */,
 				F70139D12B21C26500FE23B3 /* testView.swift in Sources */,
+				97A593012B2696A6006C0EE3 /* GetAPIKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +336,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Dotrip/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Dotrip/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -338,6 +365,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Dotrip/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Dotrip/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
