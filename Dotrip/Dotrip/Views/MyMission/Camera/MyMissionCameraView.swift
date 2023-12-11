@@ -21,12 +21,14 @@ struct MyMissionCameraView: View {
             VStack{
                 image?
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 350)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 350, height: 450)
                     .cornerRadius(20)
+                   // .padding(.top, 20)
+                    .offset(x:0,y:-20)
                     .overlay(
                         CameraButtonView(showActionSheet: $showActionSheet)
-                           // .offset(x:50,y:65)
+                            
                     )
             }
             .actionSheet(isPresented: $showActionSheet, content:{ () -> ActionSheet in

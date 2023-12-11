@@ -11,17 +11,17 @@ import SwiftUI
 
 struct MyMissionListView: View {
     @StateObject var missionStore = MissionStore(missions: missionData)
-     var succeededMissons: Int = 0 //성공한 미션 카운트
+     var succeededMissons: Int = 2 //성공한 미션 카운트
 
     var body: some View {
         NavigationStack{
             VStack {
-                HStack {
+                HStack{
                     Text("진행중인 미션이")
                     Text("\(missionStore.missions.count)")
                         .foregroundStyle(Color.orange)
                     Text("개 있습니다")
-    
+                    
                 }
                 .modifier(CountModify())
         
@@ -31,24 +31,20 @@ struct MyMissionListView: View {
 MyMissionDetailView(missions: $missionStore.missions[item])) {
                                 MyMissionList(mission: $missionStore.missions[item])
                         }.listRowSeparator(.hidden)
-                        
                     }
-                 
-                }
-                 .scrollContentBackground(.hidden)
+                }.scrollContentBackground(.hidden)
 
-                //완료된 갯수가 0개 이상이면 나타남
+                //완료된 갯수가 0개 이상이면 나타나
                 if succeededMissons > 0 {
                     HStack {
-                        Text("진행중인 미션이")
-                        Text("\(succeededMissons)")
-                            .foregroundStyle(Color.orange)
-                        Text("개 있습니다")
+                    Text("진행중인 미션이")
+                    Text("\(succeededMissons)")
+                        .foregroundStyle(Color.orange)
+                    Text("개 있습니다")
                     }
-                    .modifier(CountModify())
-                    .offset(x:0, y: -300)
+                        .modifier(CountModify())
+                        .offset(x:0, y: -300)
                 }
-
             }
         }
     }
@@ -62,10 +58,8 @@ struct CountModify: ViewModifier {
             .background(Color(hex: 0xEFECEC))
             .cornerRadius(20)
             .offset(x:0, y:40)
-            .padding(.bottom, 20)
     }
 }
-
 
 #Preview {
     MyMissionListView()

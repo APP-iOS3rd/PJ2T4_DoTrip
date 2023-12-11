@@ -11,65 +11,39 @@ struct MyMissionDetailView: View {
    
        // @Binding var seletedMissions : Mission
         @Binding var missions : Mission
-       
-        
-        @State var reward  = ""
         @State var clickedBtn = false
-        @State var missionStatus = false
-        @State var selectedImage = ""
+
+        @State var image : Image?
+       //나중에 미션 성공하면 포인트 받기
+        var reward  = ""
         var body: some View {
             
-                VStack {
+                ZStack {
                     VStack(alignment:.leading, spacing: 0){
                         Text("\(missions.name)")
                             .font(.system(size: 20))
                             .fontWeight(.bold)
-                            .padding(.bottom,5)
-                        Text("주소: \(missions.address)")
-                            .font(.system(size: 15))
-                            .fontWeight(.regular)
+                            .padding(.bottom,8)
                         Text("미션내용:\(missions.description)")
                             .font(.system(size: 15))
                             .fontWeight(.regular)
-                            
-
-                        if missionStatus == true {
-                            MyMissionCameraView(mission:$missions)
-                                
-                        }else {
-                            Image("경복궁사진1")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 350)
-                                .cornerRadius(20)
-                        }
-     
-                    }
-                  
-                    ZStack{
+                        Text("주소: \(missions.address)")
+                            .font(.system(size: 15))
+                            .fontWeight(.regular)
+//                      
                         
-                        Button(self.clickedBtn == false ? "미션 시작" : "미션중") {
-                            //클릭하면 카메라 작동
-                            self.clickedBtn = true
-                            self.missionStatus = true
-
-                        }
-                        .fontWeight(self.clickedBtn == false ? .regular : .bold)
-                        .frame(width:250, height: 50)
-                        .foregroundColor(self.clickedBtn == false ? .black : .white)
-                        .background(self.clickedBtn == true ?  Color.orange : Color.white)
-                        .cornerRadius(10)
-                        .shadow(radius:4, x:0, y:4)
-                        .padding(.top, 100)
-                        
-                        Spacer()
-                    }
-                }//VStack
-                .padding(20)
+                    
+                    }.offset(x:0, y:-300)
+                    
+                    MyMissionCameraView(mission:$missions)
+                      
             }
+        .padding(20)
+    }
+    
+}
             
-        }
 
-//#Preview {
-//    MyMissionDetailView()
-//}
+
+
+   
