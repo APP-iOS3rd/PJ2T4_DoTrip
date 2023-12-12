@@ -33,8 +33,7 @@ struct ModifyProfileView: View {
     }
     
     var body: some View {
-        NavigationView {
-            
+        NavigationStack {
             VStack {
                 ZStack(alignment: .topTrailing) {
                     Circle()
@@ -54,8 +53,7 @@ struct ModifyProfileView: View {
                         Image(systemName: "camera.circle.fill")
                             .font(.system(size: 30))
                             .foregroundColor(.black)
-                            .padding(3)
-//                            .offset(x:3, y:50)
+                            .padding(.top, 65)
                     }
                     .sheet(isPresented: $showPicker, content: {
                         ImagePicker2(config: pickerConfig) {

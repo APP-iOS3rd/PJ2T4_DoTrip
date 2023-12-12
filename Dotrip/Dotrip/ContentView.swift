@@ -16,12 +16,18 @@ struct ContentView: View {
                     Image(systemName: "flag.checkered")
                     Text("내미션")
                 }
-            Text("즐겨찾기")
+            Text("포인트교환")
                 .tabItem {
-                    Image(systemName: "heart.fill")
-                    Text("즐겨찾기")
+                    Image(systemName: "cart")
+
+                    Text("포인트교환")
                 }
+                
             MyPageView()
+                .tabItem {
+                    Image(systemName: "person")
+                    Text("MY")
+                }
         }
     }
 }
