@@ -10,26 +10,32 @@ import SwiftUI
 struct MyMissionCameraView: View {
     
     @Binding var mission: Mission
-
+    @State var missionStore: MissionStore
+    
     @State var showActionSheet: Bool = false
     @State var showImagePicker: Bool = false
     @State var image : Image?
     @State var sourcetype :Int = 0
     
+    @Binding var stackPath: NavigationPath
     var body: some View {
+        
+        
+        
         ZStack{
             VStack{
                 image?
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 350, height: 450)
+                    .frame(width: 350, height: 400)
                     .cornerRadius(20)
                    // .padding(.top, 20)
                     .offset(x:0,y:-20)
-                    .overlay(
-                        CameraButtonView(showActionSheet: $showActionSheet)
-                            
-                    )
+//                    .overlay(
+//                        MyMissionDetailView(showActionSheet: $showActionSheet)
+//                            
+//                    )
+                
             }
             .actionSheet(isPresented: $showActionSheet, content:{ () -> ActionSheet in
                 ActionSheet(title: Text("이미지 선택하기"),message: Text("사진첩에서 이미지를 고르거나 카메라를 사용해주세요"), buttons: [ActionSheet.Button.default(Text("카메라"), action: {

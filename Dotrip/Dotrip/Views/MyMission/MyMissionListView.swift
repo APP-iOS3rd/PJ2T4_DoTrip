@@ -13,8 +13,9 @@ struct MyMissionListView: View {
     @StateObject var missionStore = MissionStore(missions: missionData)
     
     @State var stackPath = NavigationPath()
-    var succeededMissons: Int = 0 //성공한 미션 카운트
-
+    @State var succeededMissons: Int = 0 //성공한 미션 카운트
+    @State var showActionSheet = false
+    @State var btnStatus = false
     var body: some View {
         NavigationStack(path: $stackPath){
             VStack {
@@ -31,12 +32,16 @@ struct MyMissionListView: View {
                         NavigationLink(value: item) {
                             MyMissionList(mission: $missionStore.missions[item])
                         }.listRowSeparator(.hidden)
-
+                        
                     }
                 }.scrollContentBackground(.hidden)
                     .navigationDestination(for: Int.self) { i in
-                        MyMissionDetailView(missions: $missionStore.missions[i], path: $stackPath)
+                        MyMissionDetailView(missionStore: missionStore, missions: $missionStore.missions[i], path: $stackPath, showActionSheet: $showActionSheet, btnStatus: btnStatus)
+
                     }
+                
+                //MyMissionDetailView(missions: $missionStore.missions[i], path: $stackPath)
+
                 //완료된 갯수가 0개 이상이면 나타나
                 if succeededMissons > 0 {
                     HStack {
