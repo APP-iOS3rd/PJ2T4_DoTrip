@@ -28,7 +28,7 @@ struct MyMissionList: View {
             .frame(width: 320, height: 70)
             .background(Color.white)
             .cornerRadius(20)
-            .shadow(radius:4, x:0, y:4)
+            .shadow(radius:2, x:0, y:2)
           
 
     }

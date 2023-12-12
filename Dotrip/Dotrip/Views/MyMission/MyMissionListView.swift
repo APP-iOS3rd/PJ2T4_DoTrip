@@ -14,7 +14,7 @@ struct MyMissionListView: View {
     
     @State var stackPath = NavigationPath()
     @State var succeededMissons: Int = 0 //성공한 미션 카운트
-    @State var showActionSheet = false
+   
     @State var btnStatus = false
     var body: some View {
         NavigationStack(path: $stackPath){
@@ -26,6 +26,7 @@ struct MyMissionListView: View {
                     Text("개 있습니다")
                 }
                 .modifier(CountModify())
+                .padding(.bottom,30)
         
                 List{
                     ForEach(0..<missionStore.missions.count, id:\.self) { item in
@@ -36,12 +37,9 @@ struct MyMissionListView: View {
                     }
                 }.scrollContentBackground(.hidden)
                     .navigationDestination(for: Int.self) { i in
-                        MyMissionDetailView(missionStore: missionStore, missions: $missionStore.missions[i], path: $stackPath, showActionSheet: $showActionSheet, btnStatus: btnStatus)
-
+                        MyMissionDetailView(missionStore: missionStore, missions: $missionStore.missions[i], path: $stackPath, showActionSheet: false,btnStatus: btnStatus)
                     }
-                
-                //MyMissionDetailView(missions: $missionStore.missions[i], path: $stackPath)
-
+     
                 //완료된 갯수가 0개 이상이면 나타나
                 if succeededMissons > 0 {
                     HStack {
@@ -65,7 +63,7 @@ struct CountModify: ViewModifier {
             .frame(width: 350, height: 30)
             .background(Color(hex: 0xEFECEC))
             .cornerRadius(20)
-            .offset(x:0, y:40)
+            .offset(x:0, y:50)
     }
 }
 
