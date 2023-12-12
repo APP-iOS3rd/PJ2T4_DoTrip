@@ -12,10 +12,10 @@ struct MapDetailView: View {
     var place : Place
     var body: some View {
         VStack {
-            Text(place.name)
+            Text(place.title)
                 .bold()
                 .padding(10)
-            Text(place.description)
+            Text(place.addr1)
                 .font(.footnote)
                 .padding(10)
             Rectangle()
