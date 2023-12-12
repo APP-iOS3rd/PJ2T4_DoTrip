@@ -21,18 +21,20 @@ struct CameraButtonView: View {
                           Image("경복궁사진1")
                               .resizable()
                               .aspectRatio(contentMode: .fill)
-                              .frame(width: 350, height: 450)
+                              .frame(width: 350, height: 400)
                               .cornerRadius(20)
                               .padding(.vertical,40)
                           
-                          Text("미션 시작")
-                              .fontWeight(.regular)
-                              .frame(width:250, height: 50)
-                              .foregroundColor(.black)
-                              .background(Color.white)
-                              .cornerRadius(10)
-                              .shadow(radius:4, x:0, y:4)
-                      }.offset(x:0, y: -270)
+                              Text("미션 시작")
+                                  .fontWeight(.regular)
+                                  .frame(width:250, height: 50)
+                                  .foregroundColor(.black)
+                                  .background(Color.white)
+                                  .cornerRadius(10)
+                                  .shadow(radius:4, x:0, y:4)
+                            
+                   
+                      }.offset(x:0, y: -280)
                          
                   }else {
                       
@@ -56,3 +58,16 @@ struct CameraButtonView: View {
        .previewLayout(.sizeThatFits)
      
 }
+
+
+
+//미션 시작하기 버튼 누르면 카메라 포기 누르면 메인
+//Button(action: {
+//    pathRemove()
+//}){
+//    Text("미션 포기하기")
+//        .frame(width: 200,height: 200)
+//}
+//func pathRemove() {
+//    path.removeLast()
+//}

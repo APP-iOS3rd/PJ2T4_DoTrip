@@ -10,7 +10,7 @@ import SwiftUI
 struct MyMissionCameraView: View {
     
     @Binding var mission: Mission
-    
+
     @State var showActionSheet: Bool = false
     @State var showImagePicker: Bool = false
     @State var image : Image?

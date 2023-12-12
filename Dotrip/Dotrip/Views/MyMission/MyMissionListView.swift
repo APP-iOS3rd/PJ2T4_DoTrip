@@ -11,29 +11,32 @@ import SwiftUI
 
 struct MyMissionListView: View {
     @StateObject var missionStore = MissionStore(missions: missionData)
-     var succeededMissons: Int = 2 //성공한 미션 카운트
+    
+    @State var stackPath = NavigationPath()
+    var succeededMissons: Int = 0 //성공한 미션 카운트
 
     var body: some View {
-        NavigationStack{
+        NavigationStack(path: $stackPath){
             VStack {
                 HStack{
                     Text("진행중인 미션이")
                     Text("\(missionStore.missions.count)")
                         .foregroundStyle(Color.orange)
                     Text("개 있습니다")
-                    
                 }
                 .modifier(CountModify())
         
                 List{
                     ForEach(0..<missionStore.missions.count, id:\.self) { item in
-                            NavigationLink(destination:
-MyMissionDetailView(missions: $missionStore.missions[item])) {
-                                MyMissionList(mission: $missionStore.missions[item])
+                        NavigationLink(value: item) {
+                            MyMissionList(mission: $missionStore.missions[item])
                         }.listRowSeparator(.hidden)
+
                     }
                 }.scrollContentBackground(.hidden)
-
+                    .navigationDestination(for: Int.self) { i in
+                        MyMissionDetailView(missions: $missionStore.missions[i], path: $stackPath)
+                    }
                 //완료된 갯수가 0개 이상이면 나타나
                 if succeededMissons > 0 {
                     HStack {
