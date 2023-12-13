@@ -12,6 +12,7 @@ import SwiftUI
 struct MyMissionListView: View {
     @StateObject var missionStore = MissionStore(missions: missionData)
     
+    @State var showActionSheet: Bool = false
     @State var stackPath = NavigationPath()
     @State var succeededMissons: Int = 0 //성공한 미션 카운트
    
@@ -38,6 +39,7 @@ struct MyMissionListView: View {
                 }.scrollContentBackground(.hidden)
                     .navigationDestination(for: Int.self) { i in
                         MyMissionDetailView(missionStore: missionStore, missions: $missionStore.missions[i], path: $stackPath, showActionSheet: false,btnStatus: btnStatus)
+                    
                     }
      
                 //완료된 갯수가 0개 이상이면 나타나
