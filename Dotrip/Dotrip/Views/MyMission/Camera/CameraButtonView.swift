@@ -9,22 +9,21 @@ import SwiftUI
 
 struct CameraButtonView: View {
     @Binding var showActionSheet : Bool
-    @Binding var btnStatus :Bool
+    @State var btnStatus = false
     
     var body: some View {
-        
-        Button {
+        Button(action: {
             self.showActionSheet.toggle()
             btnStatus = true
-        } label: {
+        }){
             if btnStatus == false {
-                VStack(spacing:0){
+                VStack{
                     Image("경복궁사진1")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 330,height: 350)
                         .cornerRadius(20)
-                        .padding(.bottom,30)
+                        .offset(x:0,y: -40)
                     
                     Text("미션 시작하기")
                         .fontWeight(.regular)
@@ -34,17 +33,12 @@ struct CameraButtonView: View {
                         .cornerRadius(10)
                         .shadow(radius:2, x:0, y:2)
                     
-
                 }
             }else{
-                VStack(spacing:0){
-                    Rectangle()
-                        .foregroundColor(.gray)
-                        .opacity(0.1)
-                        .frame(width: 330,height: 350)
-                        .cornerRadius(20)
-                        .padding(.bottom,30)
-                
+                Button(action: {
+                    self.showActionSheet.toggle()
+                    btnStatus = true
+                }){
                     
                     Text("미션중")
                         .fontWeight(.regular)
@@ -53,13 +47,65 @@ struct CameraButtonView: View {
                         .background(Color.orange)
                         .cornerRadius(10)
                         .shadow(radius:2, x:0, y:2)
-
-                }
+                }.offset(x:0,y: 180)
             }
         }
     }
-    
+        
+        
+        
+        
+//        Button(action: {
+//            self.showActionSheet.toggle()
+//            btnStatus = true
+//        }) {
+//            if btnStatus == false {
+//                VStack{
+//                    Image("경복궁사진1")
+//                        .resizable()
+//                        .aspectRatio(contentMode: .fill)
+//                        .frame(width: 350, height: 400)
+//                        .cornerRadius(20)
+//                        .padding(.vertical,40)
+//                    
+//                        Text("미션 시작")
+//                            .fontWeight(.regular)
+//                            .frame(width:250, height: 50)
+//                            .foregroundColor(.black)
+//                            .background(Color.white)
+//                            .cornerRadius(10)
+//                            .shadow(radius:4, x:0, y:4)
+//                      
+//             
+//                }.offset(x:0, y: -290)
+//                   
+//            }else {
+//                VStack{
+//                    Text("미션완료")
+//                        .fontWeight(.regular)
+//                        .frame(width:250, height: 50)
+//                        .foregroundColor(.white)
+//                        .background(Color.orange)
+//                        .cornerRadius(10)
+//                        .shadow(radius:4, x:0, y:4)
+//                        .offset(x:0, y: -45)
+//                    
+//                }
+//
+//            }
+//            
+//        }
+
+       
+    }
+ 
+
+#Preview { CameraButtonView(showActionSheet: .constant(false))
+       .previewLayout(.sizeThatFits)
+     
 }
-#Preview {
-    CameraButtonView(showActionSheet: .constant(false), btnStatus: .constant(true))
-}
+
+
+//#Preview {
+//    MyMissionCameraView()
+//}
