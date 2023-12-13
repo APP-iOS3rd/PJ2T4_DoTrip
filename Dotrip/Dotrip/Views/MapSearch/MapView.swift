@@ -152,7 +152,7 @@ struct MapList : View {
                 }
             }
             .onAppear() {
-                network.feachData()
+                network.feachData(stringAddr: "서울시 종로구")
             }
         }
 }
