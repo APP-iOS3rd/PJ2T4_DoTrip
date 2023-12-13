@@ -17,6 +17,7 @@
 		20A8DA4C2B26CB2700E306D2 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8DA4B2B26CB2700E306D2 /* ImagePicker.swift */; };
 		20A8DA4E2B26CC7800E306D2 /* missionData.json in Resources */ = {isa = PBXBuildFile; fileRef = 20A8DA4D2B26CC7800E306D2 /* missionData.json */; };
 		789730902B29333F002998D8 /* EventDetailView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897308F2B29333F002998D8 /* EventDetailView2.swift */; };
+		78E7AEE32B294C4700933ECD /* ExpandableText in Frameworks */ = {isa = PBXBuildFile; productRef = 78E7AEE22B294C4700933ECD /* ExpandableText */; };
 		970E70EB2B26FBB90005FCFE /* API_KEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = 970E70EA2B26FBB90005FCFE /* API_KEY.plist */; };
 		970E70F12B26FBEC0005FCFE /* EventInfoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970E70ED2B26FBEC0005FCFE /* EventInfoAPI.swift */; };
 		970E70F22B26FBEC0005FCFE /* TourKoreaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970E70EE2B26FBEC0005FCFE /* TourKoreaAPI.swift */; };
@@ -84,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78E7AEE32B294C4700933ECD /* ExpandableText in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +292,9 @@
 			dependencies = (
 			);
 			name = Dotrip;
+			packageProductDependencies = (
+				78E7AEE22B294C4700933ECD /* ExpandableText */,
+			);
 			productName = Dotrip;
 			productReference = F77E701F2B21A90500B2CD37 /* Dotrip.app */;
 			productType = "com.apple.product-type.application";
@@ -318,6 +323,9 @@
 				Base,
 			);
 			mainGroup = F77E70162B21A90500B2CD37;
+			packageReferences = (
+				78E7AEE12B294C4600933ECD /* XCRemoteSwiftPackageReference "ExpandableText" */,
+			);
 			productRefGroup = F77E70202B21A90500B2CD37 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -582,6 +590,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		78E7AEE12B294C4600933ECD /* XCRemoteSwiftPackageReference "ExpandableText" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/NuPlay/ExpandableText.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		78E7AEE22B294C4700933ECD /* ExpandableText */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 78E7AEE12B294C4600933ECD /* XCRemoteSwiftPackageReference "ExpandableText" */;
+			productName = ExpandableText;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F77E70172B21A90500B2CD37 /* Project object */;
 }
