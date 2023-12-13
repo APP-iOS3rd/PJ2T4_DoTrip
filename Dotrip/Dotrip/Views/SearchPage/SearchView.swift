@@ -15,8 +15,9 @@ struct SearchView: View {
     var body: some View {
         VStack {
             List {
-                ForEach(network.posts, id: \.contentid) { data in
-                    NavigationLink(destination: EventDetailView(contentId: data.contentid, contentTypeId: data.contenttypeid)) {
+                ForEach(network.posts, id: \.self) { data in
+                    NavigationLink(destination: EventDetailView2(contentId: data.contentid, contentTypeId: data.contenttypeid)) {
+                        
                         HStack {
                             AsyncImage(url: URL(string: data.firstimage ?? "")) { img in
                                 img.image?.resizable()
