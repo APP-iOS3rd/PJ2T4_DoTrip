@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import ExpandableText
 
 
 struct EventDetailView2: View {
@@ -15,7 +15,9 @@ struct EventDetailView2: View {
     @StateObject var eventIntro = IntroductionAPI.shared
     @StateObject var network = TourKoreaAPI.shared
     @State private var showMoreText = false
-    
+    @State private var sampleText: String?
+    @State private var sampleImage: String?
+        
     
     let contentId: String
     let contentTypeId: String
@@ -24,8 +26,8 @@ struct EventDetailView2: View {
         
         NavigationView {
             VStack(alignment: .leading) {
-//                                Text("ContentID = \(contentId)")
-//                                Text("ContentID = \(contentTypeId)")
+                //                                Text("ContentID = \(contentId)")
+                //                                Text("ContentID = \(contentTypeId)")
                 ForEach(eventInfo.posts, id: \.self) { result in
                     
                     HStack{
@@ -53,46 +55,48 @@ struct EventDetailView2: View {
                 }
                 .padding(2)
                 
-                Image(systemName: "personalhotspot")
-                    .frame(width: 350, height: 200)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.black, lineWidth: 2)
-                            .padding()
-                    )
-                    .padding()
+//                Image(systemName: "personalhotspot")
+//                    .frame(width: 350, height: 200)
+//                    .overlay(
+//                        RoundedRectangle(cornerRadius: 10)
+//                            .stroke(Color.black, lineWidth: 2)
+//                            .padding()
+//                    )
                 
                 VStack(alignment: .leading, spacing: 10) {
-                    
-                    ForEach(eventIntro.posts, id: \.self) { result in
-                        Text("행사 소개: \(result.infotext)")
-                            .font(.system(size: 14))
-                            .padding()
-                            .lineLimit(showMoreText ? nil : 4)
+                    AsyncImage(url: URL(string: sampleImage ?? "" )) { image in
+                        image.resizable()
+                            .scaledToFit()
+                            .frame(width: 50, height: 50)
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    .padding()
+                
+                    VStack(alignment: .leading, spacing: 10) {
+                        ScrollView {
+                            ExpandableText(text: sampleText ?? "")
+                                .font(.system(size: 14))
+                                .foregroundColor(.primary)
+                                .lineLimit(4)
+                                .expandButton(TextSet(text: "더보기", font: .system(size: 14), color: .blue))
+                                .collapseButton(TextSet(text: "접기", font: .system(size: 14), color: .blue))
+                                .expandAnimation(.easeOut)
+                                .padding(.horizontal, 24)
+                            
+                        }
                     }
                     Spacer() // 텍스트를 오른쪽으로 이동시키기 위한 Spacer
                     
-                    HStack{
-                        Spacer()
-                        Button(action: {
-                            showMoreText.toggle()
-                        }) {
-                            Text(showMoreText ? "접기" : "더보기")
-                                .foregroundColor(.black)
-                                .font(.system(size: 14))
-                        }
-                        .padding()
-                    }
                 }.padding()
                 
-                Button("미션 하러 가기") {
-                    
-                }
-                .padding()
-                .foregroundColor(.white)
-                .background(Color.blue)
-                .cornerRadius(10)
-                .frame(maxWidth: .infinity)
+                
+                Button("미션 하러 가기") {}
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(Color.blue)
+                    .cornerRadius(10)
+                    .frame(maxWidth: .infinity)
                 
                 Spacer()
                 
@@ -103,16 +107,15 @@ struct EventDetailView2: View {
         .onAppear() {
             eventInfo.feachData(contentID: contentId, contentType: contentTypeId)
             eventIntro.feachData(contentID: contentId, contentType: contentTypeId)
+            if let firstPost = eventIntro.posts.first { sampleText = firstPost.infotext }
+//            if let network = TourKoreaAPI.shared { sampleImage = network.posts }
         }
         .navigationTitle("행사 정보")
     }
 }
 
-
-
-
 #Preview {
-//    EventDetailView2()
+    //    EventDetailView2()
     EventDetailView2(contentId: "3021116", contentTypeId: "15")
 }
 
