@@ -12,11 +12,27 @@ struct CafeView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(cafeMenu) { coffee in
-                    NavigationLink(coffee.title, value: coffee.price)
+                Section(header: Text("스타벅스")) {
+                    NavigationLink(destination: SBIceAmericanoView()) {
+                        Text("아이스 아메리카노 T")
+                    }
+                    NavigationLink(destination: SBIceLatteView()) {
+                        Text("아이스 라떼 T")
+                    }
+                }
+                
+                Section(header: Text("투썸플레이스")) {
+                    NavigationLink(destination: TPIceAmericanoView()) {
+                        Text("아이스 아메리카노 R")
+                    }
+                    NavigationLink(destination: TPIceLatteView()) {
+                        Text("아이스 라떼 R")
+                    }
                 }
             }
+            .listStyle(.plain)
         }
+        .navigationTitle("카페")
     }
 }
 

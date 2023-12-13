@@ -88,7 +88,7 @@ struct CardContent: View {
                     HStack {
                         LeftContent(userData: userData, showModal: $showModal, geometry: geometry)
                         Divider()
-                            .frame(width: 1)
+                            .frame(width: 1, height: 160)
                         RightContent(geometry: geometry)
                     }
                 )

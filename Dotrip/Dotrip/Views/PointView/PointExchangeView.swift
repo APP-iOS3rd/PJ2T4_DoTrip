@@ -15,7 +15,12 @@ struct PointExchangeView: View {
                     Spacer()
                     HStack {
                         Spacer()
-                        PointCard(geometry: geometry)
+                        ZStack {
+                            Rectangle()
+                                .fill(Color(hex: 0xFFF0DF))
+                                .frame(height: geometry.size.width * 0.65)
+                            PointCard(geometry: geometry)
+                        }
                         Spacer()
                     }
                     GridButtons()
@@ -34,7 +39,7 @@ struct PointCard: View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
                 .fill(Color.white)
-                .frame(width: geometry.size.width * 0.85, height: geometry.size.width * 0.47)
+                .frame(width: geometry.size.width * 0.8, height: geometry.size.width * 0.47)
                 .shadow(radius: 2, x: 0, y: 2)
                 .overlay(
                     VStack() {
@@ -44,13 +49,13 @@ struct PointCard: View {
                         NavigationLink(destination: PointHistoryView()) {
                             // 전체 영역 클릭을 위한 VStack
                             VStack {
-                                HStack(alignment:.center) {
+                                HStack() {
                                     Spacer()
                                     Text("포인트 사용 내역")
                                         .foregroundStyle(.black)
                                     Spacer()
                                     Image(systemName: "chevron.forward")
-                                        .foregroundStyle(.black)
+                                        .foregroundStyle(Color(hex: 0xFFA800))
                                 }
                                 .padding()
                             }
@@ -92,8 +97,10 @@ struct GridButtons: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 50, height: 50)
                             .padding()
+                        
+                        // 포인트교환 아이템 카테고리 글꼴색
                         Text(item.labelText)
-                            .foregroundStyle(.black)
+                            .foregroundStyle(Color(hex: 0x7E7E7E))
                             .font(.caption)
                     }
                 }

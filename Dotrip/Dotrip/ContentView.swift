@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        TabView{
+        TabView {
             MainPageView()
             MyMissionListView()
                 .tabItem {
@@ -29,6 +29,7 @@ struct ContentView: View {
                     Text("MY")
                 }
         }
+        .tint(Color(hex: 0xFFA800))
     }
 }
 

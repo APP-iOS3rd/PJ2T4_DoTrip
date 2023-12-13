@@ -43,7 +43,10 @@
 		F73E3C422B297321007005BF /* VoucherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E3C412B297321007005BF /* VoucherView.swift */; };
 		F73E3C442B297327007005BF /* HotelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E3C432B297327007005BF /* HotelView.swift */; };
 		F73E3C462B297521007005BF /* ConvenienceStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E3C452B297521007005BF /* ConvenienceStoreView.swift */; };
-		F73E3C492B297A44007005BF /* CafeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E3C482B297A44007005BF /* CafeMenu.swift */; };
+		F73E3C4C2B299B57007005BF /* SBIceAmericanoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E3C4B2B299B57007005BF /* SBIceAmericanoView.swift */; };
+		F73E3C4E2B299B68007005BF /* TPIceAmericanoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E3C4D2B299B68007005BF /* TPIceAmericanoView.swift */; };
+		F73E3C502B299B88007005BF /* SBIceLatteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E3C4F2B299B88007005BF /* SBIceLatteView.swift */; };
+		F73E3C522B299B8E007005BF /* TPIceLatteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E3C512B299B8E007005BF /* TPIceLatteView.swift */; };
 		F77E70232B21A90500B2CD37 /* DotripApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77E70222B21A90500B2CD37 /* DotripApp.swift */; };
 		F77E70252B21A90500B2CD37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77E70242B21A90500B2CD37 /* ContentView.swift */; };
 		F77E70272B21A90600B2CD37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77E70262B21A90600B2CD37 /* Assets.xcassets */; };
@@ -89,7 +92,10 @@
 		F73E3C412B297321007005BF /* VoucherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoucherView.swift; sourceTree = "<group>"; };
 		F73E3C432B297327007005BF /* HotelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelView.swift; sourceTree = "<group>"; };
 		F73E3C452B297521007005BF /* ConvenienceStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvenienceStoreView.swift; sourceTree = "<group>"; };
-		F73E3C482B297A44007005BF /* CafeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeMenu.swift; sourceTree = "<group>"; };
+		F73E3C4B2B299B57007005BF /* SBIceAmericanoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBIceAmericanoView.swift; sourceTree = "<group>"; };
+		F73E3C4D2B299B68007005BF /* TPIceAmericanoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPIceAmericanoView.swift; sourceTree = "<group>"; };
+		F73E3C4F2B299B88007005BF /* SBIceLatteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBIceLatteView.swift; sourceTree = "<group>"; };
+		F73E3C512B299B8E007005BF /* TPIceLatteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPIceLatteView.swift; sourceTree = "<group>"; };
 		F77E701F2B21A90500B2CD37 /* Dotrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dotrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F77E70222B21A90500B2CD37 /* DotripApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotripApp.swift; sourceTree = "<group>"; };
 		F77E70242B21A90500B2CD37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -222,6 +228,7 @@
 			children = (
 				F73E3C452B297521007005BF /* ConvenienceStoreView.swift */,
 				F73E3C352B2972D1007005BF /* CafeView.swift */,
+				F73E3C4A2B299B22007005BF /* CafeDetailView */,
 				F73E3C372B2972EC007005BF /* FastFoodView.swift */,
 				F73E3C392B297302007005BF /* TheaterView.swift */,
 				F73E3C3B2B297309007005BF /* LeisureView.swift */,
@@ -233,12 +240,15 @@
 			path = PointCategory;
 			sourceTree = "<group>";
 		};
-		F73E3C472B297A29007005BF /* PointCategoryModel */ = {
+		F73E3C4A2B299B22007005BF /* CafeDetailView */ = {
 			isa = PBXGroup;
 			children = (
-				F73E3C482B297A44007005BF /* CafeMenu.swift */,
+				F73E3C4B2B299B57007005BF /* SBIceAmericanoView.swift */,
+				F73E3C4F2B299B88007005BF /* SBIceLatteView.swift */,
+				F73E3C4D2B299B68007005BF /* TPIceAmericanoView.swift */,
+				F73E3C512B299B8E007005BF /* TPIceLatteView.swift */,
 			);
-			path = PointCategoryModel;
+			path = CafeDetailView;
 			sourceTree = "<group>";
 		};
 		F77E70162B21A90500B2CD37 = {
@@ -283,7 +293,6 @@
 		F77E70302B21AE5900B2CD37 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F73E3C472B297A29007005BF /* PointCategoryModel */,
 				977C89B92B2933E300E96816 /* ToreData */,
 				F77E70352B21B6BD00B2CD37 /* CoreData */,
 			);
@@ -401,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				970E70F42B26FBEC0005FCFE /* IntroductionAPI.swift in Sources */,
+				F73E3C4C2B299B57007005BF /* SBIceAmericanoView.swift in Sources */,
 				20A8DA3F2B26C74A00E306D2 /* Mission.swift in Sources */,
 				970E70F72B26FC090005FCFE /* MainPageView.swift in Sources */,
 				20A8DA4A2B26CB0A00E306D2 /* CameraButtonView.swift in Sources */,
@@ -409,17 +419,19 @@
 				970E70F12B26FBEC0005FCFE /* EventInfoAPI.swift in Sources */,
 				F73E3C442B297327007005BF /* HotelView.swift in Sources */,
 				F73E3C422B297321007005BF /* VoucherView.swift in Sources */,
+				F73E3C502B299B88007005BF /* SBIceLatteView.swift in Sources */,
 				F7B61DB32B27040700A13B50 /* MapView.swift in Sources */,
 				20A8DA4C2B26CB2700E306D2 /* ImagePicker.swift in Sources */,
+				F73E3C522B299B8E007005BF /* TPIceLatteView.swift in Sources */,
 				789730902B29333F002998D8 /* EventDetailView2.swift in Sources */,
 				F7B61DB22B27040700A13B50 /* MapDetailView.swift in Sources */,
 				F73E3C362B2972D1007005BF /* CafeView.swift in Sources */,
 				970E70FB2B26FC1B0005FCFE /* EventDetailView.swift in Sources */,
 				F71B53BF2B25BC0B001AA4EC /* ModifyProfileView.swift in Sources */,
 				F71B53BB2B25A961001AA4EC /* QnAView.swift in Sources */,
+				F73E3C4E2B299B68007005BF /* TPIceAmericanoView.swift in Sources */,
 				F71B53C12B26C559001AA4EC /* ImagePicker2.swift in Sources */,
 				F77E70252B21A90500B2CD37 /* ContentView.swift in Sources */,
-				F73E3C492B297A44007005BF /* CafeMenu.swift in Sources */,
 				F73E3C3C2B297309007005BF /* LeisureView.swift in Sources */,
 				977C89BB2B2933F000E96816 /* TourData.swift in Sources */,
 				20A8DA432B26C81900E306D2 /* MissionDataLoad.swift in Sources */,
