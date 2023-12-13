@@ -29,11 +29,21 @@
 		977C89BE2B29340000E96816 /* RemoveHTMLTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977C89BD2B29340000E96816 /* RemoveHTMLTag.swift */; };
 		F71B53B02B2591F0001AA4EC /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53AF2B2591F0001AA4EC /* MyPageView.swift */; };
 		F71B53B52B25A023001AA4EC /* PointHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53B42B25A023001AA4EC /* PointHistoryView.swift */; };
-		F71B53B82B25A937001AA4EC /* PointExchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53B72B25A937001AA4EC /* PointExchangeView.swift */; };
 		F71B53BB2B25A961001AA4EC /* QnAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53BA2B25A961001AA4EC /* QnAView.swift */; };
 		F71B53BD2B25A985001AA4EC /* EmailInquiryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53BC2B25A985001AA4EC /* EmailInquiryView.swift */; };
 		F71B53BF2B25BC0B001AA4EC /* ModifyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53BE2B25BC0B001AA4EC /* ModifyProfileView.swift */; };
 		F71B53C12B26C559001AA4EC /* ImagePicker2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53C02B26C559001AA4EC /* ImagePicker2.swift */; };
+		F73E3C332B294D9E007005BF /* PointExchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E3C322B294D9E007005BF /* PointExchangeView.swift */; };
+		F73E3C362B2972D1007005BF /* CafeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E3C352B2972D1007005BF /* CafeView.swift */; };
+		F73E3C382B2972EC007005BF /* FastFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E3C372B2972EC007005BF /* FastFoodView.swift */; };
+		F73E3C3A2B297302007005BF /* TheaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E3C392B297302007005BF /* TheaterView.swift */; };
+		F73E3C3C2B297309007005BF /* LeisureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E3C3B2B297309007005BF /* LeisureView.swift */; };
+		F73E3C3E2B297311007005BF /* DiscountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E3C3D2B297311007005BF /* DiscountView.swift */; };
+		F73E3C402B297319007005BF /* GiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E3C3F2B297319007005BF /* GiftView.swift */; };
+		F73E3C422B297321007005BF /* VoucherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E3C412B297321007005BF /* VoucherView.swift */; };
+		F73E3C442B297327007005BF /* HotelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E3C432B297327007005BF /* HotelView.swift */; };
+		F73E3C462B297521007005BF /* ConvenienceStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E3C452B297521007005BF /* ConvenienceStoreView.swift */; };
+		F73E3C492B297A44007005BF /* CafeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E3C482B297A44007005BF /* CafeMenu.swift */; };
 		F77E70232B21A90500B2CD37 /* DotripApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77E70222B21A90500B2CD37 /* DotripApp.swift */; };
 		F77E70252B21A90500B2CD37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77E70242B21A90500B2CD37 /* ContentView.swift */; };
 		F77E70272B21A90600B2CD37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77E70262B21A90600B2CD37 /* Assets.xcassets */; };
@@ -65,11 +75,21 @@
 		977C89BD2B29340000E96816 /* RemoveHTMLTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveHTMLTag.swift; sourceTree = "<group>"; };
 		F71B53AF2B2591F0001AA4EC /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		F71B53B42B25A023001AA4EC /* PointHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointHistoryView.swift; sourceTree = "<group>"; };
-		F71B53B72B25A937001AA4EC /* PointExchangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointExchangeView.swift; sourceTree = "<group>"; };
 		F71B53BA2B25A961001AA4EC /* QnAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QnAView.swift; sourceTree = "<group>"; };
 		F71B53BC2B25A985001AA4EC /* EmailInquiryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInquiryView.swift; sourceTree = "<group>"; };
 		F71B53BE2B25BC0B001AA4EC /* ModifyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyProfileView.swift; sourceTree = "<group>"; };
 		F71B53C02B26C559001AA4EC /* ImagePicker2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker2.swift; sourceTree = "<group>"; };
+		F73E3C322B294D9E007005BF /* PointExchangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointExchangeView.swift; sourceTree = "<group>"; };
+		F73E3C352B2972D1007005BF /* CafeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeView.swift; sourceTree = "<group>"; };
+		F73E3C372B2972EC007005BF /* FastFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastFoodView.swift; sourceTree = "<group>"; };
+		F73E3C392B297302007005BF /* TheaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterView.swift; sourceTree = "<group>"; };
+		F73E3C3B2B297309007005BF /* LeisureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeisureView.swift; sourceTree = "<group>"; };
+		F73E3C3D2B297311007005BF /* DiscountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountView.swift; sourceTree = "<group>"; };
+		F73E3C3F2B297319007005BF /* GiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftView.swift; sourceTree = "<group>"; };
+		F73E3C412B297321007005BF /* VoucherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoucherView.swift; sourceTree = "<group>"; };
+		F73E3C432B297327007005BF /* HotelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelView.swift; sourceTree = "<group>"; };
+		F73E3C452B297521007005BF /* ConvenienceStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvenienceStoreView.swift; sourceTree = "<group>"; };
+		F73E3C482B297A44007005BF /* CafeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeMenu.swift; sourceTree = "<group>"; };
 		F77E701F2B21A90500B2CD37 /* Dotrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dotrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F77E70222B21A90500B2CD37 /* DotripApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotripApp.swift; sourceTree = "<group>"; };
 		F77E70242B21A90500B2CD37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -173,20 +193,52 @@
 				F71B53AF2B2591F0001AA4EC /* MyPageView.swift */,
 				F71B53BE2B25BC0B001AA4EC /* ModifyProfileView.swift */,
 				F71B53C02B26C559001AA4EC /* ImagePicker2.swift */,
-				F71B53B62B25A8D8001AA4EC /* MyPageList */,
+				F71B53B62B25A8D8001AA4EC /* CustomerService */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
 		};
-		F71B53B62B25A8D8001AA4EC /* MyPageList */ = {
+		F71B53B62B25A8D8001AA4EC /* CustomerService */ = {
 			isa = PBXGroup;
 			children = (
-				F71B53B42B25A023001AA4EC /* PointHistoryView.swift */,
-				F71B53B72B25A937001AA4EC /* PointExchangeView.swift */,
 				F71B53BA2B25A961001AA4EC /* QnAView.swift */,
 				F71B53BC2B25A985001AA4EC /* EmailInquiryView.swift */,
 			);
-			path = MyPageList;
+			path = CustomerService;
+			sourceTree = "<group>";
+		};
+		F73E3C312B294D71007005BF /* PointView */ = {
+			isa = PBXGroup;
+			children = (
+				F73E3C342B2972B6007005BF /* PointCategory */,
+				F73E3C322B294D9E007005BF /* PointExchangeView.swift */,
+				F71B53B42B25A023001AA4EC /* PointHistoryView.swift */,
+			);
+			path = PointView;
+			sourceTree = "<group>";
+		};
+		F73E3C342B2972B6007005BF /* PointCategory */ = {
+			isa = PBXGroup;
+			children = (
+				F73E3C452B297521007005BF /* ConvenienceStoreView.swift */,
+				F73E3C352B2972D1007005BF /* CafeView.swift */,
+				F73E3C372B2972EC007005BF /* FastFoodView.swift */,
+				F73E3C392B297302007005BF /* TheaterView.swift */,
+				F73E3C3B2B297309007005BF /* LeisureView.swift */,
+				F73E3C3D2B297311007005BF /* DiscountView.swift */,
+				F73E3C3F2B297319007005BF /* GiftView.swift */,
+				F73E3C412B297321007005BF /* VoucherView.swift */,
+				F73E3C432B297327007005BF /* HotelView.swift */,
+			);
+			path = PointCategory;
+			sourceTree = "<group>";
+		};
+		F73E3C472B297A29007005BF /* PointCategoryModel */ = {
+			isa = PBXGroup;
+			children = (
+				F73E3C482B297A44007005BF /* CafeMenu.swift */,
+			);
+			path = PointCategoryModel;
 			sourceTree = "<group>";
 		};
 		F77E70162B21A90500B2CD37 = {
@@ -231,6 +283,7 @@
 		F77E70302B21AE5900B2CD37 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F73E3C472B297A29007005BF /* PointCategoryModel */,
 				977C89B92B2933E300E96816 /* ToreData */,
 				F77E70352B21B6BD00B2CD37 /* CoreData */,
 			);
@@ -244,6 +297,7 @@
 				970E70F52B26FBF50005FCFE /* MainPage */,
 				F7B61DAF2B27040700A13B50 /* MapSearch */,
 				207AC6E82B26C59B00D3A340 /* MyMission */,
+				F73E3C312B294D71007005BF /* PointView */,
 				F71B53B32B259C13001AA4EC /* MyPage */,
 			);
 			path = Views;
@@ -352,28 +406,38 @@
 				20A8DA4A2B26CB0A00E306D2 /* CameraButtonView.swift in Sources */,
 				970E70F32B26FBEC0005FCFE /* GetAPIKey.swift in Sources */,
 				977C89BE2B29340000E96816 /* RemoveHTMLTag.swift in Sources */,
-				F71B53B82B25A937001AA4EC /* PointExchangeView.swift in Sources */,
 				970E70F12B26FBEC0005FCFE /* EventInfoAPI.swift in Sources */,
+				F73E3C442B297327007005BF /* HotelView.swift in Sources */,
+				F73E3C422B297321007005BF /* VoucherView.swift in Sources */,
 				F7B61DB32B27040700A13B50 /* MapView.swift in Sources */,
 				20A8DA4C2B26CB2700E306D2 /* ImagePicker.swift in Sources */,
 				789730902B29333F002998D8 /* EventDetailView2.swift in Sources */,
 				F7B61DB22B27040700A13B50 /* MapDetailView.swift in Sources */,
+				F73E3C362B2972D1007005BF /* CafeView.swift in Sources */,
 				970E70FB2B26FC1B0005FCFE /* EventDetailView.swift in Sources */,
 				F71B53BF2B25BC0B001AA4EC /* ModifyProfileView.swift in Sources */,
 				F71B53BB2B25A961001AA4EC /* QnAView.swift in Sources */,
 				F71B53C12B26C559001AA4EC /* ImagePicker2.swift in Sources */,
 				F77E70252B21A90500B2CD37 /* ContentView.swift in Sources */,
+				F73E3C492B297A44007005BF /* CafeMenu.swift in Sources */,
+				F73E3C3C2B297309007005BF /* LeisureView.swift in Sources */,
 				977C89BB2B2933F000E96816 /* TourData.swift in Sources */,
 				20A8DA432B26C81900E306D2 /* MissionDataLoad.swift in Sources */,
 				F71B53B02B2591F0001AA4EC /* MyPageView.swift in Sources */,
+				F73E3C3A2B297302007005BF /* TheaterView.swift in Sources */,
+				F73E3C382B2972EC007005BF /* FastFoodView.swift in Sources */,
 				970E70FC2B26FC1B0005FCFE /* SearchView.swift in Sources */,
 				F71B53BD2B25A985001AA4EC /* EmailInquiryView.swift in Sources */,
 				20A8DA452B26CA8300E306D2 /* MyMissionDetailView.swift in Sources */,
 				20A8DA3B2B26C69B00E306D2 /* MyMissionList.swift in Sources */,
+				F73E3C332B294D9E007005BF /* PointExchangeView.swift in Sources */,
 				20A8DA412B26C7EC00E306D2 /* MissionStore.swift in Sources */,
 				970E70F22B26FBEC0005FCFE /* TourKoreaAPI.swift in Sources */,
+				F73E3C462B297521007005BF /* ConvenienceStoreView.swift in Sources */,
 				F71B53B52B25A023001AA4EC /* PointHistoryView.swift in Sources */,
+				F73E3C3E2B297311007005BF /* DiscountView.swift in Sources */,
 				207AC6EA2B26C5C800D3A340 /* MyMissionListView.swift in Sources */,
+				F73E3C402B297319007005BF /* GiftView.swift in Sources */,
 				F77E70232B21A90500B2CD37 /* DotripApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

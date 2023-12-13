@@ -83,7 +83,7 @@ struct CardContent: View {
             RoundedRectangle(cornerRadius: 10)
                 .fill(Color.white)
                 .frame(width: geometry.size.width * 0.85, height: geometry.size.width * 0.5)
-                .shadow(radius: 4, x: 0, y: 4)
+                .shadow(radius: 2, x: 0, y: 2)
                 .overlay(
                     HStack {
                         LeftContent(userData: userData, showModal: $showModal, geometry: geometry)

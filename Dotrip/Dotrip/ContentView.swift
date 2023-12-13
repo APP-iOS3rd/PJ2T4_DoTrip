@@ -16,7 +16,7 @@ struct ContentView: View {
                     Image(systemName: "flag.checkered")
                     Text("내미션")
                 }
-            Text("포인트교환")
+            PointExchangeView()
                 .tabItem {
                     Image(systemName: "cart")
 

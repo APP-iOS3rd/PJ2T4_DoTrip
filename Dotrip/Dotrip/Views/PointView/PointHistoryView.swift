@@ -10,6 +10,8 @@ import SwiftUI
 struct PointHistoryView: View {
     var body: some View {
         Text("포인트 사용내역 뷰")
+            .navigationTitle("포인트 내역")
+        
     }
 }
 
