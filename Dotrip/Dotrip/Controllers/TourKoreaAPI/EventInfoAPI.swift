@@ -12,6 +12,7 @@ class EventInfoAPI: ObservableObject {
     private init() {}
     
     @Published var posts = [InfoItem]()
+    @Published var keyPosts = [KeyInfoItem]()
     
     // plist 파일에서 API키 불러오기
     private var apikey: String? {
@@ -40,6 +41,7 @@ class EventInfoAPI: ObservableObject {
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                 // 정상적으로 값이 오지 않았을 때 처리
                 self.posts = []
+                self.keyPosts = []
                 return
             }
             
@@ -47,14 +49,22 @@ class EventInfoAPI: ObservableObject {
                 print("No data received")
                 return
             }
-            print(data)
             
             do {
-                let json = try JSONDecoder().decode(EventInfo.self, from: data)
-                print(json)
-
-                DispatchQueue.main.async {
-                    self.posts = json.response.body.items.item
+                if contentType == "15" {
+                    let json = try JSONDecoder().decode(EventInfo.self, from: data)
+                    print(json)
+                    
+                    DispatchQueue.main.async {
+                        self.posts = json.response.body.items.item
+                    }
+                } else if contentType == "12" {
+                    let json = try JSONDecoder().decode(KeyEventInfo.self, from: data)
+                    print(json)
+                    
+                    DispatchQueue.main.async {
+                        self.keyPosts = json.response.body.items.item
+                    }
                 }
                 
             } catch let error {

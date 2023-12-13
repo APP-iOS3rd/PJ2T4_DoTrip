@@ -21,8 +21,6 @@ class TourKoreaAPI: ObservableObject {
     }
     
     private var regionData = [RegiItem]()
-
-    var addr2: String = ""
     
     // 지역코드 조회 API
     func feachData(stringAddr: String, params: [String]) {
@@ -81,15 +79,17 @@ class TourKoreaAPI: ObservableObject {
         let addr = params[3]
 
         if addr.count != 0 {
-            let addrCode = regionData.map{ $0 }.filter{ $0.name == addr2 }.map{ $0.code }
-            params[3] = addrCode[0]
+            let addrCode = regionData.map{$0}.filter{ $0.name == addr }.map{ $0.code }
+
+            // 시군구 잘못 입력 시 ""로 대체
+            params[3] = addrCode.count == 0 ? "" : addrCode[0]
         } else {
             params[3] = ""
         }
 
         totalCount = 0
         tourData(params: params)
-        getTourismKeywords(addr1: params[2], addr2: params[3])
+        getTourismKeywords(params: params)
     }
     
     // 행사정보 조회
@@ -144,11 +144,17 @@ class TourKoreaAPI: ObservableObject {
     }
     
     // 관광키워드 조회
-    func getTourismKeywords(addr1: String, addr2: String) {
+    func getTourismKeywords(params: [String]) {
+        
+        let addr1 = params[2]
+        let addr2 = params[3]
+        // 국문 키워드 인코딩 필요
+        let keyword = params[4].addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        
         guard let apikey = apikey else { return }
 
         let urlString =
-        "https://apis.data.go.kr/B551011/KorService1/searchKeyword1?numOfRows=10&MobileOS=IOS&MobileApp=DoTrip&_type=json&arrange=Q&keyword=%EC%A0%9C%EC%A3%BC&contentTypeId=12&areaCode=\(addr1)&sigunguCode=\(addr2)&serviceKey=\(apikey)"
+        "https://apis.data.go.kr/B551011/KorService1/searchKeyword1?numOfRows=10&MobileOS=IOS&MobileApp=DoTrip&_type=json&arrange=Q&keyword=\(keyword ?? "")&contentTypeId=12&areaCode=\(addr1)&sigunguCode=\(addr2)&serviceKey=\(apikey)"
         
         guard let url = URL(string: urlString) else { return }
         
@@ -176,6 +182,7 @@ class TourKoreaAPI: ObservableObject {
             
             do {
                 let json = try JSONDecoder().decode(SearchKeyword.self, from: data)
+                print(json)
                 
                 DispatchQueue.main.async {
                     self.Keywordposts = json.response.body.items.item

@@ -171,3 +171,27 @@ struct IntroItem: Decodable, Hashable {
     let infotext: String
 }
 
+
+// 입장료, 개장시간 등
+struct KeyEventInfo: Decodable {
+    let response: KeyInfoResponse
+}
+
+struct KeyInfoResponse: Decodable {
+    let body: KeyInfoBody
+}
+
+struct KeyInfoBody: Decodable {
+    let items: KeyInfoItems
+}
+
+struct KeyInfoItems: Decodable {
+    let item: [KeyInfoItem]
+}
+
+struct KeyInfoItem: Decodable, Hashable {
+    let contentid: String
+    let restdate: String
+    let expguide: String
+    let usetime: String
+}
