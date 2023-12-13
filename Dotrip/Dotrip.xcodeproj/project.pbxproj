@@ -26,6 +26,8 @@
 		970E70F72B26FC090005FCFE /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970E70F62B26FC090005FCFE /* MainPageView.swift */; };
 		970E70FB2B26FC1B0005FCFE /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970E70F92B26FC1B0005FCFE /* EventDetailView.swift */; };
 		970E70FC2B26FC1B0005FCFE /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970E70FA2B26FC1B0005FCFE /* SearchView.swift */; };
+		977C89BB2B2933F000E96816 /* TourData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977C89BA2B2933F000E96816 /* TourData.swift */; };
+		977C89BE2B29340000E96816 /* RemoveHTMLTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977C89BD2B29340000E96816 /* RemoveHTMLTag.swift */; };
 		F71B53B02B2591F0001AA4EC /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53AF2B2591F0001AA4EC /* MyPageView.swift */; };
 		F71B53B52B25A023001AA4EC /* PointHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53B42B25A023001AA4EC /* PointHistoryView.swift */; };
 		F71B53B82B25A937001AA4EC /* PointExchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53B72B25A937001AA4EC /* PointExchangeView.swift */; };
@@ -61,6 +63,8 @@
 		970E70F62B26FC090005FCFE /* MainPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
 		970E70F92B26FC1B0005FCFE /* EventDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
 		970E70FA2B26FC1B0005FCFE /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		977C89BA2B2933F000E96816 /* TourData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourData.swift; sourceTree = "<group>"; };
+		977C89BD2B29340000E96816 /* RemoveHTMLTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveHTMLTag.swift; sourceTree = "<group>"; };
 		F71B53AF2B2591F0001AA4EC /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		F71B53B42B25A023001AA4EC /* PointHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointHistoryView.swift; sourceTree = "<group>"; };
 		F71B53B72B25A937001AA4EC /* PointExchangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointExchangeView.swift; sourceTree = "<group>"; };
@@ -150,6 +154,22 @@
 			path = SearchPage;
 			sourceTree = "<group>";
 		};
+		977C89B92B2933E300E96816 /* ToreData */ = {
+			isa = PBXGroup;
+			children = (
+				977C89BA2B2933F000E96816 /* TourData.swift */,
+			);
+			path = ToreData;
+			sourceTree = "<group>";
+		};
+		977C89BC2B2933F600E96816 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				977C89BD2B29340000E96816 /* RemoveHTMLTag.swift */,
+			);
+			path = Extention;
+			sourceTree = "<group>";
+		};
 		F71B53B32B259C13001AA4EC /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +234,7 @@
 		F77E70302B21AE5900B2CD37 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				977C89B92B2933E300E96816 /* ToreData */,
 				F77E70352B21B6BD00B2CD37 /* CoreData */,
 			);
 			path = Models;
@@ -234,6 +255,7 @@
 		F77E70322B21AE6E00B2CD37 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				977C89BC2B2933F600E96816 /* Extention */,
 				970E70EC2B26FBD90005FCFE /* TourKoreaAPI */,
 			);
 			path = Controllers;
@@ -332,6 +354,7 @@
 				970E70F72B26FC090005FCFE /* MainPageView.swift in Sources */,
 				20A8DA4A2B26CB0A00E306D2 /* CameraButtonView.swift in Sources */,
 				970E70F32B26FBEC0005FCFE /* GetAPIKey.swift in Sources */,
+				977C89BE2B29340000E96816 /* RemoveHTMLTag.swift in Sources */,
 				F71B53B82B25A937001AA4EC /* PointExchangeView.swift in Sources */,
 				970E70F12B26FBEC0005FCFE /* EventInfoAPI.swift in Sources */,
 				F7B61DB32B27040700A13B50 /* MapView.swift in Sources */,
@@ -342,6 +365,7 @@
 				F71B53BB2B25A961001AA4EC /* QnAView.swift in Sources */,
 				F71B53C12B26C559001AA4EC /* ImagePicker2.swift in Sources */,
 				F77E70252B21A90500B2CD37 /* ContentView.swift in Sources */,
+				977C89BB2B2933F000E96816 /* TourData.swift in Sources */,
 				20A8DA432B26C81900E306D2 /* MissionDataLoad.swift in Sources */,
 				F71B53B02B2591F0001AA4EC /* MyPageView.swift in Sources */,
 				970E70FC2B26FC1B0005FCFE /* SearchView.swift in Sources */,

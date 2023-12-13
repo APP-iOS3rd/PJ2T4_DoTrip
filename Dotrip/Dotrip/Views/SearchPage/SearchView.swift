@@ -9,13 +9,13 @@ import SwiftUI
 
 struct SearchView: View {
     
+    // 지역코드 조회
     @StateObject var network = TourKoreaAPI.shared
-//    @StateObject var eventInfo = EventInfoAPI.shared
     
     var body: some View {
         VStack {
             List {
-                ForEach(network.posts, id: \.self) { data in
+                ForEach(network.posts, id: \.contentid) { data in
                     NavigationLink(destination: EventDetailView(contentId: data.contentid, contentTypeId: data.contenttypeid)) {
                         HStack {
                             AsyncImage(url: URL(string: data.firstimage ?? "")) { img in
@@ -35,7 +35,7 @@ struct SearchView: View {
             }
         }
         .onAppear() {
-            network.feachData()
+            network.feachData(stringAddr: "서울시 종로구")
         }
     }
 }
