@@ -56,7 +56,7 @@ struct Item: Decodable, Hashable, Identifiable {
     }
 }
 
-// 키워드 검색
+// 키워드 검색 (사용X)
 struct SearchKeyword: Decodable {
     let response: KeyResponse
 }
@@ -172,7 +172,7 @@ struct IntroItem: Decodable, Hashable {
 }
 
 
-// 입장료, 개장시간 등
+// 입장료, 개장시간 등 (사용X)
 struct KeyEventInfo: Decodable {
     let response: KeyInfoResponse
 }

@@ -14,6 +14,7 @@ class TourKoreaAPI: ObservableObject {
     @Published var posts = [Item]()
     @Published var Keywordposts = [KeyItem]()
     @Published var totalCount: Int = 0
+    @Published var isLoading = false
     
     // plist 파일에서 API키 불러오기
     private var apikey: String? {
@@ -25,6 +26,8 @@ class TourKoreaAPI: ObservableObject {
     // 지역코드 조회 API
     func feachData(params: [String]) {
         
+        self.isLoading = true
+            
         let addr1 = params[2]
         
         guard let apikey = apikey else { return }
@@ -89,7 +92,7 @@ class TourKoreaAPI: ObservableObject {
 
         totalCount = 0
         tourData(params: params)
-        getTourismKeywords(params: params)
+//        getTourismKeywords(params: params)
     }
     
     // 행사정보 조회
@@ -134,8 +137,9 @@ class TourKoreaAPI: ObservableObject {
                 DispatchQueue.main.async {
                     self.posts = json.response.body.items.item
                     self.totalCount += Int(json.response.body.numOfRows)
+                    self.isLoading = false
+
                 }
-                
             } catch let error {
                 print(error.localizedDescription)
             }
@@ -143,7 +147,7 @@ class TourKoreaAPI: ObservableObject {
         task.resume()
     }
     
-    // 관광키워드 조회
+    // 관광키워드 조회 (사용X)
     func getTourismKeywords(params: [String]) {
         
         let addr1 = params[2]
