@@ -5,27 +5,6 @@
 //  Created by Hee on 12/11/23.
 //
 
-struct IntroData: Decodable {
-    let response: IntroResponse
-}
-
-struct IntroResponse: Decodable {
-    let body: IntroBody
-}
-
-struct IntroBody: Decodable {
-    let items: IntroItems
-}
-
-struct IntroItems: Decodable {
-    let item: [IntroItem]
-}
-
-struct IntroItem: Decodable, Hashable {
-    let contentid: String
-    let infotext: String
-}
-
 import Foundation
 
 class IntroductionAPI: ObservableObject {
