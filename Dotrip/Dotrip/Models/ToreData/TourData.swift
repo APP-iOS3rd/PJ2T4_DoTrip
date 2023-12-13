@@ -33,8 +33,8 @@ struct Item: Decodable, Hashable, Identifiable {
     let title: String
     let addr1: String
     let addr2: String
-    let eventstartdate: String
-    let eventenddate: String
+    let eventstartdate: String?
+    let eventenddate: String?
     let firstimage: String?
     let firstimage2: String?
     let mapx: String
@@ -49,6 +49,51 @@ struct Item: Decodable, Hashable, Identifiable {
         case addr2 = "addr2"
         case eventstartdate = "eventstartdate"
         case eventenddate = "eventenddate"
+        case firstimage = "firstimage"
+        case firstimage2 = "firstimage2"
+        case mapx = "mapx"
+        case mapy = "mapy"
+    }
+}
+
+// 키워드 검색
+struct SearchKeyword: Decodable {
+    let response: KeyResponse
+}
+
+struct KeyResponse: Decodable {
+    let body: KeyBody
+}
+
+struct KeyBody: Decodable {
+    let items: KeyItems
+    let pageNo: Int
+    let numOfRows: Int
+}
+
+struct KeyItems: Decodable {
+    let item: [KeyItem]
+}
+
+struct KeyItem: Decodable, Hashable, Identifiable {
+    var id = UUID()
+    let contentid: String
+    let contenttypeid: String
+    let title: String
+    let addr1: String
+    let addr2: String
+    let firstimage: String?
+    let firstimage2: String?
+    let mapx: String
+    let mapy: String
+    
+    enum CodingKeys: String, CodingKey {
+        //        case id
+        case contentid = "contentid"
+        case contenttypeid = "contenttypeid"
+        case title = "title"
+        case addr1 = "addr1"
+        case addr2 = "addr2"
         case firstimage = "firstimage"
         case firstimage2 = "firstimage2"
         case mapx = "mapx"
@@ -77,3 +122,52 @@ struct RegiItem: Decodable, Hashable {
     let code: String
     let name: String
 }
+
+// 입장료, 개장시간 등
+struct EventInfo: Decodable {
+    let response: InfoResponse
+}
+
+struct InfoResponse: Decodable {
+    let body: InfoBody
+}
+
+struct InfoBody: Decodable {
+    let items: InfoItems
+}
+
+struct InfoItems: Decodable {
+    let item: [InfoItem]
+}
+
+struct InfoItem: Decodable, Hashable {
+    let contentid: String
+    let eventstartdate: String
+    let eventenddate: String
+    let playtime: String
+    let usetimefestival: String
+}
+
+// 행사소개 등
+
+struct IntroData: Decodable {
+    let response: IntroResponse
+}
+
+struct IntroResponse: Decodable {
+    let body: IntroBody
+}
+
+struct IntroBody: Decodable {
+    let items: IntroItems
+}
+
+struct IntroItems: Decodable {
+    let item: [IntroItem]
+}
+
+struct IntroItem: Decodable, Hashable {
+    let contentid: String
+    let infotext: String
+}
+

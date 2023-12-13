@@ -7,30 +7,6 @@
 
 import Foundation
 
-struct EventInfo: Decodable {
-    let response: InfoResponse
-}
-
-struct InfoResponse: Decodable {
-    let body: InfoBody
-}
-
-struct InfoBody: Decodable {
-    let items: InfoItems
-}
-
-struct InfoItems: Decodable {
-    let item: [InfoItem]
-}
-
-struct InfoItem: Decodable, Hashable {
-    let contentid: String
-    let eventstartdate: String
-    let eventenddate: String
-    let playtime: String
-    let usetimefestival: String
-}
-
 class EventInfoAPI: ObservableObject {
     static let shared = EventInfoAPI()
     private init() {}

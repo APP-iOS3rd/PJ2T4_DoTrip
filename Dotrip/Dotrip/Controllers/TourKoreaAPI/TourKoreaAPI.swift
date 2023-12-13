@@ -12,6 +12,8 @@ class TourKoreaAPI: ObservableObject {
     private init() {}
     
     @Published var posts = [Item]()
+    @Published var Keywordposts = [KeyItem]()
+    @Published var totalCount: Int = 0
     
     // plist 파일에서 API키 불러오기
     private var apikey: String? {
@@ -19,16 +21,18 @@ class TourKoreaAPI: ObservableObject {
     }
     
     private var regionData = [RegiItem]()
-    
-//    var addr1: String = "서울시 강서구"
+
     var addr2: String = ""
-    var arrdCode = [String]()
     
-    func feachData(stringAddr: String) {
+    // 지역코드 조회 API
+    func feachData(stringAddr: String, params: [String]) {
+        
+        let addr1 = params[2]
+        
         guard let apikey = apikey else { return }
 
         let urlString =
-        "https://apis.data.go.kr/B551011/KorService1/areaCode1?numOfRows=35&MobileOS=IOS&MobileApp=DoTrip&areaCode=\(1)&_type=json&serviceKey=\(apikey)"
+        "https://apis.data.go.kr/B551011/KorService1/areaCode1?numOfRows=35&MobileOS=IOS&MobileApp=DoTrip&areaCode=\(addr1)&_type=json&serviceKey=\(apikey)"
         
         guard let url = URL(string: urlString) else { return }
         
@@ -60,7 +64,7 @@ class TourKoreaAPI: ObservableObject {
 
                 DispatchQueue.main.async {
                     self.regionData = json.response.body.items.item
-                    self.click(addr: stringAddr) // feachData 완료 후 tourData 호출
+                    self.click(params: params) // feachData 완료 후 tourData 호출
                 }
                 
             } catch let error {
@@ -70,18 +74,35 @@ class TourKoreaAPI: ObservableObject {
         task.resume()
     }
     
-    func tourData(sigunguCode: String) {
+    // 지역정보API에서 불러온 데이터 중 '시/군/구' 명만 잘라서 코드값을 찾아내고 다음 API실행
+
+    func click(params: [String]) {
+        var params = params
+        let addr = params[3]
+
+        if addr.count != 0 {
+            let addrCode = regionData.map{ $0 }.filter{ $0.name == addr2 }.map{ $0.code }
+            params[3] = addrCode[0]
+        } else {
+            params[3] = ""
+        }
+
+        totalCount = 0
+        tourData(params: params)
+        getTourismKeywords(addr1: params[2], addr2: params[3])
+    }
+    
+    // 행사정보 조회
+    func tourData(params: [String]) {
         guard let apikey = apikey else { return }
         
-        /**
-         eventStartDate = 행사 시작일
-         areaCode = 지역코드
-         sigunguCode = 시군구코드
-         serviceKey = API Key
-         */
+        let startDate = params[0]
+        let endDate = params[1]
+        let addr1 = params[2]
+        let addr2 = params[3]
         
         let urlString =
-        "https://apis.data.go.kr/B551011/KorService1/searchFestival1?numOfRows=50&MobileOS=IOS&MobileApp=DoTrip&_type=json&arrange=A&eventStartDate=\(20231225)&eventEndDate=\(20231231)&areaCode=\(1)&sigunguCode=\(sigunguCode)&serviceKey=\(apikey)"
+        "https://apis.data.go.kr/B551011/KorService1/searchFestival1?numOfRows=50&MobileOS=IOS&MobileApp=DoTrip&_type=json&arrange=A&eventStartDate=\(startDate)&eventEndDate=\(endDate)&areaCode=\(addr1)&sigunguCode=\(addr2)&serviceKey=\(apikey)"
         
         guard let url = URL(string: urlString) else { return }
         
@@ -112,6 +133,7 @@ class TourKoreaAPI: ObservableObject {
                 
                 DispatchQueue.main.async {
                     self.posts = json.response.body.items.item
+                    self.totalCount += Int(json.response.body.numOfRows)
                 }
                 
             } catch let error {
@@ -121,13 +143,49 @@ class TourKoreaAPI: ObservableObject {
         task.resume()
     }
     
-    func click(addr: String) {
-        let arr = addr.split(separator: " ")
-        addr2 = String(arr[1].prefix(2))
+    // 관광키워드 조회
+    func getTourismKeywords(addr1: String, addr2: String) {
+        guard let apikey = apikey else { return }
 
-        arrdCode = regionData.map{ $0 }.filter{ $0.name.contains(addr2) }.map{ $0.code }
-        let sigungu = arrdCode[0]
-
-        tourData(sigunguCode: sigungu)
+        let urlString =
+        "https://apis.data.go.kr/B551011/KorService1/searchKeyword1?numOfRows=10&MobileOS=IOS&MobileApp=DoTrip&_type=json&arrange=Q&keyword=%EC%A0%9C%EC%A3%BC&contentTypeId=12&areaCode=\(addr1)&sigunguCode=\(addr2)&serviceKey=\(apikey)"
+        
+        guard let url = URL(string: urlString) else { return }
+        
+        let session = URLSession(configuration: .default)
+        
+        // dataTask() 메서드의 with: 매개변수에 url 또는 request 객체를 가지고 통신
+        let task = session.dataTask(with: url) { data, response, error in
+            
+            // 에러가 났다면
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                // 정상적으로 값이 오지 않았을 때 처리
+                self.posts = []
+                return
+            }
+            
+            guard let data = data else {
+                print("No data received")
+                return
+            }
+            
+            do {
+                let json = try JSONDecoder().decode(SearchKeyword.self, from: data)
+                
+                DispatchQueue.main.async {
+                    self.Keywordposts = json.response.body.items.item
+                    self.totalCount += Int(json.response.body.numOfRows)
+                }
+                
+            } catch let error {
+                print(error.localizedDescription)
+            }
+        }
+        task.resume()
     }
 }
