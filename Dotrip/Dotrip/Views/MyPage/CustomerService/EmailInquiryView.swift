@@ -99,7 +99,6 @@ struct EmailInquiryView: View {
                 .alert(isPresented: $showingAlert) {
                     Alert(title: Text("문의 완료"), message: Text("문의하신 내용이 정상적으로 접수되었습니다."), dismissButton: .default(Text("확인")))
                 }
-                
                 .navigationTitle("이메일 문의")
                 .padding()
             }
