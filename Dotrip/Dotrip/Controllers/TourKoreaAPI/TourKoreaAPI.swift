@@ -23,7 +23,7 @@ class TourKoreaAPI: ObservableObject {
     private var regionData = [RegiItem]()
     
     // 지역코드 조회 API
-    func feachData(stringAddr: String, params: [String]) {
+    func feachData(params: [String]) {
         
         let addr1 = params[2]
         

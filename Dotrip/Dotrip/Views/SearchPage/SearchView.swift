@@ -13,7 +13,7 @@ struct SearchView: View {
     @StateObject var network = TourKoreaAPI.shared
     
     // [시작날짜, 끝날짜, 지역코드, 시군구, 키워드].   * 지역코드와 키워드의 값이 일치해야함
-    var params = ["20231201", "20231231", "39", "제주시", "제주"]
+    var params = ["20231201", "20231231", "1", "종로구", "서울"]
     
     var body: some View {
         VStack {
@@ -64,7 +64,7 @@ struct SearchView: View {
             
         }
         .onAppear() {
-            network.feachData(stringAddr: "서귀포시", params: params)
+            network.feachData(params: params)
         }
     }
 }
