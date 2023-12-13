@@ -13,11 +13,10 @@
 		20A8DA412B26C7EC00E306D2 /* MissionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8DA402B26C7EC00E306D2 /* MissionStore.swift */; };
 		20A8DA432B26C81900E306D2 /* MissionDataLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8DA422B26C81900E306D2 /* MissionDataLoad.swift */; };
 		20A8DA452B26CA8300E306D2 /* MyMissionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8DA442B26CA8300E306D2 /* MyMissionDetailView.swift */; };
-		20A8DA482B26CAE700E306D2 /* MyMissionCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8DA472B26CAE700E306D2 /* MyMissionCameraView.swift */; };
 		20A8DA4A2B26CB0A00E306D2 /* CameraButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8DA492B26CB0A00E306D2 /* CameraButtonView.swift */; };
 		20A8DA4C2B26CB2700E306D2 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8DA4B2B26CB2700E306D2 /* ImagePicker.swift */; };
 		20A8DA4E2B26CC7800E306D2 /* missionData.json in Resources */ = {isa = PBXBuildFile; fileRef = 20A8DA4D2B26CC7800E306D2 /* missionData.json */; };
-		78ADA9672B285D7800D0ABF9 /* EventDetailView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ADA9662B285D7800D0ABF9 /* EventDetailView2.swift */; };
+		789730902B29333F002998D8 /* EventDetailView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897308F2B29333F002998D8 /* EventDetailView2.swift */; };
 		970E70EB2B26FBB90005FCFE /* API_KEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = 970E70EA2B26FBB90005FCFE /* API_KEY.plist */; };
 		970E70F12B26FBEC0005FCFE /* EventInfoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970E70ED2B26FBEC0005FCFE /* EventInfoAPI.swift */; };
 		970E70F22B26FBEC0005FCFE /* TourKoreaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970E70EE2B26FBEC0005FCFE /* TourKoreaAPI.swift */; };
@@ -48,11 +47,10 @@
 		20A8DA402B26C7EC00E306D2 /* MissionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionStore.swift; sourceTree = "<group>"; };
 		20A8DA422B26C81900E306D2 /* MissionDataLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDataLoad.swift; sourceTree = "<group>"; };
 		20A8DA442B26CA8300E306D2 /* MyMissionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMissionDetailView.swift; sourceTree = "<group>"; };
-		20A8DA472B26CAE700E306D2 /* MyMissionCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMissionCameraView.swift; sourceTree = "<group>"; };
 		20A8DA492B26CB0A00E306D2 /* CameraButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraButtonView.swift; sourceTree = "<group>"; };
 		20A8DA4B2B26CB2700E306D2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		20A8DA4D2B26CC7800E306D2 /* missionData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = missionData.json; sourceTree = "<group>"; };
-		78ADA9662B285D7800D0ABF9 /* EventDetailView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventDetailView2.swift; path = "../../../../../.Trash/PJ2T4_DoTrip 18.19.38/Dotrip/Dotrip/Views/SearchPage/EventDetailView2.swift"; sourceTree = "<group>"; };
+		7897308F2B29333F002998D8 /* EventDetailView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView2.swift; sourceTree = "<group>"; };
 		970E70EA2B26FBB90005FCFE /* API_KEY.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = API_KEY.plist; sourceTree = "<group>"; };
 		970E70ED2B26FBEC0005FCFE /* EventInfoAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInfoAPI.swift; sourceTree = "<group>"; };
 		970E70EE2B26FBEC0005FCFE /* TourKoreaAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourKoreaAPI.swift; sourceTree = "<group>"; };
@@ -114,7 +112,6 @@
 		20A8DA462B26CAAC00E306D2 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
-				20A8DA472B26CAE700E306D2 /* MyMissionCameraView.swift */,
 				20A8DA4B2B26CB2700E306D2 /* ImagePicker.swift */,
 				20A8DA492B26CB0A00E306D2 /* CameraButtonView.swift */,
 			);
@@ -145,7 +142,7 @@
 			children = (
 				970E70F92B26FC1B0005FCFE /* EventDetailView.swift */,
 				970E70FA2B26FC1B0005FCFE /* SearchView.swift */,
-				78ADA9662B285D7800D0ABF9 /* EventDetailView2.swift */,
+				7897308F2B29333F002998D8 /* EventDetailView2.swift */,
 			);
 			path = SearchPage;
 			sourceTree = "<group>";
@@ -336,6 +333,7 @@
 				970E70F12B26FBEC0005FCFE /* EventInfoAPI.swift in Sources */,
 				F7B61DB32B27040700A13B50 /* MapView.swift in Sources */,
 				20A8DA4C2B26CB2700E306D2 /* ImagePicker.swift in Sources */,
+				789730902B29333F002998D8 /* EventDetailView2.swift in Sources */,
 				F7B61DB22B27040700A13B50 /* MapDetailView.swift in Sources */,
 				970E70FB2B26FC1B0005FCFE /* EventDetailView.swift in Sources */,
 				F71B53BF2B25BC0B001AA4EC /* ModifyProfileView.swift in Sources */,
@@ -346,13 +344,11 @@
 				F71B53B02B2591F0001AA4EC /* MyPageView.swift in Sources */,
 				970E70FC2B26FC1B0005FCFE /* SearchView.swift in Sources */,
 				F71B53BD2B25A985001AA4EC /* EmailInquiryView.swift in Sources */,
-				78ADA9672B285D7800D0ABF9 /* EventDetailView2.swift in Sources */,
 				20A8DA452B26CA8300E306D2 /* MyMissionDetailView.swift in Sources */,
 				20A8DA3B2B26C69B00E306D2 /* MyMissionList.swift in Sources */,
 				20A8DA412B26C7EC00E306D2 /* MissionStore.swift in Sources */,
 				970E70F22B26FBEC0005FCFE /* TourKoreaAPI.swift in Sources */,
 				F71B53B52B25A023001AA4EC /* PointHistoryView.swift in Sources */,
-				20A8DA482B26CAE700E306D2 /* MyMissionCameraView.swift in Sources */,
 				207AC6EA2B26C5C800D3A340 /* MyMissionListView.swift in Sources */,
 				F77E70232B21A90500B2CD37 /* DotripApp.swift in Sources */,
 			);
