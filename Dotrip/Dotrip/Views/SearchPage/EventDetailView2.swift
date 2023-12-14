@@ -35,40 +35,72 @@ struct EventDetailView2: View {
                         .font(.system(size: 20))
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     
-                    ForEach(eventInfo.infoPosts, id: \.self) { result in
-                        HStack{
-                            Text("행사 기간 : ")
-                                .fontWeight(.bold)
-                                .padding(.leading,10)
-                            Text("\(result.eventstartdate) ~ \(result.eventenddate)")
-                        }
-                        .font(.system(size: 16))
-                        HStack{
-                            Text("개장 시간 : ")
-                                .fontWeight(.bold)
-                                .padding(.leading,10)
-                            Text("\(result.playtime.escapingHTML)")
-                        }
-                        .font(.system(size: 16))
-                        HStack{
-                            Text("입장료 : ")
-                                .fontWeight(.bold)
-                                .padding(.leading,10)
-                            Text("\(result.usetimefestival.escapingHTML)")
-                        }
-                        .font(.system(size: 16))
-                        .multilineTextAlignment(.leading)
-                    }
-                    .padding(1)
-                    
                     AsyncImage(url: URL(string: data.firstimage ?? "")) { img in
                         img.image?.resizable()
+                        
+//                        ForEach(eventInfo.infoPosts, id: \.self) { result in
+//                            HStack{
+//                                Text("행사 기간 : ")
+//                                    .fontWeight(.bold)
+//                                    .padding(.leading,10)
+//                                Text("\(result.eventstartdate) ~ \(result.eventenddate)")
+//                            }
+//                            .font(.system(size: 16))
+//                            HStack{
+//                                Text("개장 시간 : ")
+//                                    .fontWeight(.bold)
+//                                    .padding(.leading,10)
+//                                Text("\(result.playtime.escapingHTML)")
+//                            }
+//                            .font(.system(size: 16))
+//                            HStack{
+//                                Text("입장료 : ")
+//                                    .fontWeight(.bold)
+//                                    .padding(.leading,10)
+//                                Text("\(result.usetimefestival.escapingHTML)")
+//                            }
+//                            .font(.system(size: 16))
+//                            .multilineTextAlignment(.leading)
+//                        }
+//                        .padding(1)
+                        
                         
                         // 이부분이 AsyncImage( 안에 들어가야 되는 이유는??
                         // 안들어가면 동작이 안됨
                         VStack(alignment: .leading, spacing: 10) {
                             if !eventInfo.isLoading {
                                 ScrollView {
+                                    
+                                    ForEach(eventInfo.infoPosts, id: \.self) { result in
+                                        HStack{
+                                            Text("행사 기간 : ")
+                                                .fontWeight(.bold)
+                                                .padding(.leading,10)
+                                            Text("\(result.eventstartdate) ~ \(result.eventenddate)")
+                                            Spacer()
+                                        }
+                                        .font(.system(size: 16))
+                                        HStack{
+                                            Text("개장 시간 : ")
+                                                .fontWeight(.bold)
+                                                .padding(.leading,10)
+                                            Text("\(result.playtime.escapingHTML)")
+                                            Spacer()
+                                        }
+                                        .font(.system(size: 16))
+                                        HStack{
+                                            Text("입장료 : ")
+                                                .fontWeight(.bold)
+                                                .padding(.leading,10)
+                                            Text("\(result.usetimefestival.escapingHTML)")
+                                            Spacer()
+                                        }
+                                        .font(.system(size: 16))
+                                        .multilineTextAlignment(.leading)
+                                    }
+                                    .padding(1)
+                                    
+                                    
                                     ExpandableText(text: eventInfo.introPosts[0].infotext.escapingHTML)
                                         .font(.system(size: 14))
                                         .foregroundColor(.primary)
@@ -96,10 +128,6 @@ struct EventDetailView2: View {
                                 .padding(.leading, 10)
                             
                             
-                            //                        NavigationLink(destination: MyMissionListView(), isActive: $isMyMissionlistViewActive) {
-                            //                            EmptyView()
-                            //                        }
-                            
                             Button("미션 하러 가기") {
                                 isMyMissionlistViewActive = true
                             }
@@ -109,6 +137,16 @@ struct EventDetailView2: View {
                             .cornerRadius(10)
                             .frame(maxWidth: .infinity)
                             .padding()
+                            
+                            .fullScreenCover(isPresented: $isMyMissionlistViewActive, content: {
+                                NavigationView {
+                                    MyMissionListView()
+                                        .navigationBarTitle("내 미션", displayMode: .inline)
+                                        .navigationBarItems(trailing: Button("닫기") {
+                                            isMyMissionlistViewActive = false
+                                        })
+                                }
+                            })
                             
                             
                         }
