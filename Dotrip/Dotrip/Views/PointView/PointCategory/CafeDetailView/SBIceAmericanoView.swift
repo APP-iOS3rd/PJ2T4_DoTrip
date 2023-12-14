@@ -61,6 +61,7 @@ struct SBIceAmericanoDetailView: View {
 // 구매하기 버튼
 struct BuyingButton: View {
     @State private var showingAlert = false
+    @State private var showPurchaseCompletedAlert = false
     
     var body: some View {
         VStack {
@@ -82,23 +83,34 @@ struct BuyingButton: View {
                 .shadow(radius:2, x:0, y:2)
                 
             }
+            
+            // 구매확인 알림
             .alert(isPresented: $showingAlert) {
                 Alert(
-                    title: Text("해당 상품을 구매하시겠습니까?"),
-                    message: Text("450P 차감"),
+                    title: Text("구매 확인"),
+                    message: Text("해당 상품을 구매하시겠습니까?"),
                     primaryButton: .default(
                         Text("확인"),
                         action: {
-                            // 확인버튼 눌렀을 때 동작
-                            print("Okay Click")
+                            showPurchaseCompletedAlert = true
                         }
                     ),
                     secondaryButton: .default(Text("취소"))
                 )
             }
+            
+//            // 구매완료 알림
+//            .alert(isPresented: $showPurchaseCompletedAlert) {
+//                Alert(
+//                    title: Text("구매 완료"),
+//                    message: Text("구매가 완료되었습니다."),
+//                    dismissButton: .default(Text("확인"))
+//                )
+//            }
         }
     }
 }
+
 
 #Preview {
     SBIceAmericanoView()
