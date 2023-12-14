@@ -156,6 +156,10 @@ struct ModalView: View {
     
     @Binding var cont : Item?
     
+    @ObservedObject var missionStore = MissionStore(missions: missionData)
+    
+    @State var mission : Mission?
+    
     var body: some View {
         NavigationStack {
             HStack{
@@ -181,12 +185,20 @@ struct ModalView: View {
                 Spacer()
             }
             .padding(.top, 30)
-            MapList(listState: $listState, network: $network, navigationManager: navigationManager, modalManager: modalManager, contId: $contID, contyId: $contyID, cont: $cont)
+            MapList(listState: $listState, network: $network, mission: $mission, navigationManager: navigationManager, modalManager: modalManager, contId: $contID, contyId: $contyID, cont: $cont)
             
             // 이부분 추가
             NavigationLink(
                 destination: MapDetailView(contentId: contID, contentTypeId: contyID, cont: $cont, navigationManager: navigationManager),
                 tag: .MapDetailView,
+                selection: $modalManager.stackPath
+            ) {
+                EmptyView()
+            }
+            .hidden()
+            NavigationLink(
+                destination: MapMissionDetailView(missions: $mission),
+                tag: .MapMissionDetailView,
                 selection: $modalManager.stackPath
             ) {
                 EmptyView()
