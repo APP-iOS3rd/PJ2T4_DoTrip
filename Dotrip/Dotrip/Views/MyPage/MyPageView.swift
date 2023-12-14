@@ -25,6 +25,12 @@ struct MyPageView: View {
         NavigationStack {
             GeometryReader { geometry in
                 VStack {
+                    Text("MY")
+                        .frame(width: geometry.size.width * 0.85, alignment: .leading)
+                        .font(.title)
+                        .bold()
+                        .padding(.top,20)
+                        
                     Spacer()
                     
                     CardContent(showModal: $showModal, userData: userData, geometry: geometry)

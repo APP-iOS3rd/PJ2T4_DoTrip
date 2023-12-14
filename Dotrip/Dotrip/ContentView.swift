@@ -23,8 +23,7 @@ struct ContentView: View {
             PointExchangeView()
                 .tabItem {
                     Image(systemName: "cart")
-
-                    Text("포인트교환")
+                    Text("상점")
                 }
                 
             MyPageView()

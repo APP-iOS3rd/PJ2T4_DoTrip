@@ -12,13 +12,18 @@ struct PointExchangeView: View {
         NavigationStack {
             GeometryReader { geometry in
                 VStack {
+                    Text("상점")
+                        .frame(width: geometry.size.width * 0.85, alignment: .leading)
+                        .font(.title)
+                        .bold()
+                        .padding(.top,20)
                     Spacer()
                     HStack {
                         Spacer()
                         ZStack {
                             Rectangle()
                                 .fill(Color(hex: 0xFFF0DF))
-                                .frame(height: geometry.size.width * 0.65)
+                                .frame(height: geometry.size.width * 0.62)
                             PointCard(geometry: geometry)
                         }
                         Spacer()
@@ -107,7 +112,8 @@ struct GridButtons: View {
             }
         }
         .padding()
-    }   
+        .padding(.bottom,60)
+    }
 }
 
 #Preview {
