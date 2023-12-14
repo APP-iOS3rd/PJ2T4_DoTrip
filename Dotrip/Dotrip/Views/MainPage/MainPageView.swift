@@ -37,7 +37,6 @@ struct startDateModalView: View {
                 start = selectedStartDate
                 startDate = dateFormatter.string(from: selectedStartDate)
                 changeColor[0] = .black
-                print(startDate)
                 presentation.wrappedValue.dismiss()
             }) {
                 Text("날짜 선택").bold()
@@ -71,7 +70,6 @@ struct endDateModalView: View {
                 end = selectedEndDate
                 endDate = dateFormatter.string(from: selectedEndDate)
                 changeColor[1] = .black
-                print(endDate)
                 presentation.wrappedValue.dismiss()
             }) {
                 Text("날짜 선택").bold()
@@ -235,7 +233,7 @@ struct MainPageView: View {
     @State private var showingAlert: Bool = false
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 Text("DoTrip")
                     .frame(width:350, alignment: .leading)
@@ -301,7 +299,7 @@ struct MainPageView: View {
                 
                 HStack{
                     NavigationLink(
-                        destination: SearchView(params: [startDate, endDate, "\(areaCode ?? 1)", selectedBorough ?? ""]),
+                        destination: MapView(params: [startDate, endDate, "\(areaCode ?? 1)", selectedBorough ?? ""]),
                         isActive: $isActiveSearch) {
                             Button(action: {
                                 if startDate == "출발일자" || endDate == "복귀일자" || viewSelected == "지역을 선택해주세요" {
