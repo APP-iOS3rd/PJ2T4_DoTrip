@@ -12,11 +12,12 @@ import ExpandableText
 struct EventDetailView2: View {
     
     @StateObject var eventInfo = EventInfoAPI.shared
-    @StateObject var network = TourKoreaAPI.shared
+    //    @StateObject var network = TourKoreaAPI.shared
     @StateObject var missionStore = MissionStore(missions: missionData)
     
     @State private var showMoreText = false
-    @State private var sampleText: String?
+    //    @State private var sampleText: String?
+    //    @State private var sampleText2: String?
     @State private var mission: String?
     @State private var isMyMissionlistViewActive = false
     
@@ -27,99 +28,106 @@ struct EventDetailView2: View {
     let contentTypeId: String
     
     var body: some View {
-        
         NavigationView {
-            VStack(alignment: .leading) {
-                Text(data.title)
-                    .font(.system(size: 20))
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                
-                ForEach(eventInfo.infoPosts, id: \.self) { result in
-                    HStack{
-                        Text("행사 기간 : ")
-                            .fontWeight(.bold)
-                            .padding(.leading,10)
-                        Text("\(result.eventstartdate) ~ \(result.eventenddate)")
-                    }
-                    .font(.system(size: 16))
-                    HStack{
-                        Text("개장 시간 : ")
-                            .fontWeight(.bold)
-                            .padding(.leading,10)
-                        Text("\(result.playtime)")
-                    }
-                    .font(.system(size: 16))
-                    HStack{
-                        Text("입장료 : ")
-                            .fontWeight(.bold)
-                            .padding(.leading,10)
-                        Text("\(result.usetimefestival)")
-                    }
-                    .font(.system(size: 16))
-                    .multilineTextAlignment(.leading)
-                }
-                .padding(1)
-                
-                AsyncImage(url: URL(string: data.firstimage ?? "")) { img in
-                    img.image?.resizable()
+            ZStack {
+                VStack(alignment: .leading) {
+                    Text(data.title)
+                        .font(.system(size: 20))
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     
-                    VStack(alignment: .leading, spacing: 10) {
-                        ScrollView {
-                            ExpandableText(text: sampleText ?? "")
-                                .font(.system(size: 14))
-                                .foregroundColor(.primary)
-                                .lineLimit(4)
-                                .expandButton(TextSet(text: "더보기", font: .system(size: 14), color: .blue))
-                                .collapseButton(TextSet(text: "접기", font: .system(size: 14), color: .blue))
-                                .expandAnimation(.easeOut)
-                                .padding(.horizontal, 24)
+                    ForEach(eventInfo.infoPosts, id: \.self) { result in
+                        HStack{
+                            Text("행사 기간 : ")
+                                .fontWeight(.bold)
+                                .padding(.leading,10)
+                            Text("\(result.eventstartdate) ~ \(result.eventenddate)")
                         }
+                        .font(.system(size: 16))
+                        HStack{
+                            Text("개장 시간 : ")
+                                .fontWeight(.bold)
+                                .padding(.leading,10)
+                            Text("\(result.playtime.escapingHTML)")
+                        }
+                        .font(.system(size: 16))
+                        HStack{
+                            Text("입장료 : ")
+                                .fontWeight(.bold)
+                                .padding(.leading,10)
+                            Text("\(result.usetimefestival.escapingHTML)")
+                        }
+                        .font(.system(size: 16))
+                        .multilineTextAlignment(.leading)
                     }
-                    .padding(2)
+                    .padding(1)
                     
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Text(data.title)
-                                .font(.title3)
+                    AsyncImage(url: URL(string: data.firstimage ?? "")) { img in
+                        img.image?.resizable()
+                        
+                        // 이부분이 AsyncImage( 안에 들어가야 되는 이유는??
+                        // 안들어가면 동작이 안됨
+                        VStack(alignment: .leading, spacing: 10) {
+                            if !eventInfo.isLoading {
+                                ScrollView {
+                                    ExpandableText(text: eventInfo.introPosts[0].infotext.escapingHTML)
+                                        .font(.system(size: 14))
+                                        .foregroundColor(.primary)
+                                        .lineLimit(4)
+                                        .expandButton(TextSet(text: "더보기", font: .system(size: 14), color: .blue))
+                                        .collapseButton(TextSet(text: "접기", font: .system(size: 14), color: .blue))
+                                        .expandAnimation(.easeOut)
+                                        .padding(.horizontal, 24)
+                                }
+                            }
                         }
-                        .fontWeight(.bold)
-                        .padding()
+                        .padding(2)
                         
-                        Text("미션 내용이 들어갈 자리입니다.")
-                            .font(.system(size: 16))
-                            .padding(1)
-                            .padding(.leading, 10)
-                        
-                        
-                        //                        NavigationLink(destination: MyMissionListView(), isActive: $isMyMissionlistViewActive) {
-                        //                            EmptyView()
-                        //                        }
-                        
-                        Button("미션 하러 가기") {
-                            isMyMissionlistViewActive = true
+                        VStack(alignment: .leading) {
+                            HStack {
+                                Text(data.title)
+                                    .font(.title3)
+                            }
+                            .fontWeight(.bold)
+                            .padding()
+                            
+                            Text("미션 내용이 들어갈 자리입니다.")
+                                .font(.system(size: 16))
+                                .padding(1)
+                                .padding(.leading, 10)
+                            
+                            
+                            //                        NavigationLink(destination: MyMissionListView(), isActive: $isMyMissionlistViewActive) {
+                            //                            EmptyView()
+                            //                        }
+                            
+                            Button("미션 하러 가기") {
+                                isMyMissionlistViewActive = true
+                            }
+                            .padding()
+                            .foregroundColor(.white)
+                            .background(Color(hex: 0xFFA800))
+                            .cornerRadius(10)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            
+                            
                         }
-                        .padding()
-                        .foregroundColor(.white)
-                        .background(Color(hex: 0xFFA800))
+                        .background(Color(hex: 0xF4F4F4))
                         .cornerRadius(10)
-                        .frame(maxWidth: .infinity)
                         .padding()
-                        
-                        
+                        Spacer()
                     }
-                    .background(Color(hex: 0xF4F4F4))
-                    .cornerRadius(10)
-                    .padding()
-                    Spacer()
+                }
+                if eventInfo.isLoading {
+                    LoadingView()
                 }
             }
         }
         .padding()
         .onAppear() {
             eventInfo.getInfoData(contentID: contentId, contentType: contentTypeId)
-            //            eventInfo.getIntroData(contentID: contentId, contentType: contentTypeId)
-            if let firstPost = eventInfo.introPosts.first { sampleText = firstPost.infotext }
-            
+            eventInfo.getIntroData(contentID: contentId, contentType: contentTypeId)
+            //            if let firstPost = eventInfo.introPosts.first { sampleText = firstPost.infotext }
         }
         .navigationTitle("행사 정보")
         
