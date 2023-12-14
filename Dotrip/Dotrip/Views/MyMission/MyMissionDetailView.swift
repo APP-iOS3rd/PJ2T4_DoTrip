@@ -12,10 +12,9 @@ struct MyMissionDetailView: View {
     @Binding var missions : Mission
     @Binding var path: NavigationPath
     @Binding var succeededMissons: Int
-    
-    //카메라
+
     @Binding var showActionSheet : Bool
-    // @State var showActionSheet: Bool
+
     @State var showImagePicker: Bool = false
     @State var image : Image?
     @State var sourcetype :Int = 0
@@ -44,28 +43,19 @@ struct MyMissionDetailView: View {
 
             VStack{
                 if !btnStatus {
-                    
                     Image("경복궁사진1")
                         .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 330,height: 350)
-                        .cornerRadius(20)
+                        .modifier(ImageModify())
                         .padding(.bottom,45)
                     
                     Button {
                         btnStatus = true
                     } label: {
                         Text("미션 시작하기")
-                            .fontWeight(.regular)
-                            .frame(width:250, height: 50)
-                            .foregroundColor(.black)
-                            .background(Color.white)
-                            .cornerRadius(10)
-                            .shadow(radius:2, x:0, y:2)
-                    
+                            .modifier(ButtonModify())
                     }
+                    
                 }else {
-                 
                         Image(systemName:"photo.fill")
                             .foregroundColor(.black)
                             .font(.system(size: 40))
@@ -74,13 +64,12 @@ struct MyMissionDetailView: View {
                             .cornerRadius(20)
                             .opacity(0.1)
                             .overlay(
+                                
                                 image?
                                     .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: 330,height: 350)
-                                    .cornerRadius(20))
+                                    .modifier(ImageModify())
+                            )
                             .offset(x:0,y:30)
-
                             .padding(.bottom,40)
                         
                         Button {
@@ -93,7 +82,6 @@ struct MyMissionDetailView: View {
                         }
                         .font(.system(size: 18))
                         .foregroundStyle(Color.orange)
-//                       .padding(.top,20)
      
                     HStack{
                         Button {
@@ -101,13 +89,8 @@ struct MyMissionDetailView: View {
                             succeededMissons += 1
                         } label: {
                             Text("미션 완료하기")
-                                .fontWeight(.regular)
-                                .frame(width: 150, height: 50)
-                                .foregroundColor(.white)
-                                .background(Color(hex: 0xFFA800))
-                                .cornerRadius(10)
-                                .shadow(radius: 2, x: 0, y: 2)
-                        }/*.padding(.bottom,5)*/
+                                .modifier(ButtonOrangeModify())
+                        }
                         .alert(isPresented: $showingAlert) {
                             Alert(
                                 title: Text("미션 완료"),
@@ -116,20 +99,14 @@ struct MyMissionDetailView: View {
                                     giveupMission()
                                 }
                             )// Alert
-                        }
-                          // Alert
-                            
-                        //미션포기하기 알림창
+                        }// Alert
+   
                             Button {
                                 showingGiveUpAlert = true
                             } label: {
                                 Text("미션 포기하기")
-                                    .fontWeight(.regular)
-                                    .frame(width:150, height: 50)
-                                    .foregroundColor(.black)
-                                    .background(Color.white)
-                                    .cornerRadius(10)
-                                    .shadow(radius:2, x:0, y:2)
+                                    .modifier(ButtonModify())
+                                
                             } .alert(isPresented: $showingGiveUpAlert) {
                                 Alert(
                                     title: Text("미션 포기"),
@@ -138,12 +115,11 @@ struct MyMissionDetailView: View {
                                         giveupMission()
                                     }
                                 )// Alert
-                            }
+                            }// Alert
                         
                         }//HStack -Button
                     .padding(.top,39)
-                            
-//
+
     }//VStack?
  }   //카메라 로직부분
             .actionSheet(isPresented: $showActionSheet, content:{ () -> ActionSheet in
@@ -163,8 +139,7 @@ struct MyMissionDetailView: View {
                 }
         }.onAppear{self.image = Image(self.missions.image) }
             
-            
-        }//MyMissionDetailView
+    }
     //네비게이션 패스
     func giveupMission() {
         guard !path.isEmpty else {
