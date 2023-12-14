@@ -14,6 +14,6 @@ struct TheaterView: View {
     }
 }
 
-#Preview {
-    TheaterView()
-}
+//#Preview {
+//    TheaterView()
+//}
