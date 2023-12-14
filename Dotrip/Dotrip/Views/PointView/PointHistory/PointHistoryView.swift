@@ -38,8 +38,10 @@ struct PointHistoryView: View {
                             .underline()
                     } else {
                         Text("사용내역")
+                            .foregroundStyle(.gray)
                     }
                 })
+                
                 Button(action: { tap1 = false}, label: {
                     if !tap1 {
                         Text("획득내역")
@@ -47,6 +49,7 @@ struct PointHistoryView: View {
                             .underline()
                     } else {
                         Text("획득내역")
+                            .foregroundStyle(.gray)
                     }
                 })
             }
@@ -61,7 +64,10 @@ struct PointHistoryView: View {
                     
 //                    Button(action: { }, label: { Label("기간 설정", systemImage: "arrowtriangle.down.fill") })
                     Text("기간 설정")
+                        .font(.system(size: 14))
                     Image(systemName: "arrowtriangle.down.fill")
+                        .resizable()
+                        .frame(width: 12, height: 10)
                 }
                 Rectangle()
                     .fill(Color(hex: 0xDADADA))
@@ -82,6 +88,6 @@ struct PointHistoryView: View {
     }
 }
 
-//#Preview {
-//    PointHistoryView()
-//}
+#Preview {
+    PointHistoryView()
+}
