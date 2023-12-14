@@ -8,12 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2000A1382B2B4F1700055F09 /* ViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2000A1372B2B4F1700055F09 /* ViewModifier.swift */; };
-		2000A1552B2B6E6D00055F09 /* 경복궁사진2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2000A14F2B2B6E6D00055F09 /* 경복궁사진2.jpeg */; };
-		2000A1562B2B6E6D00055F09 /* 경복궁사진1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2000A1502B2B6E6D00055F09 /* 경복궁사진1.jpeg */; };
-		2000A1572B2B6E6D00055F09 /* 청계천이미지.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2000A1512B2B6E6D00055F09 /* 청계천이미지.jpeg */; };
-		2000A1582B2B6E6D00055F09 /* 광화문광장이미지.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2000A1522B2B6E6D00055F09 /* 광화문광장이미지.jpeg */; };
-		2000A1592B2B6E6D00055F09 /* 관악이미지.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2000A1532B2B6E6D00055F09 /* 관악이미지.jpg */; };
-		2000A15A2B2B6E6D00055F09 /* 난타이미지.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2000A1542B2B6E6D00055F09 /* 난타이미지.jpeg */; };
 		207AC6EA2B26C5C800D3A340 /* MyMissionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207AC6E92B26C5C800D3A340 /* MyMissionListView.swift */; };
 		20A8DA3B2B26C69B00E306D2 /* MyMissionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8DA3A2B26C69B00E306D2 /* MyMissionList.swift */; };
 		20A8DA3F2B26C74A00E306D2 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8DA3E2B26C74900E306D2 /* Mission.swift */; };
@@ -71,12 +65,6 @@
 
 /* Begin PBXFileReference section */
 		2000A1372B2B4F1700055F09 /* ViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifier.swift; sourceTree = "<group>"; };
-		2000A14F2B2B6E6D00055F09 /* 경복궁사진2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "경복궁사진2.jpeg"; path = "../../../../../../Desktop/경복궁사진2.jpeg"; sourceTree = "<group>"; };
-		2000A1502B2B6E6D00055F09 /* 경복궁사진1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "경복궁사진1.jpeg"; path = "../../../../../../Desktop/경복궁사진1.jpeg"; sourceTree = "<group>"; };
-		2000A1512B2B6E6D00055F09 /* 청계천이미지.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "청계천이미지.jpeg"; path = "../../../../../../Desktop/청계천이미지.jpeg"; sourceTree = "<group>"; };
-		2000A1522B2B6E6D00055F09 /* 광화문광장이미지.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "광화문광장이미지.jpeg"; path = "../../../../../../Desktop/광화문광장이미지.jpeg"; sourceTree = "<group>"; };
-		2000A1532B2B6E6D00055F09 /* 관악이미지.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "관악이미지.jpg"; path = "../../../../../../Desktop/관악이미지.jpg"; sourceTree = "<group>"; };
-		2000A1542B2B6E6D00055F09 /* 난타이미지.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "난타이미지.jpeg"; path = "../../../../../../Desktop/난타이미지.jpeg"; sourceTree = "<group>"; };
 		207AC6E92B26C5C800D3A340 /* MyMissionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMissionListView.swift; sourceTree = "<group>"; };
 		20A8DA3A2B26C69B00E306D2 /* MyMissionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMissionList.swift; sourceTree = "<group>"; };
 		20A8DA3E2B26C74900E306D2 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
@@ -144,19 +132,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2000A14E2B2B6E5600055F09 /* images */ = {
-			isa = PBXGroup;
-			children = (
-				2000A1502B2B6E6D00055F09 /* 경복궁사진1.jpeg */,
-				2000A14F2B2B6E6D00055F09 /* 경복궁사진2.jpeg */,
-				2000A1532B2B6E6D00055F09 /* 관악이미지.jpg */,
-				2000A1522B2B6E6D00055F09 /* 광화문광장이미지.jpeg */,
-				2000A1542B2B6E6D00055F09 /* 난타이미지.jpeg */,
-				2000A1512B2B6E6D00055F09 /* 청계천이미지.jpeg */,
-			);
-			path = images;
-			sourceTree = "<group>";
-		};
 		207AC6E82B26C59B00D3A340 /* MyMission */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,7 +304,6 @@
 				F77E70242B21A90500B2CD37 /* ContentView.swift */,
 				F77E70262B21A90600B2CD37 /* Assets.xcassets */,
 				970E70EA2B26FBB90005FCFE /* API_KEY.plist */,
-				2000A14E2B2B6E5600055F09 /* images */,
 				F77E70282B21A90600B2CD37 /* Preview Content */,
 			);
 			path = Dotrip;
@@ -459,15 +433,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F77E702A2B21A90600B2CD37 /* Preview Assets.xcassets in Resources */,
-				2000A1582B2B6E6D00055F09 /* 광화문광장이미지.jpeg in Resources */,
 				970E70EB2B26FBB90005FCFE /* API_KEY.plist in Resources */,
-				2000A15A2B2B6E6D00055F09 /* 난타이미지.jpeg in Resources */,
-				2000A1562B2B6E6D00055F09 /* 경복궁사진1.jpeg in Resources */,
 				20A8DA4E2B26CC7800E306D2 /* missionData.json in Resources */,
 				F77E70272B21A90600B2CD37 /* Assets.xcassets in Resources */,
-				2000A1572B2B6E6D00055F09 /* 청계천이미지.jpeg in Resources */,
-				2000A1552B2B6E6D00055F09 /* 경복궁사진2.jpeg in Resources */,
-				2000A1592B2B6E6D00055F09 /* 관악이미지.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
