@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2000A1382B2B4F1700055F09 /* ViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2000A1372B2B4F1700055F09 /* ViewModifier.swift */; };
 		207AC6EA2B26C5C800D3A340 /* MyMissionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207AC6E92B26C5C800D3A340 /* MyMissionListView.swift */; };
 		20A8DA3B2B26C69B00E306D2 /* MyMissionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8DA3A2B26C69B00E306D2 /* MyMissionList.swift */; };
 		20A8DA3F2B26C74A00E306D2 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8DA3E2B26C74900E306D2 /* Mission.swift */; };
@@ -63,6 +64,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2000A1372B2B4F1700055F09 /* ViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifier.swift; sourceTree = "<group>"; };
 		207AC6E92B26C5C800D3A340 /* MyMissionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMissionListView.swift; sourceTree = "<group>"; };
 		20A8DA3A2B26C69B00E306D2 /* MyMissionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMissionList.swift; sourceTree = "<group>"; };
 		20A8DA3E2B26C74900E306D2 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				20A8DA462B26CAAC00E306D2 /* Camera */,
 				20A8DA392B26C65700E306D2 /* MissionData */,
 				207AC6E92B26C5C800D3A340 /* MyMissionListView.swift */,
+				2000A1372B2B4F1700055F09 /* ViewModifier.swift */,
 				20A8DA442B26CA8300E306D2 /* MyMissionDetailView.swift */,
 				20A8DA3A2B26C69B00E306D2 /* MyMissionList.swift */,
 			);
@@ -484,6 +487,7 @@
 				20A8DA452B26CA8300E306D2 /* MyMissionDetailView.swift in Sources */,
 				20A8DA3B2B26C69B00E306D2 /* MyMissionList.swift in Sources */,
 				F73E3C332B294D9E007005BF /* PointExchangeView.swift in Sources */,
+				2000A1382B2B4F1700055F09 /* ViewModifier.swift in Sources */,
 				20A8DA412B26C7EC00E306D2 /* MissionStore.swift in Sources */,
 				970E70F22B26FBEC0005FCFE /* TourKoreaAPI.swift in Sources */,
 				F73E3C462B297521007005BF /* ConvenienceStoreView.swift in Sources */,

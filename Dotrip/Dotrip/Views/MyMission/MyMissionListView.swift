@@ -71,17 +71,6 @@ struct MyMissionListView: View {
     }
 }
 
-//진행중인 미션 갯수 디자인
-struct CountModify: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .frame(width: 350, height: 30)
-            .background(Color(hex: 0xEFECEC))
-            .cornerRadius(20)
-            .offset(x:0, y:50)
-    }
-}
-
 #Preview {
     MyMissionListView()
 }
