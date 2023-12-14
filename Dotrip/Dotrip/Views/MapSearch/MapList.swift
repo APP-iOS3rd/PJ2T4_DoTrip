@@ -50,6 +50,7 @@ struct MapList : View {
                             }
                         }
                     }
+                    .listStyle(.plain)
                     
                 } else {
                     HStack {

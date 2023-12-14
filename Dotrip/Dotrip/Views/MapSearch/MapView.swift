@@ -185,6 +185,7 @@ struct ModalView: View {
     @ObservedObject var missionStore = MissionStore(missions: missionData)
     
     @State var mission : Mission?
+    @State var color : Color = .black
     
     var body: some View {
         NavigationStack {
@@ -195,7 +196,7 @@ struct ModalView: View {
                 }, label: {
                     Text("미션")
                         .font(.title3)
-                        .foregroundStyle(.black)
+                        .foregroundStyle(listState ? .orange : .black)
                 })
                 Spacer()
                 Divider()
@@ -206,7 +207,7 @@ struct ModalView: View {
                 }, label: {
                     Text("행사")
                         .font(.title3)
-                        .foregroundStyle(.black)
+                        .foregroundStyle(listState ? .black : .orange)
                 })
                 Spacer()
             }
