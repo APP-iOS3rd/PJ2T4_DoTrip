@@ -379,10 +379,11 @@ func showCities() {
     showCity = true
 }
     func selectMax() -> Date {
-        if end != Date.now {
+        if dateFormatter.string(from: end) != dateFormatter.string(from: Date.now) {
             return end
-        } else {
-            return Calendar.current.date(byAdding: .year, value: 100, to: Date.now)!
+        }
+        else {
+            return Calendar.current.date(byAdding: .year, value: 10, to: Date.now)!
         }
     }
     func selectMin() -> Date {
