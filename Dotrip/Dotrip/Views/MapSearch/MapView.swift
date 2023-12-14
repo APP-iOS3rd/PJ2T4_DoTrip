@@ -1,10 +1,4 @@
-
-//
-//  ContentView.swift
-//  MapTest
-//
-//  Created by jonghyun baik on 12/10/23.
-//
+//MapView
 
 import SwiftUI
 import MapKit
@@ -41,6 +35,8 @@ class NavigationManager: ObservableObject {
 
 struct MapView: View {
     
+    var params: [String]
+    
     @State var listState = true
     @State var network = TourKoreaAPI.shared
     
@@ -67,77 +63,107 @@ struct MapView: View {
     
     @State var cont : Item?
     
+    @State private var backState = false
+    
     var body: some View {
-        NavigationStack {
-            ZStack {
-                Map(coordinateRegion: $region,
-                    annotationItems: network.posts,
-                    annotationContent: { location in
-                    MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: Double(location.mapy)!, longitude: Double(location.mapx)!) ) {
-                        if location == selectedPlace {
-                            CustomMapMarkerView(pinColor: .red)
-                                .onTapGesture {
-                                    if showSheet == false {
-                                        selectedPlace = dummyPlace
+        ZStack {
+            NavigationStack {
+                ZStack {
+                    Map(coordinateRegion: $region,
+                        annotationItems: network.posts,
+                        annotationContent: { location in
+                        MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: Double(location.mapy)!, longitude: Double(location.mapx)!) ) {
+                            if location == selectedPlace {
+                                CustomMapMarkerView(pinColor: .red)
+                                    .onTapGesture {
+                                        if showSheet == false {
+                                            selectedPlace = dummyPlace
+                                        }
+                                        showSheet.toggle()
+                                        detents = .medium
                                     }
-                                    showSheet.toggle()
-                                    detents = .medium
-                                }
-                        } else if showSheet == false {
-                            CustomMapMarkerView(pinColor: .blue)
-                                .onTapGesture {
-                                    
-                                    //여기 추가
-                                    modalManager.stackPath = .MapMissionDetailView
-                                    if showSheet == false {
-                                        selectedPlace = location
+                            } else if showSheet == false {
+                                CustomMapMarkerView(pinColor: .blue)
+                                    .onTapGesture {
+                                        
+                                        //여기 추가
+                                        modalManager.stackPath = .MapMissionDetailView
+                                        if showSheet == false {
+                                            selectedPlace = location
+                                        }
+                                        showSheet.toggle()
+                                        detents = .medium
                                     }
-                                    showSheet.toggle()
-                                    detents = .medium
-                                }
+                            }
                         }
+                    })
+                    .sheet(isPresented: $showSheet) {
+                        ModalView(detents: $detents, listState: $listState, network: $network, navigationManager: navigationManager, modalManager: modalManager, contID: $contID, contyID: $contyID, cont: $cont)
+                        // 높이 선택 값 바인딩
+                            .presentationDetents([.medium, .large], selection: $detents)
                     }
-                })
-                .sheet(isPresented: $showSheet) {
-                    ModalView(detents: $detents, listState: $listState, network: $network, navigationManager: navigationManager, modalManager: modalManager, contID: $contID, contyID: $contyID, cont: $cont)
-                    // 높이 선택 값 바인딩
-                        .presentationDetents([.medium, .large], selection: $detents)
+                    NavigationLink(
+                        destination: EventDetailView2(data: cont ?? dummyPlace, contentId: contID, contentTypeId: contyID),
+                        tag: .EventDetailView,
+                        selection: $navigationManager.stackPath
+                    ) {
+                        EmptyView()
+                    }
+                    .hidden()
                 }
-                NavigationLink(
-                    destination: EventDetailView(data: cont ?? dummyPlace, contentId: contID, contentTypeId: contyID),
-                    tag: .EventDetailView,
-                    selection: $navigationManager.stackPath
-                ) {
-                    EmptyView()
+                .ignoresSafeArea()
+                .onAppear {
+                    showSheet = true
+                    
+                    //위치 변경
+                    //                region = MKCoordinateRegion(
+                    //                    center: CLLocationCoordinate2D(latitude: Double(network.posts[0].mapy)!, longitude: Double(network.posts[0].mapx)!),
+                    //                    span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
                 }
-                .hidden()
+                .onChange(of: showSheet) { item in
+                    if (showSheet == false) {
+                        selectedPlace = dummyPlace
+                    }
+                }
+                .onChange(of: network.posts.count) { item in
+                    if network.posts.count > 0 {
+                        region = MKCoordinateRegion(
+                            center: CLLocationCoordinate2D(latitude: Double(network.posts[0].mapy)!, longitude: Double(network.posts[0].mapx)!),
+                            span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+                    }
+                }
+                .onChange(of: navigationManager.stackPath) { item in
+                    showSheet = false
+                    backState.toggle()
+                }
             }
+            .environmentObject(navigationManager)
+            .navigationBarHidden(backState)
             .ignoresSafeArea()
-            .onAppear {
-                showSheet = true
-                network.tourData(params: ["20231201", "20231231", "39", "", "제주"])
-                
-                //위치 변경
-//                region = MKCoordinateRegion(
-//                    center: CLLocationCoordinate2D(latitude: Double(network.posts[0].mapy)!, longitude: Double(network.posts[0].mapx)!),
-//                    span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+            
+            if network.isLoading {
+                LoadingView()
             }
         }
-        .environmentObject(navigationManager)
+        .onAppear() {
+            network.feachData(params: params)
+            
+        }
+        .ignoresSafeArea()
+        
+        //    @ViewBuilder
+        //    func destinationView() -> some View {
+        //        switch navigationManager.stackPath {
+        //        case .MapDetailView:
+        //            MapDetailView(contentId: "", contentTypeId: "", cont: $cont)
+        //        case .MapMissionDetailView:
+        //            MapDetailView(contentId: "", contentTypeId: "")
+        //        // Add more cases for additional navigation paths
+        //        default:
+        //            EmptyView()
+        //        }
+        //    }
     }
-    
-//    @ViewBuilder
-//    func destinationView() -> some View {
-//        switch navigationManager.stackPath {
-//        case .MapDetailView:
-//            MapDetailView(contentId: "", contentTypeId: "", cont: $cont)
-//        case .MapMissionDetailView:
-//            MapDetailView(contentId: "", contentTypeId: "")
-//        // Add more cases for additional navigation paths
-//        default:
-//            EmptyView()
-//        }
-//    }
 }
 
 
@@ -254,5 +280,5 @@ struct CustomMapMarkerView : View {
 }
 
 #Preview{
-    MapView()
+    MapView(params: ["20231201", "20231231", "39", "", "제주"])
 }

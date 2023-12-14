@@ -1,4 +1,4 @@
-
+//mapDetailView
 
 import SwiftUI
 
@@ -38,9 +38,6 @@ struct MapDetailView: View {
                 }
             }
             
-            if eventInfo.isLoading {
-                LoadingView()
-            }
             VStack{
                 Spacer()
                 Button {
