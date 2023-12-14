@@ -21,8 +21,6 @@ class EventInfoAPI: ObservableObject {
     }
     
     func getInfoData(contentID: String, contentType: String) {
-        
-        self.isLoading = true
 
         guard let apikey = apikey else { return }
         
@@ -55,11 +53,9 @@ class EventInfoAPI: ObservableObject {
             
             do {
                 let json = try JSONDecoder().decode(EventInfo.self, from: data)
-                print(json)
                 
                 DispatchQueue.main.async {
                     self.infoPosts = json.response.body.items.item
-                    self.getIntroData(contentID: contentID, contentType: contentType)
                 }
                 
             } catch let error {
@@ -104,6 +100,7 @@ class EventInfoAPI: ObservableObject {
             
             do {
                 let json = try JSONDecoder().decode(IntroData.self, from: data)
+                print(json)
 
                 DispatchQueue.main.async {
                     self.introPosts = json.response.body.items.item

@@ -35,7 +35,7 @@ struct SearchView: View {
                 }
                 List {
                     ForEach(network.posts, id: \.self) { data in
-                        NavigationLink(destination: EventDetailView(data: data, contentId: data.contentid, contentTypeId: data.contenttypeid)) {
+                        NavigationLink(destination: EventDetailView2(data: data, contentId: data.contentid, contentTypeId: data.contenttypeid)) {
                             
                             HStack {
                                 AsyncImage(url: URL(string: data.firstimage ?? "")) { img in
