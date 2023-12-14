@@ -21,15 +21,16 @@ struct EventDetailView2: View {
     @State private var mission: String?
     @State private var isMyMissionlistViewActive = false
     
+    let eventMissionData = EventMission()
+    
     let data: Item
-    
-    
     let contentId: String
     let contentTypeId: String
     
     var body: some View {
         NavigationView {
             ZStack {
+                
                 VStack(alignment: .leading) {
                     Text(data.title)
                         .font(.system(size: 20))
@@ -45,7 +46,6 @@ struct EventDetailView2: View {
                         VStack(alignment: .leading, spacing: 10) {
                             if !eventInfo.isLoading {
                                 ScrollView {
-                                    
                                     ForEach(eventInfo.infoPosts, id: \.self) { result in
                                         VStack{
                                             HStack{
@@ -107,7 +107,7 @@ struct EventDetailView2: View {
                                         .collapseButton(TextSet(text: "접기", font: .system(size: 14), color: .blue))
                                         .expandAnimation(.easeOut)
                                         .padding(.horizontal, 11)
-                                       
+                                    
                                     
                                     
                                     VStack(alignment: .leading) {
@@ -118,14 +118,42 @@ struct EventDetailView2: View {
                                         .fontWeight(.bold)
                                         .padding()
                                         
-                                        Text("미션 내용이 들어갈 자리입니다.")
-                                            .font(.system(size: 16))
-                                            .padding(1)
-                                            .padding(.leading, 10)
+//                                                                    contentid: "2778088" 관악
+//                                                                    contentid: "3035607" 광화문 광장
+//                                                                    contentid: "406745" 난타
+                                        
+                                        if eventInfo.introPosts[0].contentid == "2785797" {
+                                            Text(eventMissionData.missionData[0].description)
+                                                .font(.system(size: 16))
+                                                .padding(1)
+                                                .padding(.leading, 10)
+                                        }
+                                        
+                                        if eventInfo.introPosts[0].contentid == "2778088" {
+                                            Text(eventMissionData.missionData[1].description)
+                                                .font(.system(size: 16))
+                                                .padding(1)
+                                                .padding(.leading, 10)
+                                        }
+                                        
+                                        if eventInfo.introPosts[0].contentid == "3035607"  {
+                                            Text(eventMissionData.missionData[2].description)
+                                                .font(.system(size: 16))
+                                                .padding(1)
+                                                .padding(.leading, 10)
+                                        }
+                                        
+                                        if eventInfo.introPosts[0].contentid == "406745"  {
+                                            Text(eventMissionData.missionData[3].description)
+                                                .font(.system(size: 16))
+                                                .padding(1)
+                                                .padding(.leading, 10)
+                                        }
                                         
                                         
                                         Button("미션 하러 가기") {
                                             isMyMissionlistViewActive = true
+                                            //                                            print(contentTypeId)
                                         }
                                         .padding()
                                         .foregroundColor(.white)
