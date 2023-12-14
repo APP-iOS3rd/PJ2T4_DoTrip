@@ -95,6 +95,8 @@ struct BuyingButton: View {
             // 구매확인 알림
             .alert("해당 상품을 구매하시겠습니까?",isPresented: $showingAlert) {
                 
+                Button("취소", role: .cancel) {
+                }
                 Button("확인") {
                     buttonText = "구매완료"
                     buttonColor = Color(hex: 0xDADADA)
@@ -102,8 +104,7 @@ struct BuyingButton: View {
                     isButtonDisabled = true
                     showPointsText = false // "450P 차감" 텍스트 숨김
                 }
-                Button("취소") {
-                }
+                
             }
         }
     }

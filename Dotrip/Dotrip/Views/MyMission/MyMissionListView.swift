@@ -24,6 +24,12 @@ struct MyMissionListView: View {
     var body: some View {
         NavigationStack(path: $stackPath){
             VStack {
+                Text("내미션")
+                    .frame(width:350, alignment: .leading)
+                    .font(.title)
+                    .bold()
+                    .padding(.top,20)
+                    .padding(.bottom, -20)
                 HStack{
                     Text("진행중인 미션이")
                     Text("\(missioncnt)")
@@ -59,8 +65,6 @@ struct MyMissionListView: View {
                         .offset(x:0, y: -250)
                     SucceededMisson()
                         .offset(x:-10, y: -170)
-                    
-                    
                 }
             }
         }
