@@ -1,4 +1,3 @@
-
 //
 //  File.swift
 //  Dotrip
@@ -34,7 +33,7 @@ struct EventDetailView2: View {
                 VStack(alignment: .leading) {
                     Text(data.title)
                         .font(.system(size: 20))
-                        .fontWeight(.bold)
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     
                     AsyncImage(url: URL(string: data.firstimage ?? "")) { img in
                         img.image?.resizable()
