@@ -6,6 +6,7 @@
 </aside>
 
 ## 개요
+- 팀: LAB4
 - 팀장: 이현호(2HYUNHO)
 - 팀원: 김강혁(TakeMos), 백종현(jonghyunBaik), 신희선(shieun8), 유지인(youjiin0325), 김혜란(hyeran1122)
 
