@@ -16,11 +16,11 @@ struct PointDetail: View {
                 .padding(.bottom, -7)
             ExtractedView(date: "2023-12-11", store: "도서문화상품권 10,000원", point: "100 포인트 적립", usePoint: "-1000P")
                 .padding(.bottom, -7)
-            ExtractedView(date: "2023-12-01", store: "롯데리아 5,000원 상품권", point: "50 포인트 적립", usePoint: "-500P")
+            ExtractedView(date: "2023-12-16", store: "롯데리아 5,000원 상품권", point: "50 포인트 적립", usePoint: "-500P")
                 .padding(.bottom, -7)
-            ExtractedView(date: "2023-12-05", store: "투썸플레스 아메리카노R", point: "40 포인트 적립", usePoint: "-450P")
+            ExtractedView(date: "2023-12-22", store: "투썸플레스 아메리카노R", point: "40 포인트 적립", usePoint: "-450P")
                 .padding(.bottom, -7)
-            ExtractedView(date: "2023-12-11", store: "도서문화상품권 10,000원", point: "100 포인트 적립", usePoint: "-1000P")
+            ExtractedView(date: "2023-12-31", store: "도서문화상품권 10,000원", point: "100 포인트 적립", usePoint: "-1000P")
                 .padding(.bottom, -7)
         }
     }
