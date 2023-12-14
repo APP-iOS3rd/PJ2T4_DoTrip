@@ -36,7 +36,7 @@ struct EventDetailView: View {
             }
             
             if eventInfo.isLoading {
-                LoadingView2()
+                LoadingView()
             }
         }
         .padding(20)

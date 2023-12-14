@@ -25,7 +25,8 @@
 		970E70F72B26FC090005FCFE /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970E70F62B26FC090005FCFE /* MainPageView.swift */; };
 		970E70FB2B26FC1B0005FCFE /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970E70F92B26FC1B0005FCFE /* EventDetailView.swift */; };
 		970E70FC2B26FC1B0005FCFE /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970E70FA2B26FC1B0005FCFE /* SearchView.swift */; };
-		9741EE662B2A940100D2AD1C /* LoadingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9741EE652B2A940100D2AD1C /* LoadingView2.swift */; };
+		9741EE662B2A940100D2AD1C /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9741EE652B2A940100D2AD1C /* LoadingView.swift */; };
+		9741EE682B2A99A300D2AD1C /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9741EE672B2A99A300D2AD1C /* ColorExtension.swift */; };
 		977C89BB2B2933F000E96816 /* TourData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977C89BA2B2933F000E96816 /* TourData.swift */; };
 		977C89BE2B29340000E96816 /* RemoveHTMLTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977C89BD2B29340000E96816 /* RemoveHTMLTag.swift */; };
 		F71B53B02B2591F0001AA4EC /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53AF2B2591F0001AA4EC /* MyPageView.swift */; };
@@ -75,7 +76,8 @@
 		970E70F62B26FC090005FCFE /* MainPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
 		970E70F92B26FC1B0005FCFE /* EventDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
 		970E70FA2B26FC1B0005FCFE /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
-		9741EE652B2A940100D2AD1C /* LoadingView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView2.swift; sourceTree = "<group>"; };
+		9741EE652B2A940100D2AD1C /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		9741EE672B2A99A300D2AD1C /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		977C89BA2B2933F000E96816 /* TourData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourData.swift; sourceTree = "<group>"; };
 		977C89BD2B29340000E96816 /* RemoveHTMLTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveHTMLTag.swift; sourceTree = "<group>"; };
 		F71B53AF2B2591F0001AA4EC /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 		977C89BC2B2933F600E96816 /* Extention */ = {
 			isa = PBXGroup;
 			children = (
+				9741EE672B2A99A300D2AD1C /* ColorExtension.swift */,
 				977C89BD2B29340000E96816 /* RemoveHTMLTag.swift */,
 			);
 			path = Extention;
@@ -312,7 +315,7 @@
 				207AC6E82B26C59B00D3A340 /* MyMission */,
 				F73E3C312B294D71007005BF /* PointView */,
 				F71B53B32B259C13001AA4EC /* MyPage */,
-				9741EE652B2A940100D2AD1C /* LoadingView2.swift */,
+				9741EE652B2A940100D2AD1C /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -420,7 +423,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9741EE662B2A940100D2AD1C /* LoadingView2.swift in Sources */,
+				9741EE662B2A940100D2AD1C /* LoadingView.swift in Sources */,
 				F73E3C4C2B299B57007005BF /* SBIceAmericanoView.swift in Sources */,
 				20A8DA3F2B26C74A00E306D2 /* Mission.swift in Sources */,
 				970E70F72B26FC090005FCFE /* MainPageView.swift in Sources */,
@@ -451,6 +454,7 @@
 				F73E3C382B2972EC007005BF /* FastFoodView.swift in Sources */,
 				F7ADCE352B2A8560005648FC /* ProductDetailModel.swift in Sources */,
 				970E70FC2B26FC1B0005FCFE /* SearchView.swift in Sources */,
+				9741EE682B2A99A300D2AD1C /* ColorExtension.swift in Sources */,
 				F71B53BD2B25A985001AA4EC /* EmailInquiryView.swift in Sources */,
 				20A8DA452B26CA8300E306D2 /* MyMissionDetailView.swift in Sources */,
 				20A8DA3B2B26C69B00E306D2 /* MyMissionList.swift in Sources */,
