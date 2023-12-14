@@ -36,13 +36,7 @@ struct EventDetailView: View {
             }
             
             if eventInfo.isLoading {
-                ZStack {
-                    Color(.systemBackground)
-                    
-                    ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle(tint: Color(hex: 0xC2BDBD)))
-                        .scaleEffect(3)
-                }
+                LoadingView()
             }
         }
         .padding(20)

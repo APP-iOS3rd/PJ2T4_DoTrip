@@ -42,13 +42,7 @@ struct SearchView: View {
             }
             
             if network.isLoading {
-                ZStack {
-                    Color(.systemBackground)
-                    
-                    ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle(tint: Color(hex: 0xC2BDBD)))
-                        .scaleEffect(3)
-                }
+                LoadingView()
             }
         }
         .onAppear() {
