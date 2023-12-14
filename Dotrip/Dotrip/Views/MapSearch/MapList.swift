@@ -32,8 +32,8 @@ struct MapList : View {
                         Text("개 항목이 있습니다.")
                             .font(.system(size: 13))
                             .padding(.leading, -5)
-
                     }
+                    .padding()
                     List{
                         ForEach(0..<missionStore.missions.count, id:\.self) { item in
                             VStack (alignment: .leading) {

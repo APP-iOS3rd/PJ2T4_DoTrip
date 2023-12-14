@@ -21,7 +21,7 @@ struct PointHistoryView: View {
                 
                 HStack {
                     Text("보유 포인트: ")
-                    Text("20,143P")
+                    Text("20,143 P")
                         .foregroundStyle(Color.pointColor)
                         .bold()
                     Spacer()
