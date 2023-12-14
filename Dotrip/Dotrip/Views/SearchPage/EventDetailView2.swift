@@ -38,7 +38,8 @@ struct EventDetailView2: View {
                     
                     AsyncImage(url: URL(string: data.firstimage ?? "")) { img in
                         img.image?.resizable()
-                        
+                            .cornerRadius(10)
+                            .frame(width: 280, height: 180)
                         
                         // 이부분이 AsyncImage( 안에 들어가야 되는 이유는??
                         // 안들어가면 동작이 안됨
@@ -77,7 +78,7 @@ struct EventDetailView2: View {
                                     
                                     
                                     ExpandableText(text: eventInfo.introPosts[0].infotext.escapingHTML)
-                                        .font(.system(size: 14))
+                                        .font(.system(size: 16))
                                         .foregroundColor(.primary)
                                         .lineLimit(4)
                                         .expandButton(TextSet(text: "더보기", font: .system(size: 14), color: .blue))
