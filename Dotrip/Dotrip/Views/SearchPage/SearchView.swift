@@ -46,7 +46,7 @@ struct SearchView: View {
                     Color(.systemBackground)
                     
                     ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle(tint: .red))
+                        .progressViewStyle(CircularProgressViewStyle(tint: Color(hex: 0xC2BDBD)))
                         .scaleEffect(3)
                 }
             }

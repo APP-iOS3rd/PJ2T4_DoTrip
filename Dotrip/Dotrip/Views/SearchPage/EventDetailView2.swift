@@ -12,7 +12,6 @@ import ExpandableText
 struct EventDetailView2: View {
     
     @StateObject var eventInfo = EventInfoAPI.shared
-    @StateObject var eventIntro = IntroductionAPI.shared
     @StateObject var network = TourKoreaAPI.shared
     @State private var showMoreText = false
     @State private var sampleText: String?
@@ -28,7 +27,7 @@ struct EventDetailView2: View {
             VStack(alignment: .leading) {
                 //                                Text("ContentID = \(contentId)")
                 //                                Text("ContentID = \(contentTypeId)")
-                ForEach(eventInfo.posts, id: \.self) { result in
+                ForEach(eventInfo.infoPosts, id: \.self) { result in
                     
                     HStack{
                         Text("행사 기간 : ")
@@ -105,9 +104,8 @@ struct EventDetailView2: View {
         
         .padding()
         .onAppear() {
-            eventInfo.feachData(contentID: contentId, contentType: contentTypeId)
-            eventIntro.feachData(contentID: contentId, contentType: contentTypeId)
-            if let firstPost = eventIntro.posts.first { sampleText = firstPost.infotext }
+            eventInfo.getInfoData(contentID: contentId, contentType: contentTypeId)
+//            if let firstPost = eventInfo.infoPosts.first { sampleText = firstPost.infotext }
 //            if let network = TourKoreaAPI.shared { sampleImage = network.posts }
         }
         .navigationTitle("행사 정보")
