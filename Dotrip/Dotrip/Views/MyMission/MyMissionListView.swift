@@ -34,7 +34,7 @@ struct MyMissionListView: View {
                 .padding(.bottom,30)
         
                 List{
-                    ForEach(0..<missionStore.missions.count, id:\.self) { item in
+                    ForEach(0..<missioncnt, id:\.self) { item in
                         NavigationLink(value: item) {
                             MyMissionList(mission: $missionStore.missions[item])
                         }.listRowSeparator(.hidden)
@@ -58,7 +58,7 @@ struct MyMissionListView: View {
                         .modifier(CountModify())
                         .offset(x:0, y: -250)
                     SucceededMisson()
-                        .offset(x:0, y: -170)
+                        .offset(x:-10, y: -170)
                     
                     
                 }
