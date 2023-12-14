@@ -1,17 +1,17 @@
 //
-//  SBIceAmericanoView.swift
+//  Gs25View.swift
 //  Dotrip
 //
-//  Created by 이현호 on 12/13/23.
+//  Created by Hee on 12/15/23.
 //
 
 import SwiftUI
 
-struct SBIceAmericanoView: View {
-    @ObservedObject var productDetail: ProductDetailModel
-      
+struct ProductDetailView: View {
+    
+    var productDetail: ProductDetailModel
+    
     var body: some View {
-        
         VStack(alignment: .center) {
             Image(productDetail.imageName)
                 .resizable()
@@ -26,20 +26,20 @@ struct SBIceAmericanoView: View {
                 .frame(maxWidth:.infinity)
                 .padding(.top, 20)
             ScrollView {
-                SBIceAmericanoDetailView(productDetail: productDetail)
+                ProductInfo(productDetail: productDetail)
             }
         }
         .navigationTitle("구매하기")
     }
 }
 
-// 상세정보
-struct SBIceAmericanoDetailView: View {
-    @ObservedObject var productDetail: ProductDetailModel
+struct ProductInfo: View {
+    
+    var productDetail: ProductDetailModel
     
     var body: some View {
         VStack (alignment:.leading, spacing: 20) {
-            Text("아이스 카페 아메리카노 T (\(productDetail.price))")
+            Text(productDetail.title)
                 .font(.headline)
             Text(productDetail.description)
             
@@ -57,7 +57,6 @@ struct SBIceAmericanoDetailView: View {
     }
 }
 
-// 구매하기 버튼
 struct BuyingButton: View {
     @State private var showingAlert = false
     @State private var buttonColor: Color = Color(hex: 0xFFA800)
@@ -102,13 +101,13 @@ struct BuyingButton: View {
                     textColor = .gray
                     isButtonDisabled = true
                     showPointsText = false // "450P 차감" 텍스트 숨김
-                }             
+                }
             }
         }
     }
 }
 
 
-#Preview {
-    SBIceAmericanoView(productDetail: sbIceAmericano)
-}
+//#Preview {
+//    Gs25View()
+//}

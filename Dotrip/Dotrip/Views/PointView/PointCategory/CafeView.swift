@@ -13,20 +13,20 @@ struct CafeView: View {
         NavigationStack {
             List {
                 Section(header: Text("스타벅스")) {
-                    NavigationLink(destination: SBIceAmericanoView(productDetail: sbIceAmericano)) {
+                    NavigationLink(destination: ProductDetailView(productDetail: sbIceAmericano)) {
                         Text("아이스 아메리카노 T")
                     }
-                    NavigationLink(destination: SBIceLatteView()) {
+                    NavigationLink(destination: ProductDetailView(productDetail: sbIceLatte)) {
                         Text("아이스 라떼 T")
                     }
                 }
                 
                 Section(header: Text("투썸플레이스")) {
-                    NavigationLink(destination: TPIceAmericanoView()) {
-                        Text("아이스 아메리카노 R")
+                    NavigationLink(destination: ProductDetailView(productDetail: tsIceAmericano)) {
+                        Text("ICE 아메리카노 R")
                     }
-                    NavigationLink(destination: TPIceLatteView()) {
-                        Text("아이스 라떼 R")
+                    NavigationLink(destination: ProductDetailView(productDetail: tsIceLatte)) {
+                        Text("ICE 카페라떼 R")
                     }
                 }
             }
