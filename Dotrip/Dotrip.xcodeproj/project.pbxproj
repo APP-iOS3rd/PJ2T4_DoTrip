@@ -16,6 +16,7 @@
 		20A8DA4A2B26CB0A00E306D2 /* CameraButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8DA492B26CB0A00E306D2 /* CameraButtonView.swift */; };
 		20A8DA4C2B26CB2700E306D2 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8DA4B2B26CB2700E306D2 /* ImagePicker.swift */; };
 		20A8DA4E2B26CC7800E306D2 /* missionData.json in Resources */ = {isa = PBXBuildFile; fileRef = 20A8DA4D2B26CC7800E306D2 /* missionData.json */; };
+		7819940E2B2B6EB20092108E /* EventMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819940D2B2B6EB20092108E /* EventMission.swift */; };
 		789730902B29333F002998D8 /* EventDetailView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7897308F2B29333F002998D8 /* EventDetailView2.swift */; };
 		78E7AEE32B294C4700933ECD /* ExpandableText in Frameworks */ = {isa = PBXBuildFile; productRef = 78E7AEE22B294C4700933ECD /* ExpandableText */; };
 		970E70EB2B26FBB90005FCFE /* API_KEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = 970E70EA2B26FBB90005FCFE /* API_KEY.plist */; };
@@ -72,6 +73,7 @@
 		20A8DA492B26CB0A00E306D2 /* CameraButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraButtonView.swift; sourceTree = "<group>"; };
 		20A8DA4B2B26CB2700E306D2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		20A8DA4D2B26CC7800E306D2 /* missionData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = missionData.json; sourceTree = "<group>"; };
+		7819940D2B2B6EB20092108E /* EventMission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMission.swift; sourceTree = "<group>"; };
 		7897308F2B29333F002998D8 /* EventDetailView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView2.swift; sourceTree = "<group>"; };
 		970E70EA2B26FBB90005FCFE /* API_KEY.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = API_KEY.plist; sourceTree = "<group>"; };
 		970E70ED2B26FBEC0005FCFE /* EventInfoAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInfoAPI.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				20A8DA402B26C7EC00E306D2 /* MissionStore.swift */,
 				20A8DA422B26C81900E306D2 /* MissionDataLoad.swift */,
 				20A8DA4D2B26CC7800E306D2 /* missionData.json */,
+				7819940D2B2B6EB20092108E /* EventMission.swift */,
 			);
 			path = MissionData;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				F71B53BB2B25A961001AA4EC /* QnAView.swift in Sources */,
 				F73E3C4E2B299B68007005BF /* TPIceAmericanoView.swift in Sources */,
 				F71B53C12B26C559001AA4EC /* ImagePicker2.swift in Sources */,
+				7819940E2B2B6EB20092108E /* EventMission.swift in Sources */,
 				F77E70252B21A90500B2CD37 /* ContentView.swift in Sources */,
 				F73E3C3C2B297309007005BF /* LeisureView.swift in Sources */,
 				978844402B2AEB3800D082C2 /* PointAcqView.swift in Sources */,
