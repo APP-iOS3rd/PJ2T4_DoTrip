@@ -22,10 +22,6 @@ struct MainPageView: View {
                 }
             }
         }
-        .tabItem {
-            Image(systemName: "house")
-            Text("홈")
-        }
     }
 }
 

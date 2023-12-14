@@ -11,6 +11,10 @@ struct ContentView: View {
     var body: some View {
         TabView {
             MainPageView()
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("홈")
+                }
             MyMissionListView()
                 .tabItem {
                     Image(systemName: "flag.checkered")
