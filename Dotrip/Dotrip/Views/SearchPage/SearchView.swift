@@ -22,7 +22,7 @@ struct SearchView: View {
                 Text("총 \(network.totalCount)개의 데이터")
                 List {
                     ForEach(network.posts, id: \.self) { data in
-                        NavigationLink(destination: EventDetailView2(contentId: data.contentid, contentTypeId: data.contenttypeid)) {
+                        NavigationLink(destination: EventDetailView(data: data, contentId: data.contentid, contentTypeId: data.contenttypeid)) {
                             
                             HStack {
                                 AsyncImage(url: URL(string: data.firstimage ?? "")) { img in

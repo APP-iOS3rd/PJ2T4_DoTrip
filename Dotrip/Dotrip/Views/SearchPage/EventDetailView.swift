@@ -11,12 +11,22 @@ struct EventDetailView: View {
     
     @StateObject var eventInfo = EventInfoAPI.shared
 
+    let data: Item
     let contentId: String
     let contentTypeId: String
+    
+    var foreach = [String]()
     
     var body: some View {
         ZStack {
             VStack {
+                Text(data.title)
+                Text(data.addr1)
+                Text(data.addr2)
+                AsyncImage(url: URL(string: data.firstimage ?? "")) { img in
+                    img.image?.resizable()
+                }
+                
                 Divider()
                 
                 ForEach(eventInfo.infoPosts, id: \.self) { result in
@@ -35,13 +45,14 @@ struct EventDetailView: View {
                 }
             }
             
-            if eventInfo.isLoading {
-                LoadingView()
-            }
+//            if eventInfo.isLoading {
+//                LoadingView()
+//            }
         }
         .padding(20)
         .onAppear() {
             eventInfo.getInfoData(contentID: contentId, contentType: contentTypeId)
+//            eventInfo.getIntroData(contentID: contentId, contentType: contentTypeId)
         }
     }
 }
