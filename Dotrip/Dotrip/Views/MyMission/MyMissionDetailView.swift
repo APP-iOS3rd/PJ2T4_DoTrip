@@ -1,7 +1,6 @@
 //변경후
 //  MyMissionDetailView.swift
 //  Dotrip
-//
 //  Created by 유지인 on 12/11/23.
 //
 
@@ -120,6 +119,7 @@ struct MyMissionDetailView: View {
                         }
                           // Alert
                             
+                        //미션포기하기 알림창
                             Button {
                                 showingGiveUpAlert = true
                             } label: {
