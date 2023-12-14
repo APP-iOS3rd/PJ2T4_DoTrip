@@ -51,7 +51,6 @@ struct SBIceAmericanoDetailView: View {
                     Text(detail)
                         .font(.body) // 다른 폰트 스타일을 원하는대로 변경하세요
                 }
-                
             }
         }
         .padding()
@@ -103,8 +102,7 @@ struct BuyingButton: View {
                     textColor = .gray
                     isButtonDisabled = true
                     showPointsText = false // "450P 차감" 텍스트 숨김
-                }
-                
+                }             
             }
         }
     }

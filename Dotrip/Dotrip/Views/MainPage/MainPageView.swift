@@ -237,6 +237,8 @@ struct MainPageView: View {
     @State private var showStartCalendar: Bool = false
     @State private var showEndCalendar: Bool = false
     @State private var showCity: Bool = false
+    @State private var isActiveSearch: Bool = false
+    @State private var showingAlert: Bool = false
     
     var body: some View {
         NavigationView {
@@ -297,70 +299,85 @@ struct MainPageView: View {
                 .padding(3)
                 
                 HStack{
-                    NavigationLink(destination: SearchView(params: [startDate, endDate, "\(areaCode ?? 1)", selectedBorough ?? ""])) {
-                        HStack{
-                            Image(systemName: "magnifyingglass")
-                            Text("검색")
+                    NavigationLink(
+                        destination: SearchView(params: [startDate, endDate, "\(areaCode ?? 1)", selectedBorough ?? ""]),
+                        isActive: $isActiveSearch) {
+                            Button(action: {
+                                if startDate == "출발일자" || endDate == "복귀일자" || viewSelected == "지역을 선택해주세요" {
+                                    showingAlert = true
+                                } else {
+                                    isActiveSearch = true
+                                }
+                            }) {
+                            HStack{
+                                Image(systemName: "magnifyingglass")
+                                Text("검색")
+                            }
+                            .frame(width:70, height: 30)
+                            .foregroundColor(.black)
+                            .background(.white)
+                            .cornerRadius(10)
+                            .shadow(radius: 3)
                         }
-                        .frame(width:70, height: 30)
+                            .alert("날짜와 지역을 선택해주세요.",isPresented: $showingAlert) {
+                                Button("확인") {
+                                 
+                                }
+                            }
+                    }
+        }
+        .frame(width:350, alignment: .trailing)
+        
+        Text("추천 여행지")
+            .bold()
+            .frame(width: 350, alignment: .leading)
+        
+        ScrollView(.horizontal) {
+            HStack {
+                ForEach(0..<3) {_ in
+                    Text("여행 추천")
                         .foregroundColor(.black)
-                        .background(.white)
-                        .cornerRadius(10)
-                        .shadow(radius: 3)
-                    }
+                        .font(.largeTitle)
+                        .frame(width: 355, height: 200)
+                        .background(Color.yellow)
+                        .cornerRadius(25)
                 }
-                .frame(width:350, alignment: .trailing)
-                
-                Text("추천 여행지")
-                    .bold()
-                    .frame(width: 350, alignment: .leading)
-                
-                ScrollView(.horizontal) {
-                    HStack {
-                        ForEach(0..<3) {_ in
-                            Text("여행 추천")
-                                .foregroundColor(.black)
-                                .font(.largeTitle)
-                                .frame(width: 355, height: 200)
-                                .background(Color.yellow)
-                                .cornerRadius(25)
-                        }
-                    }
-                }
-                
-                Text("미션투어로 혜택 찾기")
-                    .bold()
-                    .frame(width:350, height:30, alignment: .leading)
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(0..<6) {_ in
-                            Text("미션")
-                                .foregroundColor(.black)
-                                .font(.largeTitle)
-                                .frame(width: 120, height: 120)
-                                .background(Color.yellow)
-                                .cornerRadius(25)
-                        }
-                    }
-                }
-                Spacer()
             }
         }
-        .padding()
+        
+        Text("미션투어로 혜택 찾기")
+            .bold()
+            .frame(width:350, height:30, alignment: .leading)
+        
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack {
+                ForEach(0..<6) {_ in
+                    Text("미션")
+                        .foregroundColor(.black)
+                        .font(.largeTitle)
+                        .frame(width: 120, height: 120)
+                        .background(Color.yellow)
+                        .cornerRadius(25)
+                }
+            }
+        }
+        Spacer()
     }
-    func showStartDate() {
-        showStartCalendar = true
-    }
-    
-    func showEndDate() {
-        showEndCalendar = true
-    }
-    
-    func showCities() {
-        showCity = true
-    }
-    
+}
+    .padding()
+}
+func showStartDate() {
+    showStartCalendar = true
+}
+
+func showEndDate() {
+    showEndCalendar = true
+}
+
+func showCities() {
+    showCity = true
+}
+
 }
 
 #Preview {
