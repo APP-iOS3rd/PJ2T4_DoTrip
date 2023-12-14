@@ -41,9 +41,8 @@ struct MyMissionDetailView: View {
                         .font(.system(size: 15))
                         .fontWeight(.regular)
                     
-                }.position(x: 195 , y:60)
+                }.position(x: 185 , y:60)
              
-               
                 if btnStatus == false {
                     VStack{
                         Image("경복궁사진1")
@@ -68,19 +67,18 @@ struct MyMissionDetailView: View {
                 }
                     else {
                         VStack{
+                            CameraButtonView(showActionSheet: $showActionSheet,btnStatus: $btnStatus)
+                               .position(x: 195 , y:-30)
                             image?
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: 330,height: 350)
                                 .cornerRadius(20)
-                                .position(x: 195 , y:-30)
-                                .overlay(
-                                    CameraButtonView(showActionSheet: $showActionSheet,btnStatus: $btnStatus)
-                                        .position(x: 195 , y:-32))
+                                .position(x: 195 , y:-202)
+
                              }
                         }
                   }
-            
             
                 Spacer()
                 VStack{
@@ -110,7 +108,6 @@ struct MyMissionDetailView: View {
                             
                     }
                     
-                    
                     if btnStatus {
                         Button {
                             giveupMission()
@@ -122,12 +119,10 @@ struct MyMissionDetailView: View {
                                 .background(Color.white)
                                 .cornerRadius(10)
                                 .shadow(radius:2, x:0, y:2)
-                        }.position(x: 195 , y:270)
+                        }.position(x: 195 , y:275)
                     }
                 }
 
-            
-            
             
             //카메라 로직부분
             .actionSheet(isPresented: $showActionSheet, content:{ () -> ActionSheet in
@@ -161,4 +156,5 @@ struct MyMissionDetailView: View {
     }
 
 }
+
 
