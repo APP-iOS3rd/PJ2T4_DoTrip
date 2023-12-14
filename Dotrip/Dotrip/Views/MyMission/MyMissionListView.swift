@@ -42,7 +42,7 @@ struct MyMissionListView: View {
                     }
                 }.scrollContentBackground(.hidden)
                     .navigationDestination(for: Int.self) { i in
-                        MyMissionDetailView(missionStore: missionStore, missions: $missionStore.missions[i], path: $stackPath, succeededMissons: $succeededMissons, showActionSheet: false,btnStatus: btnStatus)
+                        MyMissionDetailView(missionStore: missionStore, missions: $missionStore.missions[i], path: $stackPath, succeededMissons: $succeededMissons, showActionSheet: $showActionSheet,btnStatus: btnStatus)
                     
                     }
                    
