@@ -14,9 +14,9 @@ extension View {
             .overlay(
                 Rectangle()
                     .frame(height: 1)
+                    .foregroundStyle(Color(hex: 0xB5B5B5))
                     .padding(.top, 35)
             )
-            .foregroundColor(Color(hex: 0xB5B5B5))
     }
 }
 
@@ -54,11 +54,7 @@ struct EmailInquiryView: View {
                     Spacer()
                 }
                 .padding(.vertical, 10)
-                .overlay(
-                    Rectangle()
-                        .frame(height: 1)
-                        .padding(.top, 35)
-                )
+                .underlineTextField()
                 .foregroundColor(Color(hex: 0xB5B5B5))
                 
             }

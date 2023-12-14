@@ -174,7 +174,7 @@ struct RightContent: View {
             Text("보유 포인트")
                 .foregroundColor(.black)
                 .padding(1)
-            Text("1,203P")
+            Text("1,203 P")
                 .font(.system(size: 30))
                 .bold()
                 .foregroundColor(Color(hex: 0xFFA800))
