@@ -7,18 +7,18 @@
 
 import SwiftUI
 
-struct LoadingView2: View {
+struct LoadingView: View {
     var body: some View {
         ZStack {
             Color(.systemBackground)
             
             ProgressView()
-                .progressViewStyle(CircularProgressViewStyle())
+                .progressViewStyle(CircularProgressViewStyle(tint: .pointColor))
                 .scaleEffect(2)
         }
     }
 }
 
 #Preview {
-    LoadingView2()
+    LoadingView()
 }
