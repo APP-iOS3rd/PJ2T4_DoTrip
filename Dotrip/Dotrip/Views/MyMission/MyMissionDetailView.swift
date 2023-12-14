@@ -25,64 +25,56 @@ struct MyMissionDetailView: View {
     
     
     var body: some View {
-        ZStack(alignment:.center){
+        
+        VStack(alignment:.leading){
            
-            VStack(alignment:.leading, spacing: 0){
-                Spacer()
-                VStack(alignment:.leading, spacing: 0){
-                    Text("\(missions.name)")
-                        .font(.system(size: 20))
-                        .fontWeight(.bold)
-                        .padding(.bottom,7)
-                    Text("미션내용:\(missions.description)")
-                        .font(.system(size: 15))
-                        .fontWeight(.regular)
-                    Text("주소: \(missions.address)")
-                        .font(.system(size: 15))
-                        .fontWeight(.regular)
+                Text("\(missions.name)")
+                    .font(.system(size: 20))
+                    .fontWeight(.bold)
+                Text("미션내용:\(missions.description)")
+                    .font(.system(size: 15))
+                    .fontWeight(.regular)
+                Text("주소: \(missions.address)")
+                    .font(.system(size: 15))
+                    .fontWeight(.regular)
+
+            VStack{
+                if !btnStatus {
+
+                    Image("경복궁사진1")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 330,height: 350)
+                        .cornerRadius(20)
                     
-                }.position(x: 185 , y:60)
-             
-                if btnStatus == false {
-                    VStack{
-                        Image("경복궁사진1")
+                    Button {
+                        btnStatus = true
+                    } label: {
+                        Text("미션 시작하기")
+                            .fontWeight(.regular)
+                            .frame(width:250, height: 50)
+                            .foregroundColor(.black)
+                            .background(Color.white)
+                            .cornerRadius(10)
+                            .shadow(radius:2, x:0, y:2)
+                        
+                    }
+                }else {
+                   
+
+                    ZStack{
+                        image?
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 330,height: 350)
                             .cornerRadius(20)
-                            .padding(.bottom,30)
-                        
-                        Button {
-                            btnStatus = true
-                        } label: {
-                            Text("미션 시작하기")
-                                .fontWeight(.regular)
-                                .frame(width:250, height: 50)
-                                .foregroundColor(.black)
-                                .background(Color.white)
-                                .cornerRadius(10)
-                                .shadow(radius:2, x:0, y:2)
-                        }
-                    }.position(x: 195 , y:15)
-                }
-                    else {
-                        VStack{
-                            CameraButtonView(showActionSheet: $showActionSheet,btnStatus: $btnStatus)
-                               .position(x: 195 , y:-30)
-                            image?
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 330,height: 350)
-                                .cornerRadius(20)
-                                .position(x: 195 , y:-202)
-
-                             }
-                        }
-                  }
-            
-                Spacer()
-                VStack{
-                   
+                            .overlay(
+                                CameraButtonView(showActionSheet:$showActionSheet,btnStatus: $btnStatus)
+                            )
+                    }
+                      }
+                    
+                
                     if btnStatus {
                         Button {
                             showingAlert = true
@@ -103,12 +95,9 @@ struct MyMissionDetailView: View {
                                 dismissButton: .default(Text("확인")) {
                                     giveupMission()
                                 }
-                            )
-                        }.position(x: 195 , y:550)
-                            
-                    }
-                    
-                    if btnStatus {
+                            )// Alert
+                        }// Alert
+                        
                         Button {
                             giveupMission()
                         } label: {
@@ -119,11 +108,12 @@ struct MyMissionDetailView: View {
                                 .background(Color.white)
                                 .cornerRadius(10)
                                 .shadow(radius:2, x:0, y:2)
-                        }.position(x: 195 , y:275)
-                    }
-                }
-
-            
+                        }
+                        
+                    }// if btnStatus
+       
+                
+            }
             //카메라 로직부분
             .actionSheet(isPresented: $showActionSheet, content:{ () -> ActionSheet in
                 ActionSheet(title: Text("이미지 선택하기"),message: Text("사진첩에서 이미지를 고르거나 카메라를 사용해주세요"), buttons: [ActionSheet.Button.default(Text("카메라"), action: {
@@ -136,15 +126,16 @@ struct MyMissionDetailView: View {
                 }),
                 ActionSheet.Button.cancel()
                 ])
-            })
+            })//actionSheet
+            
             if showImagePicker {
                 ImagePicker(isVisible: $showImagePicker,image: $image, sourcetype: sourcetype )
             }
         }
+        
         .onAppear{self.image = Image(self.missions.image) }
-    }
+    }// var body: some View
 
-    
  //네비게이션 패스
     func giveupMission() {
         guard !path.isEmpty else {
@@ -153,8 +144,9 @@ struct MyMissionDetailView: View {
         }
         print("Removing from path: \(path)")
         path.removeLast()
-    }
+    } //네비게이션 패스
+    
 
-}
+}//MyMissionDetailView
 
 
