@@ -13,13 +13,15 @@ class ProductDetailModel: ObservableObject {
     var title: String
     var description: String
     var price: String
-    var details: [String] // 새로운 속성 추가
+    var point: String
+    var details: [String]
 
-    init(imageName: String, title: String, description: String, price: String, details: [String]) {
+    init(imageName: String, title: String, description: String, price: String, point: String, details: [String]) {
         self.imageName = imageName
         self.title = title
         self.description = description
         self.price = price
+        self.point = point
         self.details = details
     }
 }
@@ -28,7 +30,8 @@ let sbIceAmericano = ProductDetailModel(
     imageName: "SBIceAmericano",
     title: "아이스 아메리카노",
     description: "스타벅스의 깔끔한 맛을 자랑하는 커피로, 스타벅스 파트너들이 가장 좋아하는 커피입니다.",
-    price: "4,500원",
+    price: "4,500원", 
+    point: "450P",
     details: [
         "이용안내",
         "- 상기 이미지는 연출된 것으로 실제와 다를 수 있습니다.",

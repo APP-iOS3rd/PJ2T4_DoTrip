@@ -21,7 +21,7 @@ struct SBIceAmericanoView: View {
                 .bold()
                 .padding(2)
             //구매버튼
-            BuyingButton()
+            BuyingButton(productDetail: productDetail)
             Divider()
                 .frame(maxWidth:.infinity)
                 .padding(.top, 20)
@@ -66,7 +66,7 @@ struct BuyingButton: View {
     @State private var buttonText: String = "구매하기"
     @State private var isButtonDisabled = false // 버튼 활성화 & 비활성화
     @State private var showPointsText = true // 포인트 텍스트 활성화 & 비활성화
-    
+    @ObservedObject var productDetail: ProductDetailModel
     
     var body: some View {
         VStack {
@@ -78,7 +78,7 @@ struct BuyingButton: View {
                         .font(.title3)
                         .foregroundColor(textColor)
                     if showPointsText {
-                        Text("450P 차감")
+                        Text("\(productDetail.point) 차감")
                             .font(.caption)
                             .foregroundStyle(.gray)
                             .bold()

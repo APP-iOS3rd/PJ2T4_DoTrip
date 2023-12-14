@@ -13,7 +13,7 @@ struct PointExchangeView: View {
             GeometryReader { geometry in
                 VStack {
                     Text("상점")
-                        .frame(width: geometry.size.width * 0.85, alignment: .leading)
+                        .frame(width:350, alignment: .leading)
                         .font(.title)
                         .bold()
                         .padding(.top,20)
