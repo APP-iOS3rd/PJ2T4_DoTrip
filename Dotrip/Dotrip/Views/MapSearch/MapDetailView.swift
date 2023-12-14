@@ -1,43 +1,67 @@
-//
-//  MapDetailView.swift
-//  Dotrip
-//
-//  Created by jonghyun baik on 12/11/23.
-//
+
 
 import SwiftUI
 
 struct MapDetailView: View {
     
-    var place : Place
+    @StateObject var eventInfo = EventInfoAPI.shared
+
+    let contentId: String
+    let contentTypeId: String
+    
+    @Binding var cont : Item?
+    
+    @ObservedObject var navigationManager: NavigationManager
+    
     var body: some View {
-        VStack {
-            Text(place.title)
-                .bold()
-                .padding(10)
-            Text(place.addr1)
-                .font(.footnote)
-                .padding(10)
-            Rectangle()
-                .frame(width: 300, height: 200)
-                .padding(10)
-            HStack {
+        ZStack {
+            VStack {
+                
+                AsyncImage(url: URL(string: cont?.firstimage ?? "")) { img in
+                            img.image?.resizable()
+                        }
+                        .frame(width: 150, height: 150)
+                        .scaledToFit()
+                        .padding(.bottom, 20)
+                        
+                
+                ForEach(eventInfo.infoPosts, id: \.self) { result in
+                    VStack(alignment: .leading) {
+                        Text(cont?.title ?? "")
+                            .font(.title3)
+                            .fontWeight(.bold)
+                        Text("\(cont?.addr1 ?? "") \(cont?.addr2 ?? "")")
+                            .padding(.bottom, 10)
+                        Text("행사 기간: \(result.eventstartdate)~\(result.eventenddate)")
+                        Text("개장 시간: \(result.playtime.escapingHTML)")
+                    }
+                }
+            }
+            
+            if eventInfo.isLoading {
+                LoadingView()
+            }
+            VStack{
                 Spacer()
                 Button {
+                    navigationManager.stackPath = .EventDetailView
                     
                 } label: {
-                    Text("미션하러 가기")
+                    Text("행사 정보 확인")
                 }
-                .tint(.white)
+                .buttonStyle(BorderedButtonStyle())
                 .background(.blue)
-                Spacer()
-            }
-            .buttonStyle(.bordered)
+                .foregroundStyle(.white)
 
+            }
+        }
+        .padding(5)
+        .onAppear() {
+            eventInfo.getInfoData(contentID: contentId, contentType: contentTypeId)
         }
     }
 }
 
 //#Preview {
-//    MapDetailView()
+//    EventDetailView()
 //}
