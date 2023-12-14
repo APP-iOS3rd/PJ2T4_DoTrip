@@ -128,7 +128,7 @@ struct CityModalView: View {
     
     var body: some View {
         VStack {
-             
+            
             NavigationSplitView {
                 List(cities, id:\.self, selection: $selectedCity) { city in
                     Text(city).tag(city)
@@ -240,10 +240,12 @@ struct MainPageView: View {
     
     var body: some View {
         NavigationView {
-        VStack {
+            VStack {
                 Text("DoTrip")
                     .frame(width:350, alignment: .leading)
-                    .font(.largeTitle)
+                    .font(.title)
+                    .bold()
+                    .padding(.bottom, 20)
                 
                 HStack {
                     Button(action: showStartDate, label: {
@@ -300,11 +302,11 @@ struct MainPageView: View {
                             Image(systemName: "magnifyingglass")
                             Text("검색")
                         }
-                            .frame(width:70, height: 30)
-                            .foregroundColor(.black)
-                            .background(.white)
-                            .cornerRadius(10)
-                            .shadow(radius: 3)
+                        .frame(width:70, height: 30)
+                        .foregroundColor(.black)
+                        .background(.white)
+                        .cornerRadius(10)
+                        .shadow(radius: 3)
                     }
                 }
                 .frame(width:350, alignment: .trailing)
@@ -358,7 +360,7 @@ struct MainPageView: View {
     func showCities() {
         showCity = true
     }
-        
+    
 }
 
 #Preview {
