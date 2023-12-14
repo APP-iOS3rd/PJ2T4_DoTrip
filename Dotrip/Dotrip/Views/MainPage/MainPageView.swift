@@ -13,23 +13,8 @@ var dateFormatter: DateFormatter {
     return formatter
 }
 
-struct Dates {
-    var start = Date.now
-    var end = Date.now
-}
-
-//var dateRange: ClosedRange<Date> {
-//    var min = Date.now
-//    var max = Calendar.current.date(byAdding: .year, value: 10, to: Date.now)!
-//
-//    if (min != MainPageView().selectedStartDate) {
-//        min = MainPageView().selectedStartDate
-//    }
-//    if (MainPageView().selectedEndDate != Date.now) {
-//        max = MainPageView().selectedEndDate
-//    }
-//    return min...max
-//}
+var start = Date.now
+var end = Date.now
 
 struct startDateModalView: View {
     
@@ -37,17 +22,19 @@ struct startDateModalView: View {
     @Binding var startDate: String
     @Binding var changeColor: [Color]
     @State private var selectedStartDate = Date.now
+    @Binding var max: Date
     
     var body: some View {
         
         VStack {
             Text("출발일자")
                 .font(.largeTitle)
-            DatePicker("", selection: $selectedStartDate, in: Date.now..., displayedComponents: .date)
+            DatePicker("", selection: $selectedStartDate, in: Date()...max, displayedComponents: .date)
                 .datePickerStyle(GraphicalDatePickerStyle())
                 .frame(maxHeight: 400)
             
             Button(action: {
+                start = selectedStartDate
                 startDate = dateFormatter.string(from: selectedStartDate)
                 changeColor[0] = .black
                 print(startDate)
@@ -67,7 +54,8 @@ struct endDateModalView: View {
     @Environment(\.presentationMode) var presentation
     @Binding var endDate: String
     @Binding var changeColor: [Color]
-    @State private var selectedEndDate = Date.now
+    @Binding  var selectedEndDate: Date
+    @Binding var min: Date
     
     var body: some View {
         
@@ -75,11 +63,12 @@ struct endDateModalView: View {
             Text("복귀일자")
                 .font(.largeTitle)
             
-            DatePicker("", selection: $selectedEndDate, displayedComponents: .date)
+            DatePicker("", selection: $selectedEndDate, in: min..., displayedComponents: .date)
                 .datePickerStyle(GraphicalDatePickerStyle())
                 .frame(maxHeight: 400)
             
             Button(action: {
+                end = selectedEndDate
                 endDate = dateFormatter.string(from: selectedEndDate)
                 changeColor[1] = .black
                 print(endDate)
@@ -94,6 +83,7 @@ struct endDateModalView: View {
         }
     }
 }
+
 
 struct CityModalView: View {
     @Binding var cities: [String]
@@ -229,6 +219,8 @@ struct MainPageView: View {
     @State var endDate: String = "복귀일자"
     @State private var changeColor: [Color] = [.lightgray, .lightgray, .lightgray]
     @State private var cities = ["서울", "인천", "대전", "대구","부산", "울산", "광주", "경기도", "충청남도", "충청북도", "경상남도", "경상북도", "전라남도", "전라북도", "제주도", "세종특별자치시"]
+    
+    @State private var selectedEndDate = Date.now
     @State var areaCode: Int? = nil
     
     @State private var selectedCity: String?
@@ -237,6 +229,8 @@ struct MainPageView: View {
     @State private var showStartCalendar: Bool = false
     @State private var showEndCalendar: Bool = false
     @State private var showCity: Bool = false
+    @State private var max = Date.now
+    @State private var min = Date.now
     @State private var isActiveSearch: Bool = false
     @State private var showingAlert: Bool = false
     
@@ -250,7 +244,10 @@ struct MainPageView: View {
                     .padding(.bottom, 20)
                 
                 HStack {
-                    Button(action: showStartDate, label: {
+                    Button(action: {
+                        showStartDate()
+                        max = selectMax()
+                    }, label: {
                         Image(systemName: "calendar")
                             .foregroundColor(.black)
                         Text(startDate)
@@ -260,10 +257,14 @@ struct MainPageView: View {
                     .padding(3)
                     .background(.white)
                     .sheet(isPresented: self.$showStartCalendar) {
-                        startDateModalView(startDate: $startDate, changeColor: $changeColor)
+                        startDateModalView(startDate: $startDate, changeColor: $changeColor, max: $max)
                     }
                     
-                    Button(action: showEndDate, label: {
+                    Button(action: {
+                        showEndDate()
+                        min = selectMin()
+                        selectedEndDate = min
+                    }, label: {
                         Image(systemName: "calendar")
                             .foregroundColor(.black)
                         Text(endDate)
@@ -273,7 +274,7 @@ struct MainPageView: View {
                     .padding(3)
                     .background(.white)
                     .sheet(isPresented: self.$showEndCalendar) {
-                        endDateModalView(endDate: $endDate, changeColor: $changeColor)
+                        endDateModalView(endDate: $endDate, changeColor: $changeColor,selectedEndDate: $selectedEndDate, min: $min)
                     }
                 }
                 .cornerRadius(5)
@@ -377,6 +378,16 @@ func showEndDate() {
 func showCities() {
     showCity = true
 }
+    func selectMax() -> Date {
+        if end != Date.now {
+            return end
+        } else {
+            return Calendar.current.date(byAdding: .year, value: 100, to: Date.now)!
+        }
+    }
+    func selectMin() -> Date {
+        return start
+    }
 
 }
 
