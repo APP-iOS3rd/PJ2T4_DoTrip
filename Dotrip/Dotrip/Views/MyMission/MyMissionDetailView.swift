@@ -1,7 +1,6 @@
 //변경후
 //  MyMissionDetailView.swift
 //  Dotrip
-//
 //  Created by 유지인 on 12/11/23.
 //
 
@@ -23,7 +22,7 @@ struct MyMissionDetailView: View {
     
     @State var btnStatus :Bool = false
     @State var showingAlert: Bool  = false
-    
+    @State var showingGiveUpAlert :Bool = false
     
     var body: some View {
         ZStack{
@@ -42,7 +41,6 @@ struct MyMissionDetailView: View {
                         .fontWeight(.regular)
                         .padding(.top,3 )
             }.offset(x:-25,y:-280)
-                
 
             VStack{
                 if !btnStatus {
@@ -119,11 +117,11 @@ struct MyMissionDetailView: View {
                                 }
                             )// Alert
                         }
-                      
                           // Alert
                             
+                        //미션포기하기 알림창
                             Button {
-                                giveupMission()
+                                showingGiveUpAlert = true
                             } label: {
                                 Text("미션 포기하기")
                                     .fontWeight(.regular)
@@ -132,7 +130,16 @@ struct MyMissionDetailView: View {
                                     .background(Color.white)
                                     .cornerRadius(10)
                                     .shadow(radius:2, x:0, y:2)
+                            } .alert(isPresented: $showingGiveUpAlert) {
+                                Alert(
+                                    title: Text("미션 포기"),
+                                    message: Text("다른 미션에서 만나요!"),
+                                    dismissButton: .default(Text("확인")) {
+                                        giveupMission()
+                                    }
+                                )// Alert
                             }
+                        
                         }//HStack -Button
                     .padding(.top,39)
                             
