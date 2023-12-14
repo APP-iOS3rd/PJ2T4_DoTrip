@@ -16,11 +16,11 @@ struct PointAcqView: View {
                 .padding(.bottom, -7)
             ExtractedView2(date: "2023-12-11", store: "낙산사가서 무료국수 먹고오기", usePoint: "+100p")
                 .padding(.bottom, -7)
-            ExtractedView2(date: "2023-12-01", store: "경복궁에서 사진찍기 미션", usePoint: "+100p")
+            ExtractedView2(date: "2023-12-21", store: "경복궁에서 사진찍기 미션", usePoint: "+100p")
                 .padding(.bottom, -7)
-            ExtractedView2(date: "2023-12-05", store: "남산타워에서 연인이랑 자물쇠 걸기 미션", usePoint: "+150p")
+            ExtractedView2(date: "2023-12-24", store: "남산타워에서 연인이랑 자물쇠 걸기 미션", usePoint: "+150p")
                 .padding(.bottom, -7)
-            ExtractedView2(date: "2023-12-11", store: "낙산사가서 무료국수 먹고오기", usePoint: "+100p")
+            ExtractedView2(date: "2023-12-27", store: "낙산사가서 무료국수 먹고오기", usePoint: "+100p")
                 .padding(.bottom, -7)
         }
     }
