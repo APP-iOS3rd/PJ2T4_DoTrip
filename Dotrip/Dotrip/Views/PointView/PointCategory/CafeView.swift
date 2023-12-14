@@ -13,7 +13,7 @@ struct CafeView: View {
         NavigationStack {
             List {
                 Section(header: Text("스타벅스")) {
-                    NavigationLink(destination: SBIceAmericanoView()) {
+                    NavigationLink(destination: SBIceAmericanoView(productDetail: sbIceAmericano)) {
                         Text("아이스 아메리카노 T")
                     }
                     NavigationLink(destination: SBIceLatteView()) {
