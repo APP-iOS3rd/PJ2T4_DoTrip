@@ -24,67 +24,137 @@ struct Place : Identifiable {
     let mapy: String
 }
 
+
+//요것도 추가함
+class NavigationManager: ObservableObject {
+    @Published var stackPath: NavigationPath?
+
+    //요거 수정해야함 case 추가
+    enum NavigationPath {
+        case MapDetailView
+        case MapMissionDetailView
+        case EventDetailView
+        // Add more navigation paths as needed
+    }
+}
+
+
 struct MapView: View {
     
     @State var listState = true
     @State var network = TourKoreaAPI.shared
     
     @State private var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 33.3040, longitude: 126.2934),
+        center: CLLocationCoordinate2D(latitude: 37.55, longitude: 127),
         span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
     )
     
-    @State private var places = [
-        Place(contentid: "1", contenttypeid: "1", title: "제주공항", addr1: "제주시", addr2: "", eventstartdate: "231122", eventenddate: "231125", firstimage: "", firstimage2: "", mapx: "126.2934", mapy: "33.3040"),
-        Place(contentid: "2", contenttypeid: "2", title: "제주시당", addr1: "제주시 애월읍", addr2: "", eventstartdate: "231121", eventenddate: "231128", firstimage: "", firstimage2: "", mapx: "126.292", mapy: "33.3048")
-    ]
-    @State private var places2 = [
-        Place(contentid: "1", contenttypeid: "1", title: "제주공항", addr1: "제주시", addr2: "", eventstartdate: "231122", eventenddate: "231125", firstimage: "", firstimage2: "", mapx: "126.293", mapy: "33.3045"),
-        Place(contentid: "2", contenttypeid: "2", title: "제주시당", addr1: "제주시 애월읍", addr2: "", eventstartdate: "231121", eventenddate: "231128", firstimage: "", firstimage2: "", mapx: "126.2924", mapy: "33.3048")
-    ]
+    let dummyPlace = Item(contentid: "", contenttypeid: "", title: "", addr1: "", addr2: "", eventstartdate: "", eventenddate: "", firstimage: "", firstimage2: "", mapx: "0", mapy: "0")
     
-    @State private var selectedPlace: Item?
-    @State private var selectedPlaceforTest: Place?
+    @State var selectedPlace: Item?
     
     
     @State var showSheet: Bool = false
     @State var detents: PresentationDetent = .medium
     
+    @StateObject private var navigationManager = NavigationManager()
+    @StateObject private var modalManager = NavigationManager()
+    
+    
+    @State var contID : String = ""
+    
+    @State var contyID : String = ""
+    
+    @State var cont : Item?
+    
     var body: some View {
-        ZStack {
-            Map(coordinateRegion: $region,
-                annotationItems: (listState ? places : places2),
-                annotationContent: { location in
-                MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: Double(location.mapy)!, longitude: Double(location.mapx)!) ) {
-                    CustomMapMarkerView()
-                        .onTapGesture {
-                            selectedPlaceforTest = location
-                            showSheet.toggle()
-                            detents = .medium
+        NavigationStack {
+            ZStack {
+                Map(coordinateRegion: $region,
+                    annotationItems: network.posts,
+                    annotationContent: { location in
+                    MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: Double(location.mapy)!, longitude: Double(location.mapx)!) ) {
+                        if location == selectedPlace {
+                            CustomMapMarkerView(pinColor: .red)
+                                .onTapGesture {
+                                    if showSheet == false {
+                                        selectedPlace = dummyPlace
+                                    }
+                                    showSheet.toggle()
+                                    detents = .medium
+                                }
+                        } else if showSheet == false {
+                            CustomMapMarkerView(pinColor: .blue)
+                                .onTapGesture {
+                                    
+                                    //여기 추가
+                                    modalManager.stackPath = .MapMissionDetailView
+                                    if showSheet == false {
+                                        selectedPlace = location
+                                    }
+                                    showSheet.toggle()
+                                    detents = .medium
+                                }
                         }
+                    }
+                })
+                .sheet(isPresented: $showSheet) {
+                    ModalView(detents: $detents, listState: $listState, network: $network, navigationManager: navigationManager, modalManager: modalManager, contID: $contID, contyID: $contyID, cont: $cont)
+                    // 높이 선택 값 바인딩
+                        .presentationDetents([.medium, .large], selection: $detents)
                 }
+                NavigationLink(
+                    destination: EventDetailView(data: cont ?? dummyPlace, contentId: contID, contentTypeId: contyID),
+                    tag: .EventDetailView,
+                    selection: $navigationManager.stackPath
+                ) {
+                    EmptyView()
+                }
+                .hidden()
             }
-            )
-            .sheet(isPresented: $showSheet) {
-                ModalView(detents: $detents, listState: $listState, network: $network)
-                // 높이 선택 값 바인딩
-                    .presentationDetents([.medium, .large], selection: $detents)
+            .ignoresSafeArea()
+            .onAppear {
+                showSheet = true
+                network.tourData(params: ["20231201", "20231231", "39", "", "제주"])
+                
+                //위치 변경
+//                region = MKCoordinateRegion(
+//                    center: CLLocationCoordinate2D(latitude: Double(network.posts[0].mapy)!, longitude: Double(network.posts[0].mapx)!),
+//                    span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
             }
         }
-        .ignoresSafeArea()
-        .onAppear {
-            showSheet = true
-        }
+        .environmentObject(navigationManager)
     }
+    
+//    @ViewBuilder
+//    func destinationView() -> some View {
+//        switch navigationManager.stackPath {
+//        case .MapDetailView:
+//            MapDetailView(contentId: "", contentTypeId: "", cont: $cont)
+//        case .MapMissionDetailView:
+//            MapDetailView(contentId: "", contentTypeId: "")
+//        // Add more cases for additional navigation paths
+//        default:
+//            EmptyView()
+//        }
+//    }
 }
 
 
 struct ModalView: View {
-    
     @Binding var detents: PresentationDetent
     
     @Binding var listState : Bool
     @Binding var network : TourKoreaAPI
+    //요것도 필요
+    @ObservedObject var navigationManager: NavigationManager
+    @ObservedObject var modalManager: NavigationManager
+    
+    @Binding var contID : String
+    
+    @Binding var contyID : String
+    
+    @Binding var cont : Item?
     
     var body: some View {
         NavigationStack {
@@ -111,54 +181,42 @@ struct ModalView: View {
                 Spacer()
             }
             .padding(.top, 30)
-            MapList(listState: $listState, network: $network)
+            MapList(listState: $listState, network: $network, navigationManager: navigationManager, modalManager: modalManager, contId: $contID, contyId: $contyID, cont: $cont)
+            
+            // 이부분 추가
+            NavigationLink(
+                destination: MapDetailView(contentId: contID, contentTypeId: contyID, cont: $cont, navigationManager: navigationManager),
+                tag: .MapDetailView,
+                selection: $modalManager.stackPath
+            ) {
+                EmptyView()
+            }
+            .hidden()
+            
         }
         .background(.white)
+        // 이부분도 추가
+        .environmentObject(modalManager)
+    }
+    
+    // 이것도 추가
+    @ViewBuilder
+    func destinationView() -> some View {
+        switch navigationManager.stackPath {
+        case .MapDetailView:
+            MapDetailView(contentId: "", contentTypeId: "", cont: $cont, navigationManager: navigationManager)
+ 
+        default:
+            EmptyView()
+        }
     }
 }
 
 
-struct MapList : View {
-    
-    @Binding var listState : Bool
-    @Binding var network : TourKoreaAPI
-        
-        var body: some View {
-            VStack {
-                if listState {
-                    List {
-                        ForEach(network.posts, id: \.self) { data in
-                            NavigationLink(destination: EventDetailView(contentId: data.contentid, contentTypeId: data.contenttypeid)) {
-                                HStack {
-                                    AsyncImage(url: URL(string: data.firstimage ?? "")) { img in
-                                        img.image?.resizable()
-                                    }
-                                    .frame(width: 80, height: 80)
-                                    .scaledToFit()
-                                    
-                                    VStack(alignment: .leading) {
-                                        Text(data.title)
-                                        Text("\(data.addr1) \(data.addr2)")
-                                    }
-                                    
-                                }
-                            }
-                        }
-                    }
-                } else {
-                    List {
-                    }
-                    
-                }
-            }
-            .onAppear() {
-                network.feachData(params: ["20231201", "20231231", "39", ""])
-            }
-        }
-}
-
 
 struct CustomMapMarkerView : View {
+    var pinColor : Color
+    
     var body: some View {
             VStack(spacing: 0) {
                 Image(systemName: "map.circle.fill")
@@ -168,13 +226,13 @@ struct CustomMapMarkerView : View {
                     .font(.headline)
                     .foregroundColor(.white)
                     .padding(6)
-                    .background(.blue)
+                    .background(pinColor)
                     .cornerRadius(36)
                 
                 Image(systemName: "triangle.fill")
                     .resizable()
                     .scaledToFit()
-                    .foregroundColor(.blue)
+                    .foregroundColor(pinColor)
                     .frame(width: 10, height: 10)
                     .rotationEffect(Angle(degrees: 180))
                     .offset(y: -3)
@@ -183,6 +241,6 @@ struct CustomMapMarkerView : View {
         }
 }
 
-#Preview(body: {
+#Preview{
     MapView()
-})
+}
