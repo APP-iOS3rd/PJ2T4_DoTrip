@@ -42,7 +42,7 @@ struct SearchView: View {
             }
             
             if network.isLoading {
-                LoadingView()
+                LoadingView2()
             }
         }
         .onAppear() {
