@@ -99,7 +99,7 @@ struct CityModalView: View {
     @State private var gyeongnams = ["거제시", "거창군", "고성군", "김해시", "남해군", "마산시", "밀양시", "사천시", "산청군", "양산시", "의령군", "진주시", "진해시", "창녕군", "창원시", "통영시", "하동군", "함안군", "함양군", "합천군"]
     @State private var incheons = ["강화군", "계양구", "남동구", "동구", "미추홀구", "부평구", "서구", "연수구", "옹진군", "중구"]
     @State private var gyeonggis = ["가평군", "고양시", "과천시", "광명시", "광주시", "구리시", "군포시", "김포시", "남양주시", "동두천시", "부천시", "성남시", "수원시", "시흥시", "안산시", "안성시", "안양시", "양주시", "양평군", "여주시", "연천군", "오산시", "용인시", "의왕시", "의정부시", "이천시", "파주시", "평택시", "포천시", "하남시", "화성시"]
-    @State private var areaCodeDict = ["서울":1, "인천":2, "대전":3, "대구":4,"부산":6, "울산":7, "광주":5, "경기도":31, "충청남도":34, "충청북도":33, "경상남도":36, "경상북도":35, "전라남도":38, "전라북도":37, "제주도":17, "세종특별자치시":8]
+    @State private var areaCodeDict = ["서울":1, "인천":2, "대전":3, "대구":4,"부산":6, "울산":7, "광주":5, "경기도":31, "충청남도":34, "충청북도":33, "경상남도":36, "경상북도":35, "전라남도":38, "전라북도":37, "제주도":39, "세종특별자치시":8]
     @State private var saejong = ["세종특별자치시"]
     
     
@@ -277,7 +277,7 @@ struct MainPageView: View {
                 .padding(3)
                 
                 HStack{
-                    NavigationLink(destination: SearchView()) {
+                    NavigationLink(destination: SearchView(params: [startDate, endDate, "\(areaCode ?? 1)", selectedBorough ?? ""])) {
                     Text("검색")
                         .frame(width:70, height: 30)
                         .foregroundColor(.black)
