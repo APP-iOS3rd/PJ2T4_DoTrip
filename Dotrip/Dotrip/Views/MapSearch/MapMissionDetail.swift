@@ -1,7 +1,5 @@
-
+//mapMissionDetailView
 import SwiftUI
-
-
 
 struct MapMissionDetailView: View {
     

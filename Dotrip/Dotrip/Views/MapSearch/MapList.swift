@@ -1,9 +1,4 @@
-//
 //  MapListView.swift
-//  Dotrip
-//
-//  Created by jonghyun baik on 12/13/23.
-//
 
 import SwiftUI
 
@@ -25,30 +20,70 @@ struct MapList : View {
         var body: some View {
             VStack {
                 if listState {
+                    HStack {
+                        Text("총")
+                            .font(.system(size: 13))
+                        Text("\(missionStore.missions.count)")
+                            .foregroundStyle(Color.pointColor)
+                            .font(.system(size: 13))
+                            .padding(.leading, -5)
+                            .bold()
+
+                        Text("개 항목이 있습니다.")
+                            .font(.system(size: 13))
+                            .padding(.leading, -5)
+
+                    }
                     List{
                         ForEach(0..<missionStore.missions.count, id:\.self) { item in
-                            MyMissionList(mission: $missionStore.missions[item])
-                                .onTapGesture {
-                                    // TapGesture 시 네비게이션
-                                    mission = missionStore.missions[item]
-                                    modalManager.stackPath = .MapMissionDetailView
-                                }
+                            VStack (alignment: .leading) {
+                                Text("\(missionStore.missions[item].name)")
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                Text("\(missionStore.missions[item].address)")
+                                    .font(.footnote)
+                            }
+                            .onTapGesture {
+                                // TapGesture 시 네비게이션
+                                mission = missionStore.missions[item]
+                                modalManager.stackPath = .MapMissionDetailView
+                            }
                         }
                     }
                     
                 } else {
+                    HStack {
+                        Text("총")
+                            .font(.system(size: 13))
+                        Text("\(network.totalCount)")
+                            .foregroundStyle(Color.pointColor)
+                            .font(.system(size: 13))
+                            .padding(.leading, -5)
+                            .bold()
+
+                        Text("개 항목이 있습니다.")
+                            .font(.system(size: 13))
+                            .padding(.leading, -5)
+
+                    }
                     List {
                         ForEach(network.posts, id: \.self) { data in
                                 HStack {
                                     AsyncImage(url: URL(string: data.firstimage ?? "")) { img in
                                         img.image?.resizable()
                                     }
-                                    .frame(width: 80, height: 80)
+                                    .frame(width: 65, height: 65)
+                                    .cornerRadius(5)
                                     .scaledToFit()
                                     
                                     VStack(alignment: .leading) {
                                         Text(data.title)
+                                            .font(.system(size: 15))
+                                            .bold()
+                                            .padding(.bottom, 3)
+                                            .lineLimit(1)
                                         Text("\(data.addr1) \(data.addr2)")
+                                            .font(.system(size: 13))
                                     }
                                     
                                 }
@@ -59,14 +94,11 @@ struct MapList : View {
                                     contyId = data.contenttypeid
                                     modalManager.stackPath = .MapDetailView
                                 }
-                            
                         }
                     }
+                    .listStyle(.plain)
                     
                 }
-            }
-            .onAppear() {
-                network.tourData(params: ["20231201", "20231231", "39", "", "제주"])
             }
         }
 }
