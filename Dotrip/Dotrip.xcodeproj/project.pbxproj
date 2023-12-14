@@ -29,6 +29,9 @@
 		9741EE682B2A99A300D2AD1C /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9741EE672B2A99A300D2AD1C /* ColorExtension.swift */; };
 		977C89BB2B2933F000E96816 /* TourData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977C89BA2B2933F000E96816 /* TourData.swift */; };
 		977C89BE2B29340000E96816 /* RemoveHTMLTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977C89BD2B29340000E96816 /* RemoveHTMLTag.swift */; };
+		97E20F4D2B2AE5FF00ADE131 /* PointHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E20F4A2B2AE5FF00ADE131 /* PointHistoryView.swift */; };
+		97E20F4E2B2AE5FF00ADE131 /* PointAcqView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E20F4B2B2AE5FF00ADE131 /* PointAcqView.swift */; };
+		97E20F4F2B2AE5FF00ADE131 /* PointDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E20F4C2B2AE5FF00ADE131 /* PointDetail.swift */; };
 		F71B53B02B2591F0001AA4EC /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53AF2B2591F0001AA4EC /* MyPageView.swift */; };
 		F71B53B52B25A023001AA4EC /* PointHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53B42B25A023001AA4EC /* PointHistoryView.swift */; };
 		F71B53BB2B25A961001AA4EC /* QnAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B53BA2B25A961001AA4EC /* QnAView.swift */; };
@@ -80,6 +83,9 @@
 		9741EE672B2A99A300D2AD1C /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		977C89BA2B2933F000E96816 /* TourData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourData.swift; sourceTree = "<group>"; };
 		977C89BD2B29340000E96816 /* RemoveHTMLTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveHTMLTag.swift; sourceTree = "<group>"; };
+		97E20F4A2B2AE5FF00ADE131 /* PointHistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointHistoryView.swift; sourceTree = "<group>"; };
+		97E20F4B2B2AE5FF00ADE131 /* PointAcqView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointAcqView.swift; sourceTree = "<group>"; };
+		97E20F4C2B2AE5FF00ADE131 /* PointDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointDetail.swift; sourceTree = "<group>"; };
 		F71B53AF2B2591F0001AA4EC /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		F71B53B42B25A023001AA4EC /* PointHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointHistoryView.swift; sourceTree = "<group>"; };
 		F71B53BA2B25A961001AA4EC /* QnAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QnAView.swift; sourceTree = "<group>"; };
@@ -199,6 +205,16 @@
 			path = Extention;
 			sourceTree = "<group>";
 		};
+		97E20F492B2AE5E600ADE131 /* PointHistory2 */ = {
+			isa = PBXGroup;
+			children = (
+				97E20F4B2B2AE5FF00ADE131 /* PointAcqView.swift */,
+				97E20F4C2B2AE5FF00ADE131 /* PointDetail.swift */,
+				97E20F4A2B2AE5FF00ADE131 /* PointHistoryView.swift */,
+			);
+			path = PointHistory2;
+			sourceTree = "<group>";
+		};
 		F71B53B32B259C13001AA4EC /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +238,7 @@
 		F73E3C312B294D71007005BF /* PointView */ = {
 			isa = PBXGroup;
 			children = (
+				97E20F492B2AE5E600ADE131 /* PointHistory2 */,
 				F73E3C342B2972B6007005BF /* PointCategory */,
 				F73E3C322B294D9E007005BF /* PointExchangeView.swift */,
 				F71B53B42B25A023001AA4EC /* PointHistoryView.swift */,
@@ -428,6 +445,7 @@
 				20A8DA3F2B26C74A00E306D2 /* Mission.swift in Sources */,
 				970E70F72B26FC090005FCFE /* MainPageView.swift in Sources */,
 				20A8DA4A2B26CB0A00E306D2 /* CameraButtonView.swift in Sources */,
+				97E20F4F2B2AE5FF00ADE131 /* PointDetail.swift in Sources */,
 				970E70F32B26FBEC0005FCFE /* GetAPIKey.swift in Sources */,
 				977C89BE2B29340000E96816 /* RemoveHTMLTag.swift in Sources */,
 				970E70F12B26FBEC0005FCFE /* EventInfoAPI.swift in Sources */,
@@ -451,10 +469,12 @@
 				20A8DA432B26C81900E306D2 /* MissionDataLoad.swift in Sources */,
 				F71B53B02B2591F0001AA4EC /* MyPageView.swift in Sources */,
 				F73E3C3A2B297302007005BF /* TheaterView.swift in Sources */,
+				97E20F4D2B2AE5FF00ADE131 /* PointHistoryView.swift in Sources */,
 				F73E3C382B2972EC007005BF /* FastFoodView.swift in Sources */,
 				F7ADCE352B2A8560005648FC /* ProductDetailModel.swift in Sources */,
 				970E70FC2B26FC1B0005FCFE /* SearchView.swift in Sources */,
 				9741EE682B2A99A300D2AD1C /* ColorExtension.swift in Sources */,
+				97E20F4E2B2AE5FF00ADE131 /* PointAcqView.swift in Sources */,
 				F71B53BD2B25A985001AA4EC /* EmailInquiryView.swift in Sources */,
 				20A8DA452B26CA8300E306D2 /* MyMissionDetailView.swift in Sources */,
 				20A8DA3B2B26C69B00E306D2 /* MyMissionList.swift in Sources */,
