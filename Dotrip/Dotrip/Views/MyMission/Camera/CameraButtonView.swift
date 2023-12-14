@@ -10,7 +10,7 @@ import SwiftUI
 struct CameraButtonView: View {
     @Binding var showActionSheet : Bool
     @Binding var btnStatus :Bool
-    @State var image : Image?
+    //@State var image : Image?
     var body: some View {
       
             Button {
