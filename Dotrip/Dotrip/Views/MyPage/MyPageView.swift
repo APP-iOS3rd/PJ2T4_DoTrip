@@ -19,6 +19,8 @@ extension Color {
 
 struct MyPageView: View {
     @State private var showModal = false
+    @State private var logoutAlert = false
+    @State private var withdrawalAlert = false
     @ObservedObject private var userData: UserData = UserData()
     
     var body: some View {
@@ -26,7 +28,7 @@ struct MyPageView: View {
             GeometryReader { geometry in
                 VStack {
                     Text("MY")
-                        .frame(width: geometry.size.width * 0.85, alignment: .leading)
+                        .frame(width:350, alignment: .leading)
                         .font(.title)
                         .bold()
                         .padding(.top,20)
@@ -39,12 +41,11 @@ struct MyPageView: View {
                     Spacer()
                     
                     ListSection()
-                        .padding()
                         .listStyle(InsetListStyle())
                     
                     HStack {
                         Button {
-                            print("로그아웃")
+                            logoutAlert = true
                         } label: {
                             Text("로그아웃")
                                 .font(.system(size: 12))
@@ -55,11 +56,20 @@ struct MyPageView: View {
                                         .stroke(Color(hex: 0xC2BDBD), lineWidth: 1.5)
                                 )
                         }
+                        .alert("로그아웃하시겠습니까?",isPresented: $logoutAlert) {
+                            
+                            Button("취소", role: .cancel) {
+                            }
+                            Button("확인") {
+                                
+                            }
+                            
+                        }
                         
                         Spacer()
                         
                         Button {
-                            print("탈퇴하기")
+                            withdrawalAlert = true
                         } label: {
                             Text("탈퇴하기")
                                 .font(.system(size: 12))
@@ -70,9 +80,17 @@ struct MyPageView: View {
                                         .stroke(Color(hex: 0xC2BDBD), lineWidth: 1.5)
                                 )
                         }
+                        .alert("정말로 탈퇴하시겠습니까?",isPresented: $withdrawalAlert) {
+                            
+                            Button("취소", role: .cancel) {
+                            }
+                            Button("탈퇴하기", role: .destructive) {
+                            }
+                        }
                     }
-                    .padding(40)
+                    .padding(20)
                 }
+                
             }
         }
     }
