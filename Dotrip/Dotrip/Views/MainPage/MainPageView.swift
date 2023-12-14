@@ -231,6 +231,8 @@ struct MainPageView: View {
     @State private var min = Date.now
     @State private var isActiveSearch: Bool = false
     @State private var showingAlert: Bool = false
+    @State private var ImageSets: [Image] = [Image("chung"), Image("jeju"), Image("jan")]
+    @State private var missionImages: [Image] = [Image("camera"), Image("couple"), Image("food"), Image("friend"), Image("solo")]
     
     var body: some View {
         NavigationStack {
@@ -333,12 +335,10 @@ struct MainPageView: View {
         
         ScrollView(.horizontal) {
             HStack {
-                ForEach(0..<3) {_ in
-                    Text("여행 추천")
-                        .foregroundColor(.black)
-                        .font(.largeTitle)
+                ForEach(0..<3) {i in
+                    ImageSets[i]
+                        .resizable()
                         .frame(width: 355, height: 200)
-                        .background(Color.yellow)
                         .cornerRadius(25)
                 }
             }
@@ -350,12 +350,10 @@ struct MainPageView: View {
         
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-                ForEach(0..<6) {_ in
-                    Text("미션")
-                        .foregroundColor(.black)
-                        .font(.largeTitle)
+                ForEach(0..<5) {i in
+                    missionImages[i]
+                        .resizable()
                         .frame(width: 120, height: 120)
-                        .background(Color.yellow)
                         .cornerRadius(25)
                 }
             }
