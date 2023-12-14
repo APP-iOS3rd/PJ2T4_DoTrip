@@ -156,5 +156,3 @@ struct MyMissionDetailView: View {
     }
 
 }
-
-
