@@ -56,7 +56,7 @@ struct MyMissionListView: View {
                 //완료된 갯수가 0개 이상이면 나타나
                 if succeededMissons > 0 {
                     HStack {
-                    Text("진행중인 미션이")
+                    Text("완료된 미션이")
                     Text("\(succeededMissons)")
                         .foregroundStyle(Color.orange)
                     Text("개 있습니다")

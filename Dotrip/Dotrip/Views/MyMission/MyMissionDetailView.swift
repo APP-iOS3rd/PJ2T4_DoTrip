@@ -52,7 +52,12 @@ struct MyMissionDetailView: View {
                         btnStatus = true
                     } label: {
                         Text("미션 시작하기")
-                            .modifier(ButtonModify())
+                            .fontWeight(.regular)
+                            .frame(width:300, height: 50)
+                            .foregroundColor(.black)
+                            .background(Color.white)
+                            .cornerRadius(10)
+                            .shadow(radius:2, x:0, y:2)
                     }
                     
                 }else {
