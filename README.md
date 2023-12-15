@@ -19,7 +19,7 @@
 <table>
   <tbody>
     <tr>
-      <td align="center"><a href="https://github.com/2HYUNHO"><img src="https://private-user-images.githubusercontent.com/102159946/269171632-a6c2cf7c-cef5-4ff0-b7b9-78d9780ed3b2.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDI1NzUyMzgsIm5iZiI6MTcwMjU3NDkzOCwicGF0aCI6Ii8xMDIxNTk5NDYvMjY5MTcxNjMyLWE2YzJjZjdjLWNlZjUtNGZmMC1iN2I5LTc4ZDk3ODBlZDNiMi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMxMjE0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMTIxNFQxNzI4NThaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jYmFhMzRlYjNkMzQ3ODIzNDk1YzAzNzg2YTcyYTRlNmEwYmVkZDgzZTczM2QwM2QwYjQxMTk0NDRmMWFmNTA2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.0OW25w9HffWftNE0vAYbeQSUltX47s_QKauhY1VSVY8" width="100px;" alt=""/><br /><sub><b>팀장 : 이현호 </b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/2HYUNHO"><img src="https://github.com/APP-iOS3rd/PJ2T4_DoTrip/assets/102159946/f2ea993b-a66c-4ceb-b67c-ac68f71f0b3f" width="100px;" alt=""/><br /><sub><b>팀장 : 이현호 </b></sub></a><br /></td>
       <td align="center"><a href="https://github.com/TakeMos"><img src="https://avatars.githubusercontent.com/u/125838606?v=4" width="100px;" alt=""/><br /><sub><b>팀원 : 김강혁</b></sub></a><br /></td>
       <td align="center"><a href="https://github.com/jonghyunBaik"><img src="https://avatars.githubusercontent.com/u/89888855?v=4" width="100px;" alt=""/><br /><sub><b>팀원 : 백종현</b></sub></a><br /></td>
      <tr/>
